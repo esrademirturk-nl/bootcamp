@@ -3,6 +3,7 @@
 import { ColorPaletteSection } from './_color-palette';
 import { TypographySection } from './_typography';
 import { RadiusShadowSection } from './_radius-shadow';
+import { ComponentsSection } from './_components';
 
 export default function StyleguidePage() {
   return (
@@ -21,6 +22,7 @@ export default function StyleguidePage() {
         <ColorPaletteSection />
         <TypographySection />
         <RadiusShadowSection />
+        <ComponentsSection />
       </div>
     </main>
   );
