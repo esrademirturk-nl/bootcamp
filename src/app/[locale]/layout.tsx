@@ -11,6 +11,7 @@ import {
 import { I18nProvider } from 'next-i18next/client';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { ThemeInitScript } from '@/components/layout/theme-init-script';
 import i18nConfig from '../../../i18n.config';
 import './globals.css';
 
@@ -53,6 +54,7 @@ export default async function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
+        <ThemeInitScript />
         <I18nProvider fallbackLng={i18nConfig.fallbackLng} language={locale} resources={resources}>
           <Header />
           <div className="flex-1">{children}</div>
