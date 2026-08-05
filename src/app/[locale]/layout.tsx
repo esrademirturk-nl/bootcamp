@@ -7,7 +7,7 @@ import { I18nProvider } from 'next-i18next/client';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ThemeInitScript } from '@/components/layout/theme-init-script';
-import i18nConfig from '../../../i18n.config';
+import i18nConfig from '../../../i18n.config.server';
 import './globals.css';
 
 initServerI18next(i18nConfig);
