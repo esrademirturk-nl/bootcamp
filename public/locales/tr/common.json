@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "bootcamps": "Bootcamp'ler",
+    "schedule": "Program",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "cta": {
+    "signup": "Kayıt Ol"
+  },
+  "header": {
+    "themeToggle": "Tema değiştir",
+    "languageSelect": "Dil seç",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "menu": "Menü"
+  },
+  "footer": {
+    "tagline": "Kariyerini bootcamp'lerle bir üst seviyeye taşı.",
+    "columnPlatform": "Platform",
+    "columnResources": "Kaynaklar",
+    "columnLegal": "Yasal",
+    "login": "Giriş Yap",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları",
+    "rights": "Tüm hakları saklıdır."
+  }
+}

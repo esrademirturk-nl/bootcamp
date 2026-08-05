@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "Home",
+    "bootcamps": "Bootcamps",
+    "schedule": "Rooster",
+    "about": "Over Ons",
+    "contact": "Contact"
+  },
+  "cta": {
+    "signup": "Aanmelden"
+  },
+  "header": {
+    "themeToggle": "Thema wisselen",
+    "languageSelect": "Taal selecteren",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "menu": "Menu"
+  },
+  "footer": {
+    "tagline": "Til je carrière naar een hoger niveau met bootcamps.",
+    "columnPlatform": "Platform",
+    "columnResources": "Bronnen",
+    "columnLegal": "Juridisch",
+    "login": "Inloggen",
+    "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden",
+    "rights": "Alle rechten voorbehouden."
+  }
+}
