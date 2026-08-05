@@ -9,6 +9,22 @@
   "cta": {
     "signup": "Sign Up"
   },
+  "landing": {
+    "hero": {
+      "title": "Find the Bootcamp That Changes Your Career",
+      "subtitle": "Learn from industry experts, build real projects, and get help landing your next job.",
+      "ctaPrimary": "Explore Bootcamps",
+      "ctaSecondary": "How It Works"
+    },
+    "stats": {
+      "graduates": "500+",
+      "graduatesLabel": "Graduates",
+      "employmentRate": "87%",
+      "employmentRateLabel": "Employment Rate",
+      "partners": "40+",
+      "partnersLabel": "Partner Companies"
+    }
+  },
   "header": {
     "themeToggle": "Toggle theme",
     "languageSelect": "Select language",

@@ -9,6 +9,22 @@
   "cta": {
     "signup": "Aanmelden"
   },
+  "landing": {
+    "hero": {
+      "title": "Vind de Bootcamp Die Je Carrière Verandert",
+      "subtitle": "Leer van experts uit de sector, bouw echte projecten en vind sneller een baan.",
+      "ctaPrimary": "Ontdek Bootcamps",
+      "ctaSecondary": "Hoe Het Werkt"
+    },
+    "stats": {
+      "graduates": "500+",
+      "graduatesLabel": "Afgestudeerden",
+      "employmentRate": "87%",
+      "employmentRateLabel": "Werkgelegenheidspercentage",
+      "partners": "40+",
+      "partnersLabel": "Partnerbedrijven"
+    }
+  },
   "header": {
     "themeToggle": "Thema wisselen",
     "languageSelect": "Taal selecteren",
