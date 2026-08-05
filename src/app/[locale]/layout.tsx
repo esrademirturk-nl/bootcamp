@@ -2,12 +2,7 @@ import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import localFont from 'next/font/local';
-import {
-  initServerI18next,
-  getT,
-  getResources,
-  generateI18nStaticParams,
-} from 'next-i18next/server';
+import { initServerI18next, getT, getResources } from 'next-i18next/server';
 import { I18nProvider } from 'next-i18next/client';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -23,9 +18,13 @@ const spaceGrotesk = localFont({
   weight: '300 700',
 });
 
-export async function generateStaticParams() {
-  return generateI18nStaticParams();
-}
+// Not: generateStaticParams kasıtlı olarak kullanılmıyor. next-i18next'in
+// getT() fonksiyonu locale tespiti için headers()/cookies() gibi dinamik
+// API'ler kullanıyor — bunu statik üretimle (SSG) birlikte kullanmak
+// production'da DYNAMIC_SERVER_USAGE hatasına yol açıyor. Bu projede statik
+// üretime ihtiyaç yok (sayfalar zaten client-side tema/dil değişimi
+// içeriyor), o yüzden sayfalar normal şekilde her istekte sunucuda render
+// ediliyor.
 
 export const metadata: Metadata = {
   title: 'Bootcamp Sitesi',
