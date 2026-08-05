@@ -2,7 +2,14 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 import { useT } from 'next-i18next/client';
+import { Select } from '@/components/ui/select';
 import i18nConfig from '../../../i18n.config';
+
+const languageNames: Record<string, string> = {
+  tr: '🇹🇷 Türkçe',
+  en: '🇬🇧 English',
+  nl: '🇳🇱 Nederlands',
+};
 
 export function LanguageSwitcher() {
   const pathname = usePathname();
@@ -23,21 +30,17 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <div className="flex items-center gap-1">
+    <Select
+      value={currentLng}
+      onChange={(event) => switchLocale(event.target.value)}
+      aria-label={t('header.languageSelect')}
+      className="h-8 w-auto py-1 pr-8 text-sm"
+    >
       {supportedLngs.map((lng) => (
-        <button
-          key={lng}
-          type="button"
-          onClick={() => switchLocale(lng)}
-          aria-label={t('header.languageSelect')}
-          aria-current={currentLng === lng}
-          className={`rounded-md px-2 py-1 text-sm font-medium uppercase hover:bg-surface-muted ${
-            currentLng === lng ? 'text-primary-600' : 'text-muted'
-          }`}
-        >
-          {lng}
-        </button>
+        <option key={lng} value={lng}>
+          {languageNames[lng] ?? lng.toUpperCase()}
+        </option>
       ))}
-    </div>
+    </Select>
   );
 }

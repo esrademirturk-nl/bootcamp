@@ -56,10 +56,6 @@ export function Header() {
 
         {/* Sağ taraf: dil seçici, tema toggle, CTA, mobil hamburger */}
         <div className="flex items-center gap-3">
-          <div className="hidden md:block">
-            <LanguageSwitcher />
-          </div>
-
           {/* Tema toggle — B-02'de localStorage + sistem tercihi ile tamamlanacak */}
           <button
             type="button"
@@ -82,7 +78,9 @@ export function Header() {
               />
             </svg>
           </button>
-
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
           <Button variant="primary" size="sm" className="hidden md:inline-flex">
             {t('cta.signup')}
           </Button>
