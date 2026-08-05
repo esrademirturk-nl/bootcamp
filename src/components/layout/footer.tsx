@@ -1,30 +1,11 @@
 import Link from 'next/link';
+import { getT } from 'next-i18next/server';
+import i18nConfig from '../../../i18n.config';
 
-const footerColumns = [
-  {
-    title: 'Platform',
-    links: [
-      { href: '/bootcamps', label: "Bootcamp'ler" },
-      { href: '/schedule', label: 'Program' },
-      { href: '/about', label: 'Hakkımızda' },
-    ],
-  },
-  {
-    title: 'Kaynaklar',
-    links: [
-      { href: '/contact', label: 'İletişim' },
-      { href: '/auth/login', label: 'Giriş Yap' },
-      { href: '/auth/register', label: 'Kayıt Ol' },
-    ],
-  },
-  {
-    title: 'Yasal',
-    links: [
-      { href: '/privacy', label: 'Gizlilik Politikası' },
-      { href: '/terms', label: 'Kullanım Koşulları' },
-    ],
-  },
-];
+function localizedHref(path: string, locale: string) {
+  if (locale === i18nConfig.fallbackLng) return path;
+  return `/${locale}${path === '/' ? '' : path}`;
+}
 
 const socialLinks = [
   { href: 'https://linkedin.com', label: 'LinkedIn' },
@@ -32,7 +13,36 @@ const socialLinks = [
   { href: 'https://instagram.com', label: 'Instagram' },
 ];
 
-export function Footer() {
+export async function Footer() {
+  const { t, i18n } = await getT('common');
+  const locale = i18n.language;
+
+  const footerColumns = [
+    {
+      title: t('footer.columnPlatform'),
+      links: [
+        { href: localizedHref('/bootcamps', locale), label: t('nav.bootcamps') },
+        { href: localizedHref('/schedule', locale), label: t('nav.schedule') },
+        { href: localizedHref('/about', locale), label: t('nav.about') },
+      ],
+    },
+    {
+      title: t('footer.columnResources'),
+      links: [
+        { href: localizedHref('/contact', locale), label: t('nav.contact') },
+        { href: localizedHref('/auth/login', locale), label: t('footer.login') },
+        { href: localizedHref('/auth/register', locale), label: t('cta.signup') },
+      ],
+    },
+    {
+      title: t('footer.columnLegal'),
+      links: [
+        { href: localizedHref('/privacy', locale), label: t('footer.privacy') },
+        { href: localizedHref('/terms', locale), label: t('footer.terms') },
+      ],
+    },
+  ];
+
   const year = new Date().getFullYear();
 
   return (
@@ -40,12 +50,13 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="font-heading text-lg font-bold text-foreground">
+            <Link
+              href={localizedHref('/', locale)}
+              className="font-heading text-lg font-bold text-foreground"
+            >
               Bootcamp<span className="text-primary-600">.</span>
             </Link>
-            <p className="mt-2 text-sm text-muted">
-              Kariyerini bootcamp&apos;lerle bir üst seviyeye taşı.
-            </p>
+            <p className="mt-2 text-sm text-muted">{t('footer.tagline')}</p>
           </div>
 
           {footerColumns.map((column) => (
@@ -65,7 +76,9 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 md:flex-row">
-          <p className="text-xs text-muted">&copy; {year} Bootcamp Sitesi. Tüm hakları saklıdır.</p>
+          <p className="text-xs text-muted">
+            &copy; {year} Bootcamp Sitesi. {t('footer.rights')}
+          </p>
           <div className="flex gap-4">
             {socialLinks.map((social) => (
               <a

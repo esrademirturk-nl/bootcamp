@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { useT } from 'next-i18next/client';
 import { Button } from '@/components/ui/button';
 
 export interface NavLink {
@@ -16,6 +17,7 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
+  const { t } = useT('common');
   const panelRef = React.useRef<HTMLDivElement>(null);
 
   // Escape ile kapatma
@@ -90,15 +92,15 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
         ref={panelRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Mobil navigasyon menüsü"
+        aria-label={t('header.menu')}
         className="absolute right-0 top-0 flex h-full w-full max-w-xs flex-col gap-6 bg-surface p-6 shadow-lg"
       >
         <div className="flex items-center justify-between">
-          <span className="font-heading text-lg font-semibold">Menü</span>
+          <span className="font-heading text-lg font-semibold">{t('header.menu')}</span>
           <button
             type="button"
             onClick={onClose}
-            aria-label="Menüyü kapat"
+            aria-label={t('header.closeMenu')}
             className="rounded-md p-2 hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
           >
             <svg
@@ -132,7 +134,7 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
         </nav>
 
         <Button variant="primary" className="mt-auto w-full">
-          Kayıt Ol
+          {t('cta.signup')}
         </Button>
       </div>
     </div>
