@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {
   Card,
   CardContent,
@@ -16,7 +17,13 @@ interface BootcampCardProps {
 export function BootcampCard({ bootcamp }: BootcampCardProps) {
   return (
     <Card className="overflow-hidden">
-      <img src={bootcamp.heroImage} alt={bootcamp.title} className="h-40 w-full object-cover" />
+      <Image
+        src={bootcamp.heroImage}
+        alt={bootcamp.title}
+        width={400}
+        height={160}
+        className="h-40 w-full object-cover"
+      />
       <CardHeader>
         <div className="flex items-center gap-2">
           <Badge>{bootcamp.level}</Badge>
