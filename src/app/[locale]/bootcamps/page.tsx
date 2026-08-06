@@ -1,10 +1,13 @@
 /**
  * src/app/[locale]/bootcamps/page.tsx
- * D-02 Arama, Filtreleme ve Sıralama entegrasyonu tamamlanmış sayfa.
+ * Bootcamp Liste Sayfası (R3).
+ * Filtreleme, arama, sıralama, sonuç sayısı göstergesi, skeleton loading
+ * ve empty state mantığını bir arada yürütür.
  */
 
 import React, { Suspense } from 'react';
-import { mockBootcamps, mockCategories } from '@/data/bootcamps';
+import { bootcamps } from '@/data/bootcamps';
+import { categories } from '@/data/categories';
 import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampFilters } from '@/components/bootcamps/bootcamp-filters';
 import { BootcampSearchBar } from '@/components/bootcamps/bootcamp-search-bar';
@@ -22,6 +25,9 @@ interface PageProps {
   }>;
 }
 
+/**
+ * Yüklenme anında gösterilecek skeleton kart listesi.
+ */
 function BootcampSkeletonGrid() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -41,6 +47,9 @@ function BootcampSkeletonGrid() {
   );
 }
 
+/**
+ * Filtreleme, arama ve sıralama mantığını çalıştıran iç bileşen.
+ */
 async function BootcampListContent({
   locale,
   searchParams,
@@ -54,7 +63,7 @@ async function BootcampListContent({
   const selectedSort = searchParams.sort || 'popularity';
 
   // Filtre kombinasyon mantığı (Arama + Kategori + Seviye)
-  let filtered = mockBootcamps.filter((bootcamp) => {
+  let filtered = bootcamps.filter((bootcamp) => {
     const matchesSearch =
       !query ||
       bootcamp.title.toLowerCase().includes(query) ||
@@ -79,7 +88,7 @@ async function BootcampListContent({
 
   return (
     <div className="space-y-6">
-      {/* Result Count Indicator */}
+      {/* Sonuç Sayısı Göstergesi */}
       <div className="flex items-center justify-between pb-2 border-b border-border/40">
         <h2 className="text-lg font-semibold text-foreground">
           {filtered.length} Bootcamp Bulundu
@@ -90,7 +99,9 @@ async function BootcampListContent({
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center p-12 text-center rounded-xl border border-dashed border-border bg-card/50 space-y-4">
           <div className="text-4xl">🔍</div>
-          <h3 className="text-xl font-bold text-foreground">Aramanıza Uygun Bootcamp Bulunamadı</h3>
+          <h3 className="text-xl font-bold text-foreground">
+            Aramanıza Uygun Bootcamp Bulunamadı
+          </h3>
           <p className="text-sm text-muted-foreground max-w-md">
             Farklı arama terimleri denemeyi veya seçili filtreleri temizlemeyi deneyebilirsiniz.
           </p>
@@ -111,27 +122,33 @@ async function BootcampListContent({
   );
 }
 
+/**
+ * Ana sayfa komponenti.
+ */
 export default async function BootcampsPage({ params, searchParams }: PageProps) {
   const { locale } = await params;
   const resolvedSearchParams = await searchParams;
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
-      {/* Sayfa Üst Başlığı */}
-      <div className="space-y-2">
-        <h1 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-          Bootcamp Programları
-        </h1>
-        <p className="text-muted-foreground text-base max-w-2xl">
-          Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen
-          başvurun.
-        </p>
+      {/* Başlık ve Arama Kutusu */}
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h1 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+            Bootcamp Programları
+          </h1>
+          <p className="text-muted-foreground text-base max-w-2xl">
+            Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen
+            başvurun.
+          </p>
+        </div>
+        <BootcampSearchBar />
       </div>
 
       {/* Filtre ve Kart Listesi Alanı */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
         <aside className="lg:col-span-1 sticky top-20">
-          <BootcampFilters categories={mockCategories} />
+          <BootcampFilters categories={categories} />
         </aside>
 
         <main className="lg:col-span-3">
