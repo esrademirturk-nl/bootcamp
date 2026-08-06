@@ -9,6 +9,19 @@
   "cta": {
     "signup": "Kayıt Ol"
   },
+  "landing": {
+    "hero": {
+      "title": "Kariyerini Değiştirecek Bootcamp'i Bul",
+      "subtitle": "Sektör uzmanlarından öğren, gerçek projeler geliştir, iş bulmana yardımcı olalım.",
+      "ctaPrimary": "Bootcamp'leri Keşfet",
+      "ctaSecondary": "Nasıl Çalışır?"
+    },
+    "stats": {
+      "graduatesLabel": "Mezun",
+      "employmentRateLabel": "İstihdam Oranı",
+      "partnersLabel": "Partner Şirket"
+    }
+  },
   "header": {
     "themeToggle": "Tema değiştir",
     "languageSelect": "Dil seç",

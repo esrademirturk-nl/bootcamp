@@ -117,19 +117,15 @@ export default async function BootcampsPage({ params, searchParams }: PageProps)
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
-      {/* Başlık ve Başlık Yakınındaki Arama Kutusu (D-02 Requirement) */}
-      <div className="space-y-4">
-        <div className="space-y-2">
-          <h1 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-            Bootcamp Programları
-          </h1>
-          <p className="text-muted-foreground text-base max-w-2xl">
-            Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen başvurun.
-          </p>
-        </div>
-
-        {/* Client-side Search Box near title */}
-        <BootcampSearchBar />
+      {/* Sayfa Üst Başlığı */}
+      <div className="space-y-2">
+        <h1 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+          Bootcamp Programları
+        </h1>
+        <p className="text-muted-foreground text-base max-w-2xl">
+          Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen
+          başvurun.
+        </p>
       </div>
 
       {/* Filtre ve Kart Listesi Alanı */}
