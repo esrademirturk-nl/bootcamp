@@ -154,9 +154,7 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
       )}
 
       {isPending && (
-        <p className="text-xs text-muted-foreground animate-pulse text-center">
-          Güncelleniyor...
-        </p>
+        <p className="text-xs text-muted-foreground animate-pulse text-center">Güncelleniyor...</p>
       )}
     </div>
   );

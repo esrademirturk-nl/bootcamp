@@ -1,10 +1,6 @@
-/**
- * src/app/[locale]/bootcamps/page.tsx
- * D-01 & D-02 Bootcamp Liste, Arama ve Filtreleme Sayfası.
- */
-
 import React, { Suspense } from 'react';
-import { mockBootcamps, mockCategories } from '@/data/bootcamps';
+import { mockBootcamps } from '@/data/bootcamps';
+import { mockCategories } from '@/data/categories';
 import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampFilters } from '@/components/bootcamps/bootcamp-filters';
 import { BootcampSearchBar } from '@/components/bootcamps/bootcamp-search-bar';
@@ -22,6 +18,9 @@ interface PageProps {
   }>;
 }
 
+/**
+ * Yüklenme anında gösterilecek skeleton kart listesi.
+ */
 function BootcampSkeletonGrid() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -41,6 +40,9 @@ function BootcampSkeletonGrid() {
   );
 }
 
+/**
+ * Filtreleme, arama ve sıralama mantığını çalıştıran iç bileşen.
+ */
 async function BootcampListContent({
   locale,
   searchParams,
@@ -79,7 +81,7 @@ async function BootcampListContent({
 
   return (
     <div className="space-y-6">
-      {/* Result Count Indicator */}
+      {/* Sonuç Sayısı Göstergesi */}
       <div className="flex items-center justify-between pb-2 border-b border-border/40">
         <h2 className="text-lg font-semibold text-foreground">
           {filtered.length} Bootcamp Bulundu
@@ -111,13 +113,15 @@ async function BootcampListContent({
   );
 }
 
+/**
+ * Ana sayfa komponenti.
+ */
 export default async function BootcampsPage({ params, searchParams }: PageProps) {
   const { locale } = await params;
   const resolvedSearchParams = await searchParams;
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
-      {/* Başlık ve Başlık Yakınındaki Arama Kutusu */}
       <div className="space-y-4">
         <div className="space-y-2">
           <h1 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
@@ -128,7 +132,6 @@ export default async function BootcampsPage({ params, searchParams }: PageProps)
             başvurun.
           </p>
         </div>
-
         <BootcampSearchBar />
       </div>
 

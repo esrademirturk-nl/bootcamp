@@ -1,7 +1,7 @@
 /**
  * src/app/[locale]/bootcamps/[slug]/page.tsx
  * Bootcamp Detay Sayfası (R3).
- * Dynamic Routing, generateStaticParams, Sticky Sidebar, Müfredat, 
+ * Dynamic Routing, generateStaticParams, Sticky Sidebar, Müfredat,
  * Eğitmen Kartı, Yorumlar ve 404 kontrolünü içerir.
  */
 
@@ -9,7 +9,10 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { mockBootcamps, mockInstructors, mockTestimonials } from '@/data/bootcamps';
+import { mockInstructors } from '@/data/instructors';
+import { mockTestimonials } from '@/data/testimonials';
+import { mockBootcamps } from '@/data/bootcamps';
+
 import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampCurriculum } from '@/components/bootcamps/bootcamp-curriculum';
 import { Badge } from '@/components/ui/badge';
@@ -48,9 +51,7 @@ export default async function BootcampDetailPage({ params }: PageProps) {
   const instructor = mockInstructors.find((item) => item.slug === bootcamp.instructorSlug);
 
   // 3. İlgili Yorumları Buluyoruz
-  const testimonials = mockTestimonials.filter(
-    (item) => item.bootcampSlug === bootcamp.slug
-  );
+  const testimonials = mockTestimonials.filter((item) => item.bootcampSlug === bootcamp.slug);
 
   // 4. İlgili Diğer Bootcamp'ler (Aynı kategorideki diğer eğitimler)
   const relatedBootcamps = mockBootcamps
@@ -66,12 +67,12 @@ export default async function BootcampDetailPage({ params }: PageProps) {
           <Badge variant="default" className="uppercase tracking-wider">
             {bootcamp.categorySlug}
           </Badge>
-          
+
           {/* Seviye (Level) için R1 varyantlarına uyumlu Badge */}
           <Badge variant="neutral" className="capitalize">
             {bootcamp.level}
           </Badge>
-          
+
           {/* Format için R1 varyantlarına uyumlu Badge */}
           <Badge variant="warning" className="capitalize">
             {bootcamp.format}
@@ -89,23 +90,31 @@ export default async function BootcampDetailPage({ params }: PageProps) {
         {/* Hero Meta Bilgileri */}
         <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pt-2 border-t border-border/40">
           <div className="flex items-center space-x-2">
-            <span>⭐ <strong className="text-foreground">{bootcamp.rating}</strong> (5.0)</span>
+            <span>
+              ⭐ <strong className="text-foreground">{bootcamp.rating}</strong> (5.0)
+            </span>
           </div>
           <div className="flex items-center space-x-2">
-            <span>👨‍🎓 <strong className="text-foreground">{bootcamp.studentCount}+</strong> Mezun</span>
+            <span>
+              👨‍🎓 <strong className="text-foreground">{bootcamp.studentCount}+</strong> Mezun
+            </span>
           </div>
           <div className="flex items-center space-x-2">
-            <span>⏱ <strong className="text-foreground">{bootcamp.durationWeeks} Hafta</strong> Süre</span>
+            <span>
+              ⏱ <strong className="text-foreground">{bootcamp.durationWeeks} Hafta</strong> Süre
+            </span>
           </div>
           <div className="flex items-center space-x-2">
-            <span>🌐 Diller: <strong className="text-foreground">{bootcamp.languages.join(', ')}</strong></span>
+            <span>
+              🌐 Diller:{' '}
+              <strong className="text-foreground">{bootcamp.languages.join(', ')}</strong>
+            </span>
           </div>
         </div>
       </section>
 
       {/* 2. ANA İÇERİK & STICKY SIDEBAR DÜZENİ */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        
         {/* Sol Taraf: Detaylar, Müfredat, Eğitmen, Yorumlar */}
         <div className="lg:col-span-2 space-y-10">
           {/* Görsel */}
@@ -138,11 +147,11 @@ export default async function BootcampDetailPage({ params }: PageProps) {
                 <div className="space-y-2 text-center md:text-left">
                   <div>
                     <h3 className="text-xl font-bold text-foreground">{instructor.name}</h3>
-                    <p className="text-sm font-medium text-primary">{instructor.title} @ {instructor.company}</p>
+                    <p className="text-sm font-medium text-primary">
+                      {instructor.title} @ {instructor.company}
+                    </p>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {instructor.bio}
-                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{instructor.bio}</p>
                 </div>
               </Card>
             </div>
@@ -161,10 +170,12 @@ export default async function BootcampDetailPage({ params }: PageProps) {
                       </div>
                       <div>
                         <h4 className="text-sm font-bold text-foreground">{t.name}</h4>
-                        <p className="text-xs text-muted-foreground">{t.role} @ {t.company}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {t.role} @ {t.company}
+                        </p>
                       </div>
                     </div>
-                    <p className="text-sm text-muted-foreground italic">"{t.quote}"</p>
+                    <p className="text-sm text-muted-foreground italic">&quot;{t.quote}&quot;</p>
                   </Card>
                 ))}
               </div>
@@ -176,7 +187,9 @@ export default async function BootcampDetailPage({ params }: PageProps) {
         <aside className="lg:col-span-1 sticky top-20">
           <Card className="p-6 space-y-6 border-border/80 shadow-md">
             <div className="space-y-1">
-              <span className="text-xs uppercase font-semibold text-muted-foreground">Eğitim Ücreti</span>
+              <span className="text-xs uppercase font-semibold text-muted-foreground">
+                Eğitim Ücreti
+              </span>
               <div className="text-3xl font-extrabold text-primary">€{bootcamp.priceEUR}</div>
             </div>
 
@@ -207,7 +220,9 @@ export default async function BootcampDetailPage({ params }: PageProps) {
       {/* 3. İLGİLİ BOOTCAMP'LER (Related Bootcamps) */}
       {relatedBootcamps.length > 0 && (
         <section className="space-y-6 pt-8 border-t border-border/40">
-          <h2 className="text-2xl font-bold text-foreground">İlgini Çekebilecek Diğer Programlar</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            İlgini Çekebilecek Diğer Programlar
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedBootcamps.map((item) => (
               <BootcampCard key={item.slug} bootcamp={item} locale={locale} />
