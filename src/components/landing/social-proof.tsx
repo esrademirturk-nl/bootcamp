@@ -1,16 +1,19 @@
 import { getT } from 'next-i18next/server';
+import { siteStats } from '@/data/site-stats';
+
+const labelKeys: Record<string, string> = {
+  graduates: 'landing.stats.graduatesLabel',
+  employmentRate: 'landing.stats.employmentRateLabel',
+  partners: 'landing.stats.partnersLabel',
+};
 
 export async function SocialProof() {
   const { t } = await getT('common');
 
-  const stats = [
-    { value: t('landing.stats.graduates'), label: t('landing.stats.graduatesLabel') },
-    {
-      value: t('landing.stats.employmentRate'),
-      label: t('landing.stats.employmentRateLabel'),
-    },
-    { value: t('landing.stats.partners'), label: t('landing.stats.partnersLabel') },
-  ];
+  const stats = siteStats.map((stat) => ({
+    value: stat.value,
+    label: t(labelKeys[stat.id]),
+  }));
 
   return (
     <section className="border-b border-border bg-surface">
