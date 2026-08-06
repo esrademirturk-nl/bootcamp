@@ -1,8 +1,8 @@
-import { bootcamps } from '@/data/bootcamps';
+import { mockBootcamps } from '@/data/bootcamps';
 import { BootcampCard } from './bootcamp-card';
 
 export function FeaturedPrograms() {
-  const featured = bootcamps.filter((bootcamp) => bootcamp.featured);
+  const featured = mockBootcamps.filter((bootcamp) => bootcamp.featured);
 
   return (
     <section className="py-16">
