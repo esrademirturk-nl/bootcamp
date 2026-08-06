@@ -32,7 +32,7 @@ export interface Bootcamp {
   curriculum: CurriculumModule[];
   instructorSlug: string;
   featured: boolean;
-=======
+}
 export interface Stat {
   id: string;
   value: number;
