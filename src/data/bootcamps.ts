@@ -354,8 +354,6 @@ export const mockTestimonials: Testimonial[] = [
   },
 ];
 
-import type { Bootcamp } from '@/types';
-
 export const bootcamps: Bootcamp[] = [
   {
     slug: 'full-stack-web-development',
