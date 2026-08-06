@@ -96,5 +96,37 @@
     "hours": "UREN",
     "minutes": "MINUTEN",
     "seconds": "SECONDEN"
+  },
+ "aboutPage": {
+    "badge": "Onze Missie & Visie",
+    "title": "Het Opleiden van de Technologieleiders van de Toekomst",
+    "missionText": "Bij Werhere IT is ons doel om verder te gaan dan theoretische kennis en individuen via praktische, projectgerichte en actuele lesprogramma's volledig voor te bereiden op de wereldwijde technologiemarkt.",
+    "stats": {
+      "graduates": "Gediplomeerde Studenten",
+      "employmentRate": "Plaatsingspercentage",
+      "partners": "Partnerbedrijven",
+      "instructors": "Docenten & Experts"
+    },
+    "teamTitle": "Ons Docenten- en Expertteam",
+    "teamSubtitle": "Leer van ervaren engineers en leiders die rechtstreeks uit het werkveld komen.",
+    "bios": {
+      "ahmetBio": "Ex-Google Senior Data Scientist, 10+ jaar ervaring in de sector.",
+      "elifBio": "Expert in het React & Next.js ecosysteem, actieve open-source bijdrager.",
+      "canerBio": "AWS Certified Solutions Architect & Kubernetes Community Leader.",
+      "selinBio": "Gebruikersgericht productontwerp en Design Systems specialist."
+    },
+    "timelineTitle": "Onze Reis",
+    "timelineSubtitle": "Mijlpalen die we sinds onze oprichting hebben bereikt.",
+    "timeline": {
+      "event1Title": "Oprichting & Eerste Bootcamp",
+      "event1Desc": "Lanceerde onze allereerste Full-Stack cohort onder Werhere IT.",
+      "event2Title": "Europese Uitbreiding",
+      "event2Desc": "Uitgebreid naar de Nederlandse en Europese markt met NL en EN taalondersteuning.",
+      "event3Title": "AI & Data Curriculum",
+      "event3Desc": "Ons Data Science & AI curriculum bijgewerkt naar moderne industriestandaarden.",
+      "event4Title": "Wereldwijde Partnerschappen",
+      "event4Desc": "Directe werkgelegenheidsovereenkomsten getekend met 50+ technologiegiganten."
+    },
+    "partnersTitle": "Bedrijven Waar Onze Afgestudeerden Werken"
   }
 }

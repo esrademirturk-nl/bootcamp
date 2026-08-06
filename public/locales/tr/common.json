@@ -96,5 +96,37 @@
     "hours": "SAAT",
     "minutes": "DAKİKA",
     "seconds": "SANİYE"
+  },
+  "aboutPage": {
+    "badge": "Misyonumuz & Vizyonumuz",
+    "title": "Geleceğin Teknoloji Liderlerini Yetiştiriyoruz",
+    "missionText": "Werhere IT olarak amacımız; teorik bilginin ötesine geçerek pratik, proje odaklı ve güncel müfredatlarla bireyleri küresel teknoloji pazarına tam donanımlı hazırlamaktır.",
+    "stats": {
+      "graduates": "Mezun Öğrenci",
+      "employmentRate": "İşe Yerleşme Oranı",
+      "partners": "Partner Şirket",
+      "instructors": "Eğitmen Kadrosu"
+    },
+    "teamTitle": "Eğitmen ve Uzman Kadromuz",
+    "teamSubtitle": "Sektörün mutfağından gelen tecrübeli mühendisler ve liderlerle çalışın.",
+    "bios": {
+      "ahmetBio": "Ex-Google Senior Data Scientist, 10+ yıl sektör deneyimi.",
+      "elifBio": "React ve Next.js ekosisteminde uzman, open-source katkıcısı.",
+      "canerBio": "AWS Certified Solutions Architect & Kubernetes Topluluk Lideri.",
+      "selinBio": "Kullanıcı odaklı ürün tasarımı ve Design Systems uzmanı."
+    },
+    "timelineTitle": "Yolculuğumuz",
+    "timelineSubtitle": "Kuruluşumuzdan bu yana attığımız kilometre taşları.",
+    "timeline": {
+      "event1Title": "Kuruluş & İlk Bootcamp",
+      "event1Desc": "Werhere IT çatısı altında ilk Full-Stack kohortumuzu başlattık.",
+      "event2Title": "Avrupa Genişlemesi",
+      "event2Desc": "NL ve EN dil seçenekleri ile Hollanda ve AB pazarına açıldık.",
+      "event3Title": "Yapay Zeka Müfredatı",
+      "event3Desc": "Data Science & AI müfredatlarımızı güncel sektör standartlarına çıkardık.",
+      "event4Title": "Küresel Partnerlikler",
+      "event4Desc": "50+ teknoloji devi ile doğrudan istihdam anlaşmaları imzaladık."
+    },
+    "partnersTitle": "Mezunlarımızın Çalıştığı ve Güvendiği Şirketler"
   }
 }
