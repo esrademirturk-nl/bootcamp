@@ -79,7 +79,6 @@ export interface Testimonial {
   rating: number;        // Verdiği puan
   bootcampSlug?: string; // Hangi bootcamp için yapıldığı
 }
-=======
 export type Level = 'beginner' | 'intermediate' | 'advanced';
 export type Format = 'online' | 'hybrid' | 'onsite';
 
