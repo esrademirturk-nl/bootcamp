@@ -66,5 +66,35 @@
     "beginner": "Başlangıç Seviye",
     "intermediate": "Orta Seviye",
     "advanced": "İleri Seviye"
+  },
+  "schedulePage": {
+    "title": "Eğitim Takvimi & Kohortlar",
+    "subtitle": "Gelecek dönem başlayacak bootcamp programlarımızı inceleyin, kontenjanlar dolmadan yerinizi ayırtın.",
+    "filterByMonth": "Aya Göre Filtrele:",
+    "allPeriods": "Tüm Dönemler",
+    "noCohortFound": "Seçilen döneme ait aktif bir kohort bulunamadı.",
+    "dateRange": "Tarih Aralığı",
+    "seats": "Kontenjan",
+    "status": "Durum",
+    "action": "Eylem",
+    "seatsFull": "Kontenjan Doldu",
+    "seatsLeft_one": "Son {{count}} Koltuk",
+    "seatsLeft_other": "Son {{count}} Koltuk",
+    "statusStarted": "Devam Ediyor / Başladı",
+    "statusClosed": "Kayıtlar Kapalı",
+    "statusOpen": "Kayıt Yapılabilir",
+    "btnInspect": "İncele",
+    "btnFull": "Dolu",
+    "btnApply": "Başvur"
+  },
+  "countdown": {
+    "nextCohortTag": "En Yakın Kohort",
+    "startedDesc": "Bu kohort için kayıtlar tamamlandı ve eğitim başladı.",
+    "remainingDesc": "Eğitimin başlamasına kalan süre:",
+    "startedBadge": "Program Başladı",
+    "days": "GÜN",
+    "hours": "SAAT",
+    "minutes": "DAKİKA",
+    "seconds": "SANİYE"
   }
 }

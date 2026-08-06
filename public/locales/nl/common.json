@@ -66,5 +66,35 @@
     "beginner": "Beginnersniveau",
     "intermediate": "Gemiddeld Niveau",
     "advanced": "Gevorderd Niveau"
+  },
+  "schedulePage": {
+    "title": "Rooster & Cohorten",
+    "subtitle": "Bekijk onze aankomende bootcamp programma's en reserveer je plek voordat de plaatsen vol zijn.",
+    "filterByMonth": "Filteren op Maand:",
+    "allPeriods": "Alle Perioden",
+    "noCohortFound": "Geen actieve cohorten gevonden voor de geselecteerde periode.",
+    "dateRange": "Datumbereik",
+    "seats": "Plaatsen",
+    "status": "Status",
+    "action": "Actie",
+    "seatsFull": "Volgeboekt",
+    "seatsLeft_one": "Nog {{count}} Plek Beschikbaar",
+    "seatsLeft_other": "Nog {{count}} Plekken Beschikbaar",
+    "statusStarted": "Bezig / Gestart",
+    "statusClosed": "Inschrijving Gesloten",
+    "statusOpen": "Open voor Inschrijving",
+    "btnInspect": "Bekijken",
+    "btnFull": "Vol",
+    "btnApply": "Aanmelden"
+  },
+  "countdown": {
+    "nextCohortTag": "Eerstvolgende Cohort",
+    "startedDesc": "De inschrijvingen voor dit cohort zijn gesloten en het programma is gestart.",
+    "remainingDesc": "Resterende tijd tot de start:",
+    "startedBadge": "Programma Gestart",
+    "days": "DAGEN",
+    "hours": "UREN",
+    "minutes": "MINUTEN",
+    "seconds": "SECONDEN"
   }
 }

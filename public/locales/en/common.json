@@ -66,5 +66,35 @@
     "beginner": "Beginner Level",
     "intermediate": "Intermediate Level",
     "advanced": "Advanced Level"
+  },
+  "schedulePage": {
+    "title": "Schedule & Cohorts",
+    "subtitle": "Explore our upcoming bootcamp programs and reserve your spot before seats run out.",
+    "filterByMonth": "Filter by Month:",
+    "allPeriods": "All Periods",
+    "noCohortFound": "No active cohorts found for the selected period.",
+    "dateRange": "Date Range",
+    "seats": "Seats",
+    "status": "Status",
+    "action": "Action",
+    "seatsFull": "Seats Full",
+    "seatsLeft_one": "Last {{count}} Seat Left",
+    "seatsLeft_other": "Last {{count}} Seats Left",
+    "statusStarted": "Ongoing / Started",
+    "statusClosed": "Registration Closed",
+    "statusOpen": "Open for Registration",
+    "btnInspect": "Inspect",
+    "btnFull": "Full",
+    "btnApply": "Apply"
+  },
+  "countdown": {
+    "nextCohortTag": "Next Cohort",
+    "startedDesc": "Registrations for this cohort are closed and the program has started.",
+    "remainingDesc": "Time remaining until the start of the program:",
+    "startedBadge": "Program Started",
+    "days": "DAYS",
+    "hours": "HOURS",
+    "minutes": "MINUTES",
+    "seconds": "SECONDS"
   }
 }
