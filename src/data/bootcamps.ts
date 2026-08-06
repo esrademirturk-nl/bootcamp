@@ -1,12 +1,10 @@
-
 /**
  * src/data/bootcamps.ts
  * Uygulama genelinde kullanılacak mock veriler.
  * Gerçek backend olmadığı için tip güvenli şekilde buradan okunacaktır.
  */
 
-import { Bootcamp, Category, Instructor, Cohort, Testimonial } from '@/types';
-import type { Bootcamp } from '@/types';
+import { Bootcamp, Category, Instructor, Testimonial } from '@/types';
 
 // 8 Adet Kategori Verisi
 export const mockCategories: Category[] = [
@@ -85,16 +83,30 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1490,
     rating: 4.9,
     studentCount: 340,
-    shortDescription: 'Modern web geliştirme ekosisteminde React, Next.js ve TypeScript ile profesyonel projeler üretin.',
-    description: 'Bu kapsamlı eğitimde modern frontend mimarilerini, state yönetimini, Server Components mantığını ve performans optimizasyonlarını uygulamalı projelerle öğreneceksiniz.',
+    shortDescription:
+      'Modern web geliştirme ekosisteminde React, Next.js ve TypeScript ile profesyonel projeler üretin.',
+    description:
+      'Bu kapsamlı eğitimde modern frontend mimarilerini, state yönetimini, Server Components mantığını ve performans optimizasyonlarını uygulamalı projelerle öğreneceksiniz.',
     heroImage: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800',
     tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     instructorSlug: 'ahmet-yilmaz',
     featured: true,
     curriculum: [
-      { title: 'Modül 1: TypeScript ve Modern JS', durationHours: 20, lessons: ['ES6+', 'TypeScript Fundamentals', 'Interfaces & Types'] },
-      { title: 'Modül 2: Advanced React', durationHours: 30, lessons: ['Custom Hooks', 'Context API', 'Performance Optimization'] },
-      { title: 'Modül 3: Next.js App Router', durationHours: 40, lessons: ['Server Components', 'Routing & Middleware', 'Data Fetching'] },
+      {
+        title: 'Modül 1: TypeScript ve Modern JS',
+        durationHours: 20,
+        lessons: ['ES6+', 'TypeScript Fundamentals', 'Interfaces & Types'],
+      },
+      {
+        title: 'Modül 2: Advanced React',
+        durationHours: 30,
+        lessons: ['Custom Hooks', 'Context API', 'Performance Optimization'],
+      },
+      {
+        title: 'Modül 3: Next.js App Router',
+        durationHours: 40,
+        lessons: ['Server Components', 'Routing & Middleware', 'Data Fetching'],
+      },
     ],
   },
   {
@@ -108,15 +120,25 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 890,
     rating: 4.7,
     studentCount: 520,
-    shortDescription: 'Yazılıma ilk adımı atın. HTML, CSS ve JavaScript ile web siteleri tasarlamayı öğrenin.',
-    description: 'Hangi altyapıdan olursanız olun, web dünyasına giriş yapmanız için tasarlanmış temel seviye kodlama eğitimi.',
+    shortDescription:
+      'Yazılıma ilk adımı atın. HTML, CSS ve JavaScript ile web siteleri tasarlamayı öğrenin.',
+    description:
+      'Hangi altyapıdan olursanız olun, web dünyasına giriş yapmanız için tasarlanmış temel seviye kodlama eğitimi.',
     heroImage: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=800',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Git'],
     instructorSlug: 'ahmet-yilmaz',
     featured: false,
     curriculum: [
-      { title: 'Modül 1: Web Temelleri', durationHours: 15, lessons: ['HTML Structure', 'CSS Basics', 'Flexbox & Grid'] },
-      { title: 'Modül 2: JavaScript Temelleri', durationHours: 25, lessons: ['Variables & Types', 'Functions', 'DOM Manipulation'] },
+      {
+        title: 'Modül 1: Web Temelleri',
+        durationHours: 15,
+        lessons: ['HTML Structure', 'CSS Basics', 'Flexbox & Grid'],
+      },
+      {
+        title: 'Modül 2: JavaScript Temelleri',
+        durationHours: 25,
+        lessons: ['Variables & Types', 'Functions', 'DOM Manipulation'],
+      },
     ],
   },
   {
@@ -130,14 +152,20 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1290,
     rating: 4.8,
     studentCount: 180,
-    shortDescription: 'Vue 3 Composition API ve Nuxt 3 ile ölçeklenebilir kurumsal uygulamalar geliştirin.',
-    description: 'Büyük ölçekli projeler için Vue 3 mimarisi, Pinia state yönetimi ve Nuxt SSR sistemleri.',
+    shortDescription:
+      'Vue 3 Composition API ve Nuxt 3 ile ölçeklenebilir kurumsal uygulamalar geliştirin.',
+    description:
+      'Büyük ölçekli projeler için Vue 3 mimarisi, Pinia state yönetimi ve Nuxt SSR sistemleri.',
     heroImage: 'https://images.unsplash.com/photo-1581276879432-15e50529f34b?w=800',
     tags: ['Vue 3', 'Nuxt 3', 'Pinia', 'TypeScript'],
     instructorSlug: 'ahmet-yilmaz',
     featured: false,
     curriculum: [
-      { title: 'Modül 1: Composition API', durationHours: 20, lessons: ['Reactivity', 'Composables', 'Script Setup'] },
+      {
+        title: 'Modül 1: Composition API',
+        durationHours: 20,
+        lessons: ['Reactivity', 'Composables', 'Script Setup'],
+      },
     ],
   },
   {
@@ -151,14 +179,20 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1390,
     rating: 4.9,
     studentCount: 290,
-    shortDescription: 'Node.js, Express, PostgreSQL ve Docker kullanarak mikroservis mimarileri inşa edin.',
-    description: 'Yüksek trafikli sistemler için backend geliştirmeyi, API güvenliğini ve veritabanı yönetimini öğrenin.',
+    shortDescription:
+      'Node.js, Express, PostgreSQL ve Docker kullanarak mikroservis mimarileri inşa edin.',
+    description:
+      'Yüksek trafikli sistemler için backend geliştirmeyi, API güvenliğini ve veritabanı yönetimini öğrenin.',
     heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800',
     tags: ['Node.js', 'Express', 'PostgreSQL', 'Docker'],
     instructorSlug: 'can-ozkan',
     featured: true,
     curriculum: [
-      { title: 'Modül 1: REST API Design', durationHours: 25, lessons: ['Express Architecture', 'Middleware', 'JWT Authentication'] },
+      {
+        title: 'Modül 1: REST API Design',
+        durationHours: 25,
+        lessons: ['Express Architecture', 'Middleware', 'JWT Authentication'],
+      },
     ],
   },
   {
@@ -172,14 +206,20 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1590,
     rating: 4.95,
     studentCount: 140,
-    shortDescription: 'Google tarafından geliştirilen Go dili ile eşzamanlı (concurrent) ve hızlı backend yazılımı.',
-    description: 'Goroutine, Channel ve Go ekosistemi ile yüksek performanslı backend servisleri yazın.',
+    shortDescription:
+      'Google tarafından geliştirilen Go dili ile eşzamanlı (concurrent) ve hızlı backend yazılımı.',
+    description:
+      'Goroutine, Channel ve Go ekosistemi ile yüksek performanslı backend servisleri yazın.',
     heroImage: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800',
     tags: ['Go', 'Concurrency', 'gRPC', 'Microservices'],
     instructorSlug: 'can-ozkan',
     featured: false,
     curriculum: [
-      { title: 'Modül 1: Go Internals', durationHours: 20, lessons: ['Pointers & Memory', 'Goroutines', 'Channels'] },
+      {
+        title: 'Modül 1: Go Internals',
+        durationHours: 20,
+        lessons: ['Pointers & Memory', 'Goroutines', 'Channels'],
+      },
     ],
   },
   {
@@ -193,14 +233,20 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 990,
     rating: 4.6,
     studentCount: 410,
-    shortDescription: 'Python ile sıfırdan backend geliştirmeye geçin. Güvenli web servisleri yazın.',
-    description: 'Python ekosisteminde en popüler backend framework olan Django ile veritabanı ve API yönetimi.',
+    shortDescription:
+      'Python ile sıfırdan backend geliştirmeye geçin. Güvenli web servisleri yazın.',
+    description:
+      'Python ekosisteminde en popüler backend framework olan Django ile veritabanı ve API yönetimi.',
     heroImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800',
     tags: ['Python', 'Django', 'REST API', 'SQLite'],
     instructorSlug: 'can-ozkan',
     featured: false,
     curriculum: [
-      { title: 'Modül 1: Python Basics', durationHours: 15, lessons: ['Syntax', 'OOP', 'Package Management'] },
+      {
+        title: 'Modül 1: Python Basics',
+        durationHours: 15,
+        lessons: ['Syntax', 'OOP', 'Package Management'],
+      },
     ],
   },
   {
@@ -214,14 +260,20 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1790,
     rating: 4.9,
     studentCount: 210,
-    shortDescription: 'CI/CD süreçleri, bulut altyapısı ve konteyner orkestrasyonu ile modern DevOps mühendisi olun.',
-    description: 'AWS servisleri, Terraform ile Infrastructure as Code ve Kubernetes cluster yönetimi.',
+    shortDescription:
+      'CI/CD süreçleri, bulut altyapısı ve konteyner orkestrasyonu ile modern DevOps mühendisi olun.',
+    description:
+      'AWS servisleri, Terraform ile Infrastructure as Code ve Kubernetes cluster yönetimi.',
     heroImage: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800',
     tags: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'CI/CD'],
     instructorSlug: 'elena-rodriguez',
     featured: true,
     curriculum: [
-      { title: 'Modül 1: Container Architecture', durationHours: 25, lessons: ['Docker Deep Dive', 'Kubernetes Basics', 'Helm'] },
+      {
+        title: 'Modül 1: Container Architecture',
+        durationHours: 25,
+        lessons: ['Docker Deep Dive', 'Kubernetes Basics', 'Helm'],
+      },
     ],
   },
   {
@@ -235,14 +287,19 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1690,
     rating: 4.85,
     studentCount: 450,
-    shortDescription: 'MongoDB, Express, React ve Node.js ile baştan sona uçtan uca web uygulamaları geliştirin.',
+    shortDescription:
+      'MongoDB, Express, React ve Node.js ile baştan sona uçtan uca web uygulamaları geliştirin.',
     description: 'Tek bir dille (JavaScript) hem ön yüzü hem arka yüzü geliştirmeyi öğrenin.',
     heroImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800',
     tags: ['React', 'Node.js', 'MongoDB', 'Express'],
     instructorSlug: 'ahmet-yilmaz',
     featured: true,
     curriculum: [
-      { title: 'Modül 1: Fullstack Architecture', durationHours: 40, lessons: ['Monorepo Setup', 'API Integration', 'Deployment'] },
+      {
+        title: 'Modül 1: Fullstack Architecture',
+        durationHours: 40,
+        lessons: ['Monorepo Setup', 'API Integration', 'Deployment'],
+      },
     ],
   },
   {
@@ -256,14 +313,20 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 790,
     rating: 4.75,
     studentCount: 310,
-    shortDescription: 'Figma ile profesyonel arayüz tasarımları ve ölçeklenebilir tasarım sistemleri oluşturun.',
-    description: 'Kullanıcı araştırmasından tel çerçeve (wireframe) ve prototiplemeye kadar UI/UX metodolojileri.',
+    shortDescription:
+      'Figma ile profesyonel arayüz tasarımları ve ölçeklenebilir tasarım sistemleri oluşturun.',
+    description:
+      'Kullanıcı araştırmasından tel çerçeve (wireframe) ve prototiplemeye kadar UI/UX metodolojileri.',
     heroImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800',
     tags: ['Figma', 'UI Design', 'UX Research', 'Design System'],
     instructorSlug: 'sarah-jenkins',
     featured: false,
     curriculum: [
-      { title: 'Modül 1: Design Fundamentals', durationHours: 15, lessons: ['Color Theory', 'Typography', 'Figma Auto-Layout'] },
+      {
+        title: 'Modül 1: Design Fundamentals',
+        durationHours: 15,
+        lessons: ['Color Theory', 'Typography', 'Figma Auto-Layout'],
+      },
     ],
   },
   {
@@ -277,14 +340,20 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1190,
     rating: 4.8,
     studentCount: 260,
-    shortDescription: 'iOS ve Android için tek bir kod tabanı üzerinden yerel (native) performanslı mobil uygulamalar yazın.',
-    description: 'React bilginizi mobil dünyaya taşıyın. Navigation, Redux Toolkit ve Cihaz Özellikleri erişimi.',
+    shortDescription:
+      'iOS ve Android için tek bir kod tabanı üzerinden yerel (native) performanslı mobil uygulamalar yazın.',
+    description:
+      'React bilginizi mobil dünyaya taşıyın. Navigation, Redux Toolkit ve Cihaz Özellikleri erişimi.',
     heroImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800',
     tags: ['React Native', 'Expo', 'Mobile', 'iOS', 'Android'],
     instructorSlug: 'zeynep-iron',
     featured: false,
     curriculum: [
-      { title: 'Modül 1: Mobile UI', durationHours: 20, lessons: ['Flexbox Layout', 'React Native Components', 'Navigation'] },
+      {
+        title: 'Modül 1: Mobile UI',
+        durationHours: 20,
+        lessons: ['Flexbox Layout', 'React Native Components', 'Navigation'],
+      },
     ],
   },
   {
@@ -298,14 +367,20 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1490,
     rating: 4.9,
     studentCount: 380,
-    shortDescription: 'Veri analizi, görselleştirme ve yapay zeka modelleri ile veriden değer üretmeyi öğrenin.',
-    description: 'Pandas, NumPy, Scikit-Learn ve TensorFlow kullanarak gerçek dünya verilerini işleyin.',
+    shortDescription:
+      'Veri analizi, görselleştirme ve yapay zeka modelleri ile veriden değer üretmeyi öğrenin.',
+    description:
+      'Pandas, NumPy, Scikit-Learn ve TensorFlow kullanarak gerçek dünya verilerini işleyin.',
     heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
     tags: ['Python', 'Pandas', 'Machine Learning', 'AI'],
     instructorSlug: 'mehmet-kaya',
     featured: false,
     curriculum: [
-      { title: 'Modül 1: Data Processing', durationHours: 30, lessons: ['NumPy Arrays', 'Pandas DataFrames', 'Data Cleaning'] },
+      {
+        title: 'Modül 1: Data Processing',
+        durationHours: 30,
+        lessons: ['NumPy Arrays', 'Pandas DataFrames', 'Data Cleaning'],
+      },
     ],
   },
   {
@@ -319,14 +394,20 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1290,
     rating: 4.85,
     studentCount: 220,
-    shortDescription: 'Sistem güvenlik açıkları tespiti, sızma testleri ve siber savunma stratejileri.',
-    description: 'Ağ güvenliği, web uygulama güvenliği (OWASP Top 10) ve etik korsanlık teknikleri.',
+    shortDescription:
+      'Sistem güvenlik açıkları tespiti, sızma testleri ve siber savunma stratejileri.',
+    description:
+      'Ağ güvenliği, web uygulama güvenliği (OWASP Top 10) ve etik korsanlık teknikleri.',
     heroImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800',
     tags: ['Ethical Hacking', 'Network Security', 'OWASP', 'Linux'],
     instructorSlug: 'can-ozkan',
     featured: false,
     curriculum: [
-      { title: 'Modül 1: Security Fundamentals', durationHours: 25, lessons: ['Linux Basics', 'Networking', 'Penetration Testing'] },
+      {
+        title: 'Modül 1: Security Fundamentals',
+        durationHours: 25,
+        lessons: ['Linux Basics', 'Networking', 'Penetration Testing'],
+      },
     ],
   },
 ];
@@ -339,7 +420,8 @@ export const mockTestimonials: Testimonial[] = [
     role: 'Frontend Developer',
     company: 'Trendyol',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200',
-    quote: 'React & Next.js bootcamp sayesinde sektör standartlarında proje geliştirmeyi ve clean code disiplinini kazandım.',
+    quote:
+      'React & Next.js bootcamp sayesinde sektör standartlarında proje geliştirmeyi ve clean code disiplinini kazandım.',
     rating: 5,
     bootcampSlug: 'react-nextjs-frontend-bootcamp',
   },
@@ -601,4 +683,3 @@ export const bootcamps: Bootcamp[] = [
     featured: false,
   },
 ];
-

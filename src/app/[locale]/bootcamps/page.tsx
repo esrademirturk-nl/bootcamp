@@ -140,7 +140,8 @@ export default async function BootcampsPage({ params, searchParams }: PageProps)
           Bootcamp Programları
         </h1>
         <p className="text-muted-foreground text-base max-w-2xl">
-          Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen başvurun.
+          Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen
+          başvurun.
         </p>
       </div>
 
