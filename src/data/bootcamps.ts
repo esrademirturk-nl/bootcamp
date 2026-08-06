@@ -6,6 +6,7 @@
  */
 
 import { Bootcamp, Category, Instructor, Cohort, Testimonial } from '@/types';
+import type { Bootcamp } from '@/types';
 
 // 8 Adet Kategori Verisi
 export const mockCategories: Category[] = [
