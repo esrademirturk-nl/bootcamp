@@ -38,5 +38,33 @@
     "privacy": "Privacybeleid",
     "terms": "Gebruiksvoorwaarden",
     "rights": "Alle rechten voorbehouden."
+  },
+  "bootcampsPage": {
+    "title": "Bootcamp Programma's",
+    "subtitle": "Ontdek, filter en solliciteer direct voor moderne IT-trainingen die je carrière vormgeven.",
+    "searchPlaceholder": "In welk vakgebied wil je je specialiseren? (bijv. React, Go, DevOps...)",
+    "filterSearchPlaceholder": "Zoek bootcamp of technologie...",
+    "foundCount": "{{count}} Bootcamps Gevonden",
+    "notFoundTitle": "Geen Bootcamps Gevonden Die Aan Je Zoekopdracht Voldoen",
+    "notFoundDesc": "Probeer andere zoektermen of wis je geselecteerde filters.",
+    "clearFilters": "Filters Wis",
+    "searchLabel": "Zoeken",
+    "sortLabel": "Sorteren op",
+    "levelLabel": "Niveau",
+    "categoriesLabel": "Categorieën",
+    "inspect": "Bekijken",
+    "weeks": "{{count}} Weken"
+  },
+  "sortOptions": {
+    "popularity": "Populariteit",
+    "priceAsc": "Prijs (Laag naar Hoog)",
+    "priceDesc": "Prijs (Hoog naar Laag)",
+    "duration": "Duur (Kort naar Lang)"
+  },
+  "levelOptions": {
+    "all": "Alle Niveaus",
+    "beginner": "Beginnersniveau",
+    "intermediate": "Gemiddeld Niveau",
+    "advanced": "Gevorderd Niveau"
   }
 }

@@ -1,4 +1,14 @@
+/**
+ * @file src/app/[locale]/bootcamps/page.tsx
+ * @description D-01 & D-02 Bootcamp Liste, Arama ve Filtreleme Ana Sayfası.
+ * 
+ * Bu dosya ne iş yapar?
+ * 1. URL parametrelerini (q, categories, level, sort) okuyarak sunucu tarafında veri filtreleme ve sıralama yapar.
+ * 2. `mockBootcamps` ve `mockCategories` verilerini doğru modül yollarından içe aktarır.
+ */
+
 import React, { Suspense } from 'react';
+// mockCategories ayrı bir veri dosyasında olduğu için import yollarını ayırıyoruz
 import { mockBootcamps } from '@/data/bootcamps';
 import { mockCategories } from '@/data/categories';
 import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
@@ -8,6 +18,11 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
+/**
+ * @interface PageProps
+ * @property {Promise<{ locale: string }>} params - URL'den gelen aktif dil parametresi.
+ * @property {Promise<{ q?: string; categories?: string; level?: string; sort?: string }>} searchParams - Filtre ve arama sorgu parametreleri.
+ */
 interface PageProps {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{
@@ -19,7 +34,8 @@ interface PageProps {
 }
 
 /**
- * Yüklenme anında gösterilecek skeleton kart listesi.
+ * @function BootcampSkeletonGrid
+ * @description Yükleme esnasında gösterilen iskelet tasarımı.
  */
 function BootcampSkeletonGrid() {
   return (
@@ -41,7 +57,8 @@ function BootcampSkeletonGrid() {
 }
 
 /**
- * Filtreleme, arama ve sıralama mantığını çalıştıran iç bileşen.
+ * @function BootcampListContent
+ * @description Arama, süzme ve sıralama mantığını çalıştırıp sonuçları listeleyen sunucu bileşeni.
  */
 async function BootcampListContent({
   locale,
@@ -81,18 +98,20 @@ async function BootcampListContent({
 
   return (
     <div className="space-y-6">
-      {/* Sonuç Sayısı Göstergesi */}
+      {/* Bulunan Sonuç Sayısı Göstergesi */}
       <div className="flex items-center justify-between pb-2 border-b border-border/40">
         <h2 className="text-lg font-semibold text-foreground">
           {filtered.length} Bootcamp Bulundu
         </h2>
       </div>
 
-      {/* Empty State */}
+      {/* Boş Sonuç Durumu (Empty State) */}
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center p-12 text-center rounded-xl border border-dashed border-border bg-card/50 space-y-4">
           <div className="text-4xl">🔍</div>
-          <h3 className="text-xl font-bold text-foreground">Aramanıza Uygun Bootcamp Bulunamadı</h3>
+          <h3 className="text-xl font-bold text-foreground">
+            Aramanıza Uygun Bootcamp Bulunamadı
+          </h3>
           <p className="text-sm text-muted-foreground max-w-md">
             Farklı arama terimleri denemeyi veya seçili filtreleri temizlemeyi deneyebilirsiniz.
           </p>
@@ -103,6 +122,7 @@ async function BootcampListContent({
           </Link>
         </div>
       ) : (
+        /* Kart Izgarası */
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((bootcamp) => (
             <BootcampCard key={bootcamp.slug} bootcamp={bootcamp} locale={locale} />
@@ -114,7 +134,8 @@ async function BootcampListContent({
 }
 
 /**
- * Ana sayfa komponenti.
+ * @function BootcampsPage
+ * @description Bootcamp ana sayfasının kapsayıcı bileşeni.
  */
 export default async function BootcampsPage({ params, searchParams }: PageProps) {
   const { locale } = await params;
@@ -122,20 +143,21 @@ export default async function BootcampsPage({ params, searchParams }: PageProps)
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
+      {/* Üst Başlık ve Arama Kutusu */}
       <div className="space-y-4">
         <div className="space-y-2">
           <h1 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
             Bootcamp Programları
           </h1>
           <p className="text-muted-foreground text-base max-w-2xl">
-            Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen
-            başvurun.
+            Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen başvurun.
           </p>
         </div>
+
         <BootcampSearchBar />
       </div>
 
-      {/* Filtre ve Kart Listesi Alanı */}
+      {/* Sol Filtre Paneli ve Sağ Liste Alanı */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
         <aside className="lg:col-span-1 sticky top-20">
           <BootcampFilters categories={mockCategories} />

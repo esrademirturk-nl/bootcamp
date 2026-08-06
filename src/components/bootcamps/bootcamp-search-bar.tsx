@@ -1,29 +1,42 @@
 /**
- * src/components/bootcamps/bootcamp-search-bar.tsx
- * Sayfa başlığının altında yer alan ana arama kutusu bileşeni.
- * URL query parametrelerini anlık günceller.
+ * @file src/components/bootcamps/bootcamp-search-bar.tsx
+ * @description Ana arama çubuğu bileşeni.
+ * 
+ * Bu dosya ne iş yapar?
+ * Kullanıcının aramak istediği bootcamp/teknoloji kelimesini alıp 
+ * URL'deki `q` parametresini günceller. `useTranslation` ile placeholder dilye uyarlanır.
  */
 
 'use client';
 
 import React, { useTransition } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 import { Input } from '@/components/ui/input';
 
-export const BootcampSearchBar: React.FC = () => {
+/**
+ * @function BootcampSearchBar
+ * @description Üst alan arama barı bileşeni.
+ */
+export function BootcampSearchBar() {
+  const { t } = useTranslation('common');
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [, startTransition] = useTransition();
 
-  const currentSearch = searchParams.get('q') || '';
+  const currentQuery = searchParams.get('q') || '';
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value;
+  /**
+   * @function handleSearch
+   * @description Arama kutusu değiştikçe URL parametresini yeniler.
+   */
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
     const params = new URLSearchParams(searchParams.toString());
 
-    if (val) {
-      params.set('q', val);
+    if (value) {
+      params.set('q', value);
     } else {
       params.delete('q');
     }
@@ -34,16 +47,19 @@ export const BootcampSearchBar: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full max-w-2xl">
+    <div className="w-full">
       <Input
         type="text"
-        placeholder="Hangi alanda uzmanlaşmak istiyorsunuz? (ör: React, Go, DevOps...)"
-        value={currentSearch}
-        onChange={handleSearchChange}
-        className="w-full h-12 pl-4 pr-10 text-base rounded-xl shadow-sm border-border/80 focus:border-primary"
+        value={currentQuery}
+        onChange={handleSearch}
+        placeholder={t('bootcampsPage.searchPlaceholder', {
+          defaultValue: 'Hangi alanda uzmanlaşmak istiyorsunuz? (ör: React, Go, DevOps...)',
+        })}
+        className="w-full h-12 text-base px-4 rounded-xl border-border/80 shadow-sm"
       />
     </div>
   );
 };
 
 export default BootcampSearchBar;
+
