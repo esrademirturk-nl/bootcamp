@@ -97,3 +97,12 @@ export interface HowItWorksStep {
   title: string;
   description: string;
 }
+export interface PricingPlan {
+  id: string;
+  name: string;
+  priceEUR: number | null;
+  period: 'month' | 'year' | null;
+  description: string;
+  features: string[];
+  highlighted: boolean;
+}
