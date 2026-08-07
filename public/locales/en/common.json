@@ -38,5 +38,33 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "rights": "All rights reserved."
+  },
+  "bootcampsPage": {
+    "title": "Bootcamp Programs",
+    "subtitle": "Discover, filter, and apply immediately for modern tech trainings that will shape your career.",
+    "searchPlaceholder": "Which area do you want to specialize in? (e.g., React, Go, DevOps...)",
+    "filterSearchPlaceholder": "Search bootcamp or technology...",
+    "foundCount": "{{count}} Bootcamps Found",
+    "notFoundTitle": "No Bootcamps Found Matching Your Search",
+    "notFoundDesc": "You can try different search terms or clear your selected filters.",
+    "clearFilters": "Clear Filters",
+    "searchLabel": "Search",
+    "sortLabel": "Sort By",
+    "levelLabel": "Level",
+    "categoriesLabel": "Categories",
+    "inspect": "View",
+    "weeks": "{{count}} Weeks"
+  },
+  "sortOptions": {
+    "popularity": "Popularity",
+    "priceAsc": "Price (Low to High)",
+    "priceDesc": "Price (High to Low)",
+    "duration": "Duration (Short to Long)"
+  },
+  "levelOptions": {
+    "all": "All Levels",
+    "beginner": "Beginner Level",
+    "intermediate": "Intermediate Level",
+    "advanced": "Advanced Level"
   }
 }

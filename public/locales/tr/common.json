@@ -38,5 +38,33 @@
     "privacy": "Gizlilik Politikası",
     "terms": "Kullanım Koşulları",
     "rights": "Tüm hakları saklıdır."
+  },
+  "bootcampsPage": {
+    "title": "Bootcamp Programları",
+    "subtitle": "Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen başvurun.",
+    "searchPlaceholder": "Hangi alanda uzmanlaşmak istiyorsunuz? (ör: React, Go, DevOps...)",
+    "filterSearchPlaceholder": "Bootcamp veya teknoloji ara...",
+    "foundCount": "{{count}} Bootcamp Bulundu",
+    "notFoundTitle": "Aramanıza Uygun Bootcamp Bulunamadı",
+    "notFoundDesc": "Farklı arama terimleri denemeyi veya seçili filtreleri temizlemeyi deneyebilirsiniz.",
+    "clearFilters": "Filtreleri Temizle",
+    "searchLabel": "Arama",
+    "sortLabel": "Sırala",
+    "levelLabel": "Seviye",
+    "categoriesLabel": "Kategoriler",
+    "inspect": "İncele",
+    "weeks": "{{count}} Hafta"
+  },
+  "sortOptions": {
+    "popularity": "Popülerlik",
+    "priceAsc": "Fiyat (Düşükten Yükseğe)",
+    "priceDesc": "Fiyat (Yüksekten Düşüğe)",
+    "duration": "Süre (Kısadan Uzuna)"
+  },
+  "levelOptions": {
+    "all": "Tüm Seviyeler",
+    "beginner": "Başlangıç Seviye",
+    "intermediate": "Orta Seviye",
+    "advanced": "İleri Seviye"
   }
 }

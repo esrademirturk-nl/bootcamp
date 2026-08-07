@@ -1,27 +1,44 @@
+/**
+ * @file src/components/layout/theme-init-script.tsx
+ * @description Tema (Light/Dark) başlangıç betiği.
+ *
+ * Bu dosya ne iş yapar?
+ * Sayfa henüz yüklenirken `localStorage` veya sistem temasını okuyarak
+ * `<html>` etiketine `dark` sınıfını ekler. `afterInteractive` stratejisi ile
+ * React client render script uyarısını önler.
+ */
+
+'use client';
+
+import React from 'react';
 import Script from 'next/script';
 
+/**
+ * @function ThemeInitScript
+ * @description Tema ön yükleme script bileşeni.
+ */
 export function ThemeInitScript() {
-  const script = `
-(function () {
-  try {
-    var stored = localStorage.getItem('theme');
-    var isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    }
-  } catch (e) {}
-})();
-`.trim();
+  const code = `
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  `.trim();
 
   return (
-    // Bu kural Pages Router döneminden kalma ve App Router'da beforeInteractive'in
-    // root layout'ta kullanılmasını resmi olarak desteklediğini henüz yansıtmıyor
-    // (bkz. Next.js next/script dokümantasyonu, App Router örneği).
-    // eslint-disable-next-line @next/next/no-before-interactive-script-outside-document
     <Script
       id="theme-init"
-      strategy="beforeInteractive"
-      dangerouslySetInnerHTML={{ __html: script }}
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{ __html: code }}
     />
   );
 }
+
+export default ThemeInitScript;
