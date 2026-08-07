@@ -128,5 +128,43 @@
       "event4Desc": "Signed direct employment agreements with 50+ tech giants."
     },
     "partnersTitle": "Companies Where Our Graduates Work & Trust Us"
+  },
+  "contactPage": {
+    "badge": "Contact",
+    "title": "Get in Touch With Us",
+    "subtitle": "You can fill out the form for your questions, training programs, and enrollment processes.",
+    "successTitle": "Message Received!",
+    "successDesc": "Thank you for reaching out to us. We will get back to you as soon as possible.",
+    "btnNewMessage": "Send Another Message",
+    "btnSubmit": "Send Message",
+    "btnSending": "Sending...",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message"
+    },
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "subject": "Bootcamp Enrollment Inquiry",
+      "message": "Write your question here in detail..."
+    },
+    "errors": {
+      "nameRequired": "Full name is required.",
+      "nameMin": "Name must be at least 2 characters.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "subjectRequired": "Subject is required.",
+      "subjectMin": "Subject must be at least 3 characters.",
+      "messageRequired": "Message is required.",
+      "messageMin": "Message must be at least 10 characters."
+    },
+    "infoTitle": "Contact Information",
+    "addressLabel": "Address",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "hoursLabel": "Working Hours",
+    "hoursValue": "Monday - Friday: 09:00 - 18:00 (CET)"
   }
 }
