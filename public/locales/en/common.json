@@ -96,5 +96,37 @@
     "hours": "HOURS",
     "minutes": "MINUTES",
     "seconds": "SECONDS"
+  },
+  "aboutPage": {
+    "badge": "Our Mission & Vision",
+    "title": "Empowering the Technology Leaders of Tomorrow",
+    "missionText": "At Werhere IT, our goal is to go beyond theoretical knowledge and fully prepare individuals for the global tech market through practical, project-oriented, and up-to-date curricula.",
+    "stats": {
+      "graduates": "Graduated Students",
+      "employmentRate": "Employment Rate",
+      "partners": "Partner Companies",
+      "instructors": "Instructors & Experts"
+    },
+    "teamTitle": "Our Instructors & Team",
+    "teamSubtitle": "Learn from experienced engineers and tech leaders working directly in the field.",
+    "bios": {
+      "ahmetBio": "Ex-Google Senior Data Scientist, 10+ years of industry experience.",
+      "elifBio": "Expert in React & Next.js ecosystem, active open-source contributor.",
+      "canerBio": "AWS Certified Solutions Architect & Kubernetes Community Leader.",
+      "selinBio": "User-centric product design and Design Systems specialist."
+    },
+    "timelineTitle": "Our Journey",
+    "timelineSubtitle": "Milestones we have achieved since our founding.",
+    "timeline": {
+      "event1Title": "Founding & First Bootcamp",
+      "event1Desc": "Launched our very first Full-Stack cohort under Werhere IT.",
+      "event2Title": "European Expansion",
+      "event2Desc": "Expanded into the Netherlands and EU market with NL and EN language support.",
+      "event3Title": "AI & Data Curriculum",
+      "event3Desc": "Updated our Data Science & AI curriculum to modern industry standards.",
+      "event4Title": "Global Partnerships",
+      "event4Desc": "Signed direct employment agreements with 50+ tech giants."
+    },
+    "partnersTitle": "Companies Where Our Graduates Work & Trust Us"
   }
 }
