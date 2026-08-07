@@ -26,16 +26,6 @@ interface PageProps {
   }>;
 }
 
-/**
- * generateStaticParams:
- * Next.js'in derleme (build) anında tüm bootcamp slug'larını statik olarak üretmesini sağlar.
- */
-export async function generateStaticParams() {
-  return mockBootcamps.map((bootcamp) => ({
-    slug: bootcamp.slug,
-  }));
-}
-
 export default async function BootcampDetailPage({ params }: PageProps) {
   const { locale, slug } = await params;
 
