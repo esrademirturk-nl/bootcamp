@@ -23,28 +23,32 @@ const teamMembers = [
   {
     name: 'Dr. Ahmet Yılmaz',
     role: 'Lead Data Science Instructor',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    image:
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
     bioKey: 'ahmetBio',
     defaultBio: 'Ex-Google Senior Data Scientist, 10+ yıl sektör deneyimi.',
   },
   {
     name: 'Elif Demir',
     role: 'Full-Stack Web Lead',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+    image:
+      'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
     bioKey: 'elifBio',
     defaultBio: 'React ve Next.js ekosisteminde uzman, open-source katkıcısı.',
   },
   {
     name: 'Caner Şahin',
     role: 'DevOps & Cloud Architect',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+    image:
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
     bioKey: 'canerBio',
     defaultBio: 'AWS Certified Solutions Architect & Kubernetes Topluluk Lideri.',
   },
   {
     name: 'Selin Kaya',
     role: 'UI/UX & Product Design',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+    image:
+      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
     bioKey: 'selinBio',
     defaultBio: 'Kullanıcı odaklı ürün tasarımı ve Design Systems uzmanı.',
   },
@@ -83,9 +87,7 @@ const timelineEvents = [
 ];
 
 // Mock Partner Logoları
-const partnerLogos = [
-  'TechCorp', 'CloudScale', 'DataMind', 'NextGen', 'DevMatrix', 'CyberShield'
-];
+const partnerLogos = ['TechCorp', 'CloudScale', 'DataMind', 'NextGen', 'DevMatrix', 'CyberShield'];
 
 export default function AboutPage({ params }: AboutPageProps) {
   const { locale } = use(params);
@@ -102,14 +104,16 @@ export default function AboutPage({ params }: AboutPageProps) {
   // İstatistik Etiketleri ve Değerleri
   const stats = [
     { label: t('aboutPage.stats.graduates', { defaultValue: 'Mezun Öğrenci' }), value: '1,500+' },
-    { label: t('aboutPage.stats.employmentRate', { defaultValue: 'İşe Yerleşme Oranı' }), value: '%94' },
+    {
+      label: t('aboutPage.stats.employmentRate', { defaultValue: 'İşe Yerleşme Oranı' }),
+      value: '%94',
+    },
     { label: t('aboutPage.stats.partners', { defaultValue: 'Partner Şirket' }), value: '50+' },
     { label: t('aboutPage.stats.instructors', { defaultValue: 'Eğitmen Kadrosu' }), value: '25+' },
   ];
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12 space-y-16 max-w-7xl">
-      
       {/* 1. SECTION: Misyon (Mission Section) */}
       <section className="text-center space-y-4 max-w-3xl mx-auto">
         <Badge variant="neutral" className="uppercase tracking-widest text-xs px-3 py-1">
@@ -120,7 +124,8 @@ export default function AboutPage({ params }: AboutPageProps) {
         </h1>
         <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
           {t('aboutPage.missionText', {
-            defaultValue: 'Werhere IT olarak amacımız; teorik bilginin ötesine geçerek pratik, proje odaklı ve güncel müfredatlarla bireyleri küresel teknoloji pazarına tam donanımlı hazırlamaktır.',
+            defaultValue:
+              'Werhere IT olarak amacımız; teorik bilginin ötesine geçerek pratik, proje odaklı ve güncel müfredatlarla bireyleri küresel teknoloji pazarına tam donanımlı hazırlamaktır.',
           })}
         </p>
       </section>
@@ -131,7 +136,9 @@ export default function AboutPage({ params }: AboutPageProps) {
           <Card key={i} className="border-border/60 bg-card/50 text-center p-6 shadow-xs">
             <CardContent className="p-0 space-y-1">
               <div className="text-3xl sm:text-4xl font-extrabold text-primary">{stat.value}</div>
-              <div className="text-xs sm:text-sm text-muted-foreground font-medium">{stat.label}</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">
+                {stat.label}
+              </div>
             </CardContent>
           </Card>
         ))}
@@ -144,13 +151,19 @@ export default function AboutPage({ params }: AboutPageProps) {
             {t('aboutPage.teamTitle', { defaultValue: 'Eğitmen ve Uzman Kadromuz' })}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-            {t('aboutPage.teamSubtitle', { defaultValue: 'Sektörün mutfağından gelen tecrübeli mühendisler ve liderlerle çalışın.' })}
+            {t('aboutPage.teamSubtitle', {
+              defaultValue:
+                'Sektörün mutfağından gelen tecrübeli mühendisler ve liderlerle çalışın.',
+            })}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {teamMembers.map((member, i) => (
-            <Card key={i} className="overflow-hidden border-border/50 bg-card group hover:shadow-md transition-all">
+            <Card
+              key={i}
+              className="overflow-hidden border-border/50 bg-card group hover:shadow-md transition-all"
+            >
               <div className="relative h-56 w-full bg-muted overflow-hidden">
                 <Image
                   src={member.image}
@@ -179,7 +192,9 @@ export default function AboutPage({ params }: AboutPageProps) {
             {t('aboutPage.timelineTitle', { defaultValue: 'Yolculuğumuz' })}
           </h2>
           <p className="text-sm text-muted-foreground">
-            {t('aboutPage.timelineSubtitle', { defaultValue: 'Kuruluşumuzdan bu yana attığımız kilometre taşları.' })}
+            {t('aboutPage.timelineSubtitle', {
+              defaultValue: 'Kuruluşumuzdan bu yana attığımız kilometre taşları.',
+            })}
           </p>
         </div>
 
@@ -187,7 +202,7 @@ export default function AboutPage({ params }: AboutPageProps) {
           {timelineEvents.map((event, i) => (
             <div key={i} className="relative pl-6 sm:pl-8 group">
               <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-background border-2 border-primary group-hover:bg-primary transition-colors" />
-              
+
               <div className="sm:absolute sm:-left-32 sm:top-0 sm:w-24 sm:text-right font-bold text-primary text-sm sm:text-base mb-1 sm:mb-0">
                 {event.year}
               </div>
@@ -209,7 +224,9 @@ export default function AboutPage({ params }: AboutPageProps) {
       <section className="space-y-6 pt-6 border-t border-border/40">
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            {t('aboutPage.partnersTitle', { defaultValue: 'Mezunlarımızın Çalıştığı ve Güvendiği Şirketler' })}
+            {t('aboutPage.partnersTitle', {
+              defaultValue: 'Mezunlarımızın Çalıştığı ve Güvendiği Şirketler',
+            })}
           </p>
         </div>
 
@@ -224,7 +241,6 @@ export default function AboutPage({ params }: AboutPageProps) {
           ))}
         </div>
       </section>
-
     </div>
   );
 }
