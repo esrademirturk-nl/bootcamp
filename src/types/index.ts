@@ -117,3 +117,12 @@ export interface Stat {
   suffix: string;
   label: string;
 }
+export interface PricingPlan {
+  id: string;
+  name: string;
+  priceEUR: number | null;
+  period: 'month' | 'year' | null;
+  description: string;
+  features: string[];
+  highlighted: boolean;
+}
