@@ -1,7 +1,7 @@
 /**
  * @file src/app/[locale]/bootcamps/page.tsx
  * @description D-01 & D-02 Bootcamp Liste, Arama ve Filtreleme Ana Sayfası.
- * 
+ *
  * Bu dosya ne iş yapar?
  * 1. URL parametrelerini (q, categories, level, sort) okuyarak sunucu tarafında veri filtreleme ve sıralama yapar.
  * 2. `mockBootcamps` ve `mockCategories` verilerini doğru modül yollarından içe aktarır.
@@ -109,9 +109,7 @@ async function BootcampListContent({
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center p-12 text-center rounded-xl border border-dashed border-border bg-card/50 space-y-4">
           <div className="text-4xl">🔍</div>
-          <h3 className="text-xl font-bold text-foreground">
-            Aramanıza Uygun Bootcamp Bulunamadı
-          </h3>
+          <h3 className="text-xl font-bold text-foreground">Aramanıza Uygun Bootcamp Bulunamadı</h3>
           <p className="text-sm text-muted-foreground max-w-md">
             Farklı arama terimleri denemeyi veya seçili filtreleri temizlemeyi deneyebilirsiniz.
           </p>
@@ -150,7 +148,8 @@ export default async function BootcampsPage({ params, searchParams }: PageProps)
             Bootcamp Programları
           </h1>
           <p className="text-muted-foreground text-base max-w-2xl">
-            Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen başvurun.
+            Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen
+            başvurun.
           </p>
         </div>
 
