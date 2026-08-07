@@ -6,7 +6,7 @@ export const mockInstructors: Instructor[] = [
     name: 'Ahmet Yılmaz',
     title: 'Principal Frontend Engineer',
     bio: '10+ yıllık Web Teknolojileri tecrübesi, eski Spotify geliştiricisi.',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400',
     company: 'TechCorp',
   },
   {
@@ -22,7 +22,7 @@ export const mockInstructors: Instructor[] = [
     name: 'Can Özkan',
     title: 'Senior Backend Developer',
     bio: 'Go ve Distributed Systems uzmanı.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
+    avatar: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400',
     company: 'FinTech Labs',
   },
   {
@@ -38,7 +38,7 @@ export const mockInstructors: Instructor[] = [
     name: 'Mehmet Kaya',
     title: 'AI & Data Specialist',
     bio: 'Python ve Machine Learning konularında akademik ve sektörel deneyim.',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400',
+    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400',
     company: 'AI Tech',
   },
   {
