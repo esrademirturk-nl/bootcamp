@@ -166,5 +166,48 @@
     "phoneLabel": "Telefon",
     "hoursLabel": "Çalışma Saatleri",
     "hoursValue": "Pazartesi - Cuma: 09:00 - 18:00 (CET)"
+  },
+  "authPage": {
+    "loginTitle": "Hesabınıza Giriş Yapın",
+    "registerTitle": "Yeni Hesap Oluşturun",
+    "tabLogin": "Giriş Yap",
+    "tabRegister": "Kayıt Ol",
+    "show": "Göster",
+    "hide": "Gizle",
+    "forgotPassword": "Şifremi Unuttum?",
+    "loginSuccess": "Giriş başarılı! Yönlendiriliyorsunuz...",
+    "loginFailure": "E-posta veya şifre hatalı. Lütfen tekrar deneyin.",
+    "registerSuccess": "Kayıt başarıyla tamamlandı! Hesabınıza giriş yapabilirsiniz.",
+    "btnLogin": "Giriş Yap",
+    "btnRegister": "Kayıt Ol",
+    "btnProcessing": "İşleniyor...",
+    "noAccount": "Hesabınız yok mu?",
+    "registerNow": "Hemen Kayıt Olun",
+    "hasAccount": "Zaten hesabınız var mı?",
+    "loginNow": "Giriş Yapın",
+    "failHint": "* Hata senaryosu için fail@example.com yazabilirsiniz.",
+    "acceptTerms": "Kullanım Koşullarını kabul ediyorum. *",
+    "strengthLabel": "Şifre Gücü:"
+  },
+  "fields": {
+    "name": "Ad Soyad",
+    "email": "E-posta Adresi",
+    "password": "Şifre",
+    "confirmPassword": "Şifre Tekrarı"
+  },
+  "errors": {
+    "emailRequired": "E-posta alanı zorunludur.",
+    "emailInvalid": "Geçerli bir e-posta adresi giriniz.",
+    "passwordRequired": "Şifre alanı zorunludur.",
+    "passwordMin": "Şifre en az 8 karakter olmalıdır.",
+    "passwordMatch": "Şifreler eşleşmiyor.",
+    "nameRequired": "Ad soyad alanı zorunludur.",
+    "termsRequired": "Kullanım koşullarını kabul etmelisiniz."
+  },
+  "strength": {
+    "weak": "Zayıf",
+    "medium": "Orta",
+    "good": "İyi",
+    "strong": "Çok Güçlü"
   }
 }

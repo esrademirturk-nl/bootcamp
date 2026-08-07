@@ -166,5 +166,48 @@
     "phoneLabel": "Phone",
     "hoursLabel": "Working Hours",
     "hoursValue": "Monday - Friday: 09:00 - 18:00 (CET)"
+  },
+  "authPage": {
+    "loginTitle": "Sign in to your account",
+    "registerTitle": "Create a new account",
+    "tabLogin": "Login",
+    "tabRegister": "Register",
+    "show": "Show",
+    "hide": "Hide",
+    "forgotPassword": "Forgot password?",
+    "loginSuccess": "Login successful! Redirecting...",
+    "loginFailure": "Invalid email or password. Please try again.",
+    "registerSuccess": "Registration successful! You can now log in.",
+    "btnLogin": "Login",
+    "btnRegister": "Register",
+    "btnProcessing": "Processing...",
+    "noAccount": "Don't have an account?",
+    "registerNow": "Register now",
+    "hasAccount": "Already have an account?",
+    "loginNow": "Sign in",
+    "failHint": "* You can type fail@example.com to test error scenario.",
+    "acceptTerms": "I accept the Terms of Use. *",
+    "strengthLabel": "Password Strength:"
+  },
+  "fields": {
+    "name": "Full Name",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password"
+  },
+  "errors": {
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Please enter a valid email address.",
+    "passwordRequired": "Password is required.",
+    "passwordMin": "Password must be at least 8 characters.",
+    "passwordMatch": "Passwords do not match.",
+    "nameRequired": "Full name is required.",
+    "termsRequired": "You must accept the terms of use."
+  },
+  "strength": {
+    "weak": "Weak",
+    "medium": "Medium",
+    "good": "Good",
+    "strong": "Very Strong"
   }
 }

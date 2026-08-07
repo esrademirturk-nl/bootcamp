@@ -166,5 +166,48 @@
     "phoneLabel": "Telefoon",
     "hoursLabel": "Openingstijden",
     "hoursValue": "Maandag - Vrijdag: 09:00 - 18:00 (CET)"
+  },
+  "authPage": {
+    "loginTitle": "Log in op uw account",
+    "registerTitle": "Maak een nieuw account aan",
+    "tabLogin": "Inloggen",
+    "tabRegister": "Registreren",
+    "show": "Tonen",
+    "hide": "Verbergen",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "loginSuccess": "Inloggen geslaagd! U wordt doorgestuurd...",
+    "loginFailure": "E-mail of wachtwoord onjuist. Probeer het opnieuw.",
+    "registerSuccess": "Registratie voltooid! U kunt nu inloggen.",
+    "btnLogin": "Inloggen",
+    "btnRegister": "Registreren",
+    "btnProcessing": "Verwerken...",
+    "noAccount": "Nog geen account?",
+    "registerNow": "Nu registreren",
+    "hasAccount": "Heeft u al een account?",
+    "loginNow": "Inloggen",
+    "failHint": "* Typ fail@example.com om het foutscenario te testen.",
+    "acceptTerms": "Ik accepteer de Gebruiksvoorwaarden. *",
+    "strengthLabel": "Wachtwoordsterkte:"
+  },
+  "fields": {
+    "name": "Volledige Naam",
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "confirmPassword": "Wachtwoord bevestigen"
+  },
+  "errors": {
+    "emailRequired": "E-mail is verplicht.",
+    "emailInvalid": "Voer een geldig e-mailadres in.",
+    "passwordRequired": "Wachtwoord is verplicht.",
+    "passwordMin": "Wachtwoord moet minimaal 8 tekens lang zijn.",
+    "passwordMatch": "Wachtwoorden komen niet overeen.",
+    "nameRequired": "Volledige naam is verplicht.",
+    "termsRequired": "U moet de gebruiksvoorwaarden accepteren."
+  },
+  "strength": {
+    "weak": "Zwak",
+    "medium": "Gemiddeld",
+    "good": "Goed",
+    "strong": "Zeer sterk"
   }
 }
