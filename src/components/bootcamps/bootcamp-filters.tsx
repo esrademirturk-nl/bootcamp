@@ -1,7 +1,7 @@
 /**
  * @file src/components/bootcamps/bootcamp-filters.tsx
  * @description Arama, Kategori, Seviye ve Sıralama Filtreleme Paneli.
- * 
+ *
  * Bu dosya ne iş yapar?
  * 1. URL parametrelerinden aktif dili (`locale`) okur.
  * 2. Dilden bağımsız olarak filtre etiket ve seçeneklerini anında seçili dilde (TR/EN/NL) dinamik gösterir.
@@ -153,9 +153,7 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
     <div className="space-y-6 bg-card p-5 rounded-xl border border-border/60 shadow-sm">
       {/* 1. Arama Kutusu */}
       <div className="space-y-2">
-        <label className="text-sm font-semibold text-foreground">
-          {t.searchLabel}
-        </label>
+        <label className="text-sm font-semibold text-foreground">{t.searchLabel}</label>
         <Input
           type="text"
           placeholder={t.searchPlaceholder}
@@ -167,9 +165,7 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
 
       {/* 2. Sıralama Seçimi (Sort By) */}
       <div className="space-y-2">
-        <label className="text-sm font-semibold text-foreground">
-          {t.sortLabel}
-        </label>
+        <label className="text-sm font-semibold text-foreground">{t.sortLabel}</label>
         <Select value={currentSort} onChange={handleSortChange} className="w-full">
           <option value="popularity">{t.sortOptions.popularity}</option>
           <option value="price-asc">{t.sortOptions.priceAsc}</option>
@@ -180,9 +176,7 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
 
       {/* 3. Seviye Filtresi (Level) */}
       <div className="space-y-2">
-        <label className="text-sm font-semibold text-foreground">
-          {t.levelLabel}
-        </label>
+        <label className="text-sm font-semibold text-foreground">{t.levelLabel}</label>
         <Select value={currentLevel} onChange={handleLevelChange} className="w-full">
           <option value="all">{t.levelOptions.all}</option>
           <option value="beginner">{t.levelOptions.beginner}</option>
@@ -193,9 +187,7 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
 
       {/* 4. Kategori Filtresi */}
       <div className="space-y-3">
-        <label className="text-sm font-semibold text-foreground">
-          {t.categoriesLabel}
-        </label>
+        <label className="text-sm font-semibold text-foreground">{t.categoriesLabel}</label>
         <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
           {categories.map((cat) => {
             const isChecked = currentCategories.includes(cat.slug);
@@ -232,11 +224,7 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
         </Button>
       )}
 
-      {isPending && (
-        <p className="text-xs text-muted-foreground animate-pulse text-center">
-          ...
-        </p>
-      )}
+      {isPending && <p className="text-xs text-muted-foreground animate-pulse text-center">...</p>}
     </div>
   );
 };

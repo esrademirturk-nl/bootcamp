@@ -1,7 +1,7 @@
 /**
  * @file src/components/bootcamps/bootcamp-card.tsx
  * @description Tekil Bootcamp Kartı Bileşeni.
- * 
+ *
  * Bu dosya ne iş yapar?
  * 1. Bootcamp kurs bilgilerini (başlık, görsel, fiyat, süre, puan, rozetler) kart yapısında sunar.
  * 2. Seviyeye göre (beginner, intermediate, advanced) doğru renkte Badge render eder.
@@ -58,7 +58,6 @@ export const BootcampCard: React.FC<BootcampCardProps> = ({ bootcamp, locale = '
 
   return (
     <Card className="group flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-lg border-border/50">
-      
       {/* Görsel ve Üst Rozetler Alanı */}
       <div className="relative w-full h-48 overflow-hidden bg-muted">
         <Image
@@ -68,7 +67,7 @@ export const BootcampCard: React.FC<BootcampCardProps> = ({ bootcamp, locale = '
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        
+
         {/* Öne Çıkan Rozeti */}
         {bootcamp.featured && (
           <div className="absolute top-3 left-3 z-10">
@@ -81,7 +80,9 @@ export const BootcampCard: React.FC<BootcampCardProps> = ({ bootcamp, locale = '
         {/* Seviye Rozeti */}
         <div className="absolute top-3 right-3 z-10">
           <Badge variant={levelInfo.variant}>
-            {t(`bootcampsPage.levelOptions.${levelInfo.key}`, { defaultValue: levelInfo.defaultLabel })}
+            {t(`bootcampsPage.levelOptions.${levelInfo.key}`, {
+              defaultValue: levelInfo.defaultLabel,
+            })}
           </Badge>
         </div>
       </div>
@@ -92,9 +93,7 @@ export const BootcampCard: React.FC<BootcampCardProps> = ({ bootcamp, locale = '
           <span className="uppercase font-semibold tracking-wider text-primary">
             {bootcamp.categorySlug}
           </span>
-          <span className="capitalize px-2 py-0.5 rounded bg-muted">
-            {bootcamp.format}
-          </span>
+          <span className="capitalize px-2 py-0.5 rounded bg-muted">{bootcamp.format}</span>
         </div>
 
         <h3 className="font-bold text-lg leading-tight line-clamp-2 group-hover:text-primary transition-colors">
@@ -103,9 +102,7 @@ export const BootcampCard: React.FC<BootcampCardProps> = ({ bootcamp, locale = '
       </CardHeader>
 
       <CardContent className="p-5 pt-0 flex-1 space-y-4">
-        <p className="text-sm text-muted-foreground line-clamp-2">
-          {bootcamp.shortDescription}
-        </p>
+        <p className="text-sm text-muted-foreground line-clamp-2">{bootcamp.shortDescription}</p>
 
         <div className="flex flex-wrap gap-1">
           {bootcamp.tags.map((tag) => (
@@ -122,13 +119,13 @@ export const BootcampCard: React.FC<BootcampCardProps> = ({ bootcamp, locale = '
       <CardFooter className="p-5 pt-0 border-t border-border/40 mt-auto flex items-center justify-between gap-2">
         <div className="flex flex-col text-xs text-muted-foreground pt-3">
           <div className="flex items-center gap-2">
-            <span>⏱ {bootcamp.durationWeeks} {t('bootcampsPage.weeksLabel', { defaultValue: 'Hafta' })}</span>
+            <span>
+              ⏱ {bootcamp.durationWeeks} {t('bootcampsPage.weeksLabel', { defaultValue: 'Hafta' })}
+            </span>
             <span>•</span>
             <span className="font-semibold text-foreground">★ {bootcamp.rating}</span>
           </div>
-          <span className="text-lg font-bold text-primary mt-1">
-            €{bootcamp.priceEUR}
-          </span>
+          <span className="text-lg font-bold text-primary mt-1">€{bootcamp.priceEUR}</span>
         </div>
 
         <Link href={`/${locale}/bootcamps/${bootcamp.slug}`} className="pt-3">
