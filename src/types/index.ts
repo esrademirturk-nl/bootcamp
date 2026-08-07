@@ -55,7 +55,6 @@ export interface Bootcamp {
   featured: boolean; // Öne çıkarılan ürün mü?
 }
 
-
 // Kohort (dönem/sınıf) verisi arayüzü
 export interface Cohort {
   id: string; // Benzersiz kohort ID
