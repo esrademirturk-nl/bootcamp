@@ -1,5 +1,6 @@
 import {
   Code,
+  Code2,
   BarChart,
   Palette,
   Shield,
@@ -7,11 +8,16 @@ import {
   Smartphone,
   Brain,
   Briefcase,
+  Users,
+  UsersRound,
+  Calendar,
+  Award,
   type LucideIcon,
 } from 'lucide-react';
 
 export const iconMap: Record<string, LucideIcon> = {
   code: Code,
+  'code-2': Code2,
   'bar-chart': BarChart,
   palette: Palette,
   shield: Shield,
@@ -19,4 +25,8 @@ export const iconMap: Record<string, LucideIcon> = {
   smartphone: Smartphone,
   brain: Brain,
   briefcase: Briefcase,
+  users: Users,
+  'users-round': UsersRound,
+  calendar: Calendar,
+  award: Award,
 };
