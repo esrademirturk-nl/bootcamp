@@ -1,7 +1,7 @@
 /**
  * @file src/app/[locale]/layout.tsx
  * @description Tüm uygulamanın kök düzen (Root Layout) bileşenidir.
- * 
+ *
  * Bu dosya ne iş yapar?
  * 1. Uygulamanın temel HTML ve BODY yapısını kurar.
  * 2. Uygulanacak font değişkenlerini (Geist, Space Grotesk) CSS sınıfı olarak hazırlar.
@@ -57,7 +57,7 @@ interface RootLayoutProps {
 /**
  * @function RootLayout
  * @description Kök yerleşim düzenini oluşturan asenkron sunucu bileşeni (Async Server Component).
- * 
+ *
  * @param {RootLayoutProps} props - Sayfa içeriği ve URL parametreleri.
  * @returns {JSX.Element} Bütünsel HTML sayfa yapısı.
  */
@@ -86,8 +86,8 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
         {/* Tema ön ayar betiği: Sayfa yüklenmeden önce çalışıp karanlık/aydınlık temayı ayarlar */}
         <ThemeInitScript />
       </head>
-      <body 
-        className="min-h-full flex flex-col font-sans bg-background text-foreground" 
+      <body
+        className="min-h-full flex flex-col font-sans bg-background text-foreground"
         suppressHydrationWarning
       >
         {/* İstemci tarafı i18n bağlamı (Context Provider) */}
