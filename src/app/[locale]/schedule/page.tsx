@@ -121,18 +121,24 @@ export default function SchedulePage({ params }: SchedulePageProps) {
   const formatMonthLabel = (monthKey: string) => {
     const [year, month] = monthKey.split('-');
     const date = new Date(parseInt(year), parseInt(month) - 1, 1);
-    return date.toLocaleDateString(currentLocale === 'tr' ? 'tr-TR' : currentLocale === 'nl' ? 'nl-NL' : 'en-US', {
-      month: 'long',
-      year: 'numeric',
-    });
+    return date.toLocaleDateString(
+      currentLocale === 'tr' ? 'tr-TR' : currentLocale === 'nl' ? 'nl-NL' : 'en-US',
+      {
+        month: 'long',
+        year: 'numeric',
+      }
+    );
   };
 
   const formatDate = (dateStr: string) => {
-    return new Date(dateStr).toLocaleDateString(currentLocale === 'tr' ? 'tr-TR' : currentLocale === 'nl' ? 'nl-NL' : 'en-US', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    });
+    return new Date(dateStr).toLocaleDateString(
+      currentLocale === 'tr' ? 'tr-TR' : currentLocale === 'nl' ? 'nl-NL' : 'en-US',
+      {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      }
+    );
   };
 
   const nextCohortBootcamp = getBootcamp(nextCohort.bootcampSlug);
@@ -146,16 +152,16 @@ export default function SchedulePage({ params }: SchedulePageProps) {
           {t('schedulePage.title', { defaultValue: 'Eğitim Takvimi & Kohortlar' })}
         </h1>
         <p className="text-muted-foreground text-base max-w-2xl">
-          {t('schedulePage.subtitle', { defaultValue: 'Gelecek dönem başlayacak bootcamp programlarımızı inceleyin, kontenjanlar dolmadan yerinizi ayırtın.' })}
+          {t('schedulePage.subtitle', {
+            defaultValue:
+              'Gelecek dönem başlayacak bootcamp programlarımızı inceleyin, kontenjanlar dolmadan yerinizi ayırtın.',
+          })}
         </p>
       </div>
 
       {/* 2. En Yakın Kohort İçin Canlı Sayaç */}
       <section>
-        <CohortCountdown
-          targetDate={nextCohort.startDate}
-          bootcampTitle={countdownTitle}
-        />
+        <CohortCountdown targetDate={nextCohort.startDate} bootcampTitle={countdownTitle} />
       </section>
 
       {/* 3. Aya Göre Filtreleme Butonları */}
@@ -186,7 +192,9 @@ export default function SchedulePage({ params }: SchedulePageProps) {
         {/* 4. Tablo Görünümü */}
         {filteredCohorts.length === 0 ? (
           <div className="py-12 text-center text-muted-foreground">
-            {t('schedulePage.noCohortFound', { defaultValue: 'Seçilen döneme ait aktif bir kohort bulunamadı.' })}
+            {t('schedulePage.noCohortFound', {
+              defaultValue: 'Seçilen döneme ait aktif bir kohort bulunamadı.',
+            })}
           </div>
         ) : (
           <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
@@ -196,10 +204,18 @@ export default function SchedulePage({ params }: SchedulePageProps) {
                   <tr>
                     <th className="px-6 py-4">Bootcamp</th>
                     <th className="px-6 py-4">Format</th>
-                    <th className="px-6 py-4">{t('schedulePage.dateRange', { defaultValue: 'Tarih Aralığı' })}</th>
-                    <th className="px-6 py-4">{t('schedulePage.seats', { defaultValue: 'Kontenjan' })}</th>
-                    <th className="px-6 py-4">{t('schedulePage.status', { defaultValue: 'Durum' })}</th>
-                    <th className="px-6 py-4 text-right">{t('schedulePage.action', { defaultValue: 'Eylem' })}</th>
+                    <th className="px-6 py-4">
+                      {t('schedulePage.dateRange', { defaultValue: 'Tarih Aralığı' })}
+                    </th>
+                    <th className="px-6 py-4">
+                      {t('schedulePage.seats', { defaultValue: 'Kontenjan' })}
+                    </th>
+                    <th className="px-6 py-4">
+                      {t('schedulePage.status', { defaultValue: 'Durum' })}
+                    </th>
+                    <th className="px-6 py-4 text-right">
+                      {t('schedulePage.action', { defaultValue: 'Eylem' })}
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
@@ -247,7 +263,10 @@ export default function SchedulePage({ params }: SchedulePageProps) {
                             </span>
                           ) : (
                             <span className="text-xs font-medium text-amber-600 dark:text-amber-400">
-                              {t('schedulePage.seatsLeft', { count: cohort.seatsLeft, defaultValue: `Son ${cohort.seatsLeft} Koltuk` })}
+                              {t('schedulePage.seatsLeft', {
+                                count: cohort.seatsLeft,
+                                defaultValue: `Son ${cohort.seatsLeft} Koltuk`,
+                              })}
                             </span>
                           )}
                         </td>
@@ -256,7 +275,9 @@ export default function SchedulePage({ params }: SchedulePageProps) {
                         <td className="px-6 py-4">
                           {isPassed ? (
                             <Badge variant="neutral">
-                              {t('schedulePage.statusStarted', { defaultValue: 'Devam Ediyor / Başladı' })}
+                              {t('schedulePage.statusStarted', {
+                                defaultValue: 'Devam Ediyor / Başladı',
+                              })}
                             </Badge>
                           ) : isFull ? (
                             <Badge variant="error">
@@ -271,7 +292,9 @@ export default function SchedulePage({ params }: SchedulePageProps) {
 
                         {/* Detay / Kayıt Butonu */}
                         <td className="px-6 py-4 text-right">
-                          <Link href={`/${currentLocale}/bootcamps/${bootcamp?.slug || cohort.bootcampSlug}`}>
+                          <Link
+                            href={`/${currentLocale}/bootcamps/${bootcamp?.slug || cohort.bootcampSlug}`}
+                          >
                             <Button
                               size="sm"
                               disabled={isPassed || isFull}
@@ -280,8 +303,8 @@ export default function SchedulePage({ params }: SchedulePageProps) {
                               {isPassed
                                 ? t('schedulePage.btnInspect', { defaultValue: 'İncele' })
                                 : isFull
-                                ? t('schedulePage.btnFull', { defaultValue: 'Dolu' })
-                                : t('schedulePage.btnApply', { defaultValue: 'Başvur' })}
+                                  ? t('schedulePage.btnFull', { defaultValue: 'Dolu' })
+                                  : t('schedulePage.btnApply', { defaultValue: 'Başvur' })}
                             </Button>
                           </Link>
                         </td>
