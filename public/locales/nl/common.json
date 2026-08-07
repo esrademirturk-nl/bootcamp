@@ -209,5 +209,17 @@
     "medium": "Gemiddeld",
     "good": "Goed",
     "strong": "Zeer sterk"
+  },
+  "notFoundPage": {
+    "badge": "Fout 404",
+    "title": "Pagina Niet Gevonden",
+    "description": "De pagina die u zoekt is mogelijk verwijderd, van naam veranderd of tijdelijk niet beschikbaar.",
+    "btnHome": "Terug naar Home",
+    "popularLinksTitle": "Populaire Pagina's"
+  },
+  "links": {
+    "bootcamps": "Bootcamps",
+    "schedule": "Programma",
+    "contact": "Contact"
   }
 }
