@@ -17,7 +17,7 @@ import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampCurriculum } from '@/components/bootcamps/bootcamp-curriculum';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 
 interface PageProps {
   params: Promise<{
