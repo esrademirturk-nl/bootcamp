@@ -128,5 +128,43 @@
       "event4Desc": "Directe werkgelegenheidsovereenkomsten getekend met 50+ technologiegiganten."
     },
     "partnersTitle": "Bedrijven Waar Onze Afgestudeerden Werken"
+  },
+  "contactPage": {
+    "badge": "Contact",
+    "title": "Neem Contact Met Ons Op",
+    "subtitle": "U kunt het formulier invullen voor uw vragen, opleidingsprogramma's en inschrijvingsprocessen.",
+    "successTitle": "Bericht Ontvangen!",
+    "successDesc": "Bedankt dat u contact met ons hebt opgenomen. We nemen zo snel mogelijk contact met u op.",
+    "btnNewMessage": "Nieuw Bericht Sturen",
+    "btnSubmit": "Bericht Versturen",
+    "btnSending": "Versturen...",
+    "fields": {
+      "name": "Volledige Naam",
+      "email": "E-mailadres",
+      "subject": "Onderwerp",
+      "message": "Uw Bericht"
+    },
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "subject": "Informatie over Bootcamp Inschrijving",
+      "message": "Schrijf uw vraag hier in detail..."
+    },
+    "errors": {
+      "nameRequired": "Volledige naam is verplicht.",
+      "nameMin": "Naam moet minimaal 2 tekens lang zijn.",
+      "emailRequired": "E-mail is verplicht.",
+      "emailInvalid": "Voer een geldig e-mailadres in.",
+      "subjectRequired": "Onderwerp is verplicht.",
+      "subjectMin": "Onderwerp moet minimaal 3 tekens lang zijn.",
+      "messageRequired": "Bericht is verplicht.",
+      "messageMin": "Bericht moet minimaal 10 tekens lang zijn."
+    },
+    "infoTitle": "Contactgegevens",
+    "addressLabel": "Adres",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Telefoon",
+    "hoursLabel": "Openingstijden",
+    "hoursValue": "Maandag - Vrijdag: 09:00 - 18:00 (CET)"
   }
 }

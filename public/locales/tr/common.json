@@ -128,5 +128,43 @@
       "event4Desc": "50+ teknoloji devi ile doğrudan istihdam anlaşmaları imzaladık."
     },
     "partnersTitle": "Mezunlarımızın Çalıştığı ve Güvendiği Şirketler"
+  },
+  "contactPage": {
+    "badge": "İletişim",
+    "title": "Bizimle İletişime Geçin",
+    "subtitle": "Sorularınız, eğitim programları ve kayıt süreçleri için formu doldurabilirsiniz.",
+    "successTitle": "Mesajınız Alındı!",
+    "successDesc": "Bizimle iletişime geçtiğiniz için teşekkür ederiz. En kısa sürede size dönüş yapacağız.",
+    "btnNewMessage": "Yeni Mesaj Gönder",
+    "btnSubmit": "Mesaj Gönder",
+    "btnSending": "Gönderiliyor...",
+    "fields": {
+      "name": "Ad Soyad",
+      "email": "E-posta Adresi",
+      "subject": "Konu",
+      "message": "Mesajınız"
+    },
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "subject": "Bootcamp Kayıt Bilgisi",
+      "message": "Sorunuzu buraya detaylıca yazabilirsiniz..."
+    },
+    "errors": {
+      "nameRequired": "Ad soyad alanı zorunludur.",
+      "nameMin": "Ad en az 2 karakter olmalıdır.",
+      "emailRequired": "E-posta alanı zorunludur.",
+      "emailInvalid": "Geçerli bir e-posta adresi giriniz.",
+      "subjectRequired": "Konu alanı zorunludur.",
+      "subjectMin": "Konu en az 3 karakter olmalıdır.",
+      "messageRequired": "Mesaj alanı zorunludur.",
+      "messageMin": "Mesaj en az 10 karakter olmalıdır."
+    },
+    "infoTitle": "İletişim Bilgilerimiz",
+    "addressLabel": "Adres",
+    "emailLabel": "E-posta",
+    "phoneLabel": "Telefon",
+    "hoursLabel": "Çalışma Saatleri",
+    "hoursValue": "Pazartesi - Cuma: 09:00 - 18:00 (CET)"
   }
 }
