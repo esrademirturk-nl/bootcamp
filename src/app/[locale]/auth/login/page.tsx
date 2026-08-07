@@ -35,15 +35,22 @@ export default function LoginPage({ params }: LoginPageProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [serverMessage, setServerMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [serverMessage, setServerMessage] = useState<{
+    type: 'success' | 'error';
+    text: string;
+  } | null>(null);
 
   const validate = () => {
     const errs: Record<string, string> = {};
     if (!formData.email.trim()) {
-      errs.email = t('authPage.errors.emailRequired', { defaultValue: 'E-posta alanı zorunludur.' });
+      errs.email = t('authPage.errors.emailRequired', {
+        defaultValue: 'E-posta alanı zorunludur.',
+      });
     }
     if (!formData.password) {
-      errs.password = t('authPage.errors.passwordRequired', { defaultValue: 'Şifre alanı zorunludur.' });
+      errs.password = t('authPage.errors.passwordRequired', {
+        defaultValue: 'Şifre alanı zorunludur.',
+      });
     }
     return errs;
   };
@@ -65,12 +72,16 @@ export default function LoginPage({ params }: LoginPageProps) {
       if (formData.email === 'fail@example.com') {
         setServerMessage({
           type: 'error',
-          text: t('authPage.loginFailure', { defaultValue: 'E-posta veya şifre hatalı. Lütfen tekrar deneyin.' }),
+          text: t('authPage.loginFailure', {
+            defaultValue: 'E-posta veya şifre hatalı. Lütfen tekrar deneyin.',
+          }),
         });
       } else {
         setServerMessage({
           type: 'success',
-          text: t('authPage.loginSuccess', { defaultValue: 'Giriş başarılı! Yönlendiriliyorsunuz...' }),
+          text: t('authPage.loginSuccess', {
+            defaultValue: 'Giriş başarılı! Yönlendiriliyorsunuz...',
+          }),
         });
       }
     }, 1000);
@@ -80,9 +91,11 @@ export default function LoginPage({ params }: LoginPageProps) {
     <div className="container mx-auto px-4 py-8 md:py-16 max-w-md">
       <Card className="border-border/60 bg-card shadow-md">
         <CardContent className="p-6 sm:p-8 space-y-6">
-          
           <div className="text-center space-y-2">
-            <Badge variant="neutral" className="uppercase text-[10px] tracking-widest px-2.5 py-0.5">
+            <Badge
+              variant="neutral"
+              className="uppercase text-[10px] tracking-widest px-2.5 py-0.5"
+            >
               {t('authPage.tabLogin', { defaultValue: 'Giriş Yap' })}
             </Badge>
             <h1 className="text-2xl font-bold text-foreground">
@@ -129,12 +142,16 @@ export default function LoginPage({ params }: LoginPageProps) {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="example@werhere.io"
                 className={`w-full rounded-lg border bg-background px-3.5 py-2 text-sm text-foreground transition-colors focus:outline-none focus:ring-2 ${
-                  errors.email ? 'border-destructive focus:ring-destructive/30' : 'border-border focus:ring-primary/20'
+                  errors.email
+                    ? 'border-destructive focus:ring-destructive/30'
+                    : 'border-border focus:ring-primary/20'
                 }`}
               />
               {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
               <p className="text-[11px] text-muted-foreground italic">
-                {t('authPage.failHint', { defaultValue: '* Hata senaryosu için fail@example.com yazabilirsiniz.' })}
+                {t('authPage.failHint', {
+                  defaultValue: '* Hata senaryosu için fail@example.com yazabilirsiniz.',
+                })}
               </p>
             </div>
 
@@ -143,7 +160,10 @@ export default function LoginPage({ params }: LoginPageProps) {
                 <label className="text-xs font-semibold text-foreground">
                   {t('authPage.fields.password', { defaultValue: 'Şifre' })} *
                 </label>
-                <Link href={`/${currentLocale}/forgot-password`} className="text-xs text-primary hover:underline">
+                <Link
+                  href={`/${currentLocale}/forgot-password`}
+                  className="text-xs text-primary hover:underline"
+                >
                   {t('authPage.forgotPassword', { defaultValue: 'Şifremi Unuttum?' })}
                 </Link>
               </div>
@@ -154,7 +174,9 @@ export default function LoginPage({ params }: LoginPageProps) {
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   placeholder="••••••••"
                   className={`w-full rounded-lg border bg-background pl-3.5 pr-10 py-2 text-sm text-foreground transition-colors focus:outline-none focus:ring-2 ${
-                    errors.password ? 'border-destructive focus:ring-destructive/30' : 'border-border focus:ring-primary/20'
+                    errors.password
+                      ? 'border-destructive focus:ring-destructive/30'
+                      : 'border-border focus:ring-primary/20'
                   }`}
                 />
                 <button
@@ -162,7 +184,9 @@ export default function LoginPage({ params }: LoginPageProps) {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground text-xs font-semibold"
                 >
-                  {showPassword ? t('authPage.hide', { defaultValue: 'Gizle' }) : t('authPage.show', { defaultValue: 'Göster' })}
+                  {showPassword
+                    ? t('authPage.hide', { defaultValue: 'Gizle' })
+                    : t('authPage.show', { defaultValue: 'Göster' })}
                 </button>
               </div>
               {errors.password && <p className="text-xs text-destructive">{errors.password}</p>}
@@ -177,11 +201,13 @@ export default function LoginPage({ params }: LoginPageProps) {
 
           <div className="text-center text-xs text-muted-foreground pt-2 border-t border-border/50">
             {t('authPage.noAccount', { defaultValue: 'Hesabınız yok mu?' })}{' '}
-            <Link href={`/${currentLocale}/auth/register`} className="text-primary font-semibold hover:underline">
+            <Link
+              href={`/${currentLocale}/auth/register`}
+              className="text-primary font-semibold hover:underline"
+            >
               {t('authPage.registerNow', { defaultValue: 'Hemen Kayıt Olun' })}
             </Link>
           </div>
-
         </CardContent>
       </Card>
     </div>

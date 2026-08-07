@@ -31,12 +31,21 @@ export default function RegisterPage({ params }: RegisterPageProps) {
     }
   }, [currentLocale, i18n]);
 
-  const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '', terms: false });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    terms: false,
+  });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [serverMessage, setServerMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [serverMessage, setServerMessage] = useState<{
+    type: 'success' | 'error';
+    text: string;
+  } | null>(null);
 
   const calculatePasswordStrength = (pass: string): number => {
     let score = 0;
@@ -52,27 +61,40 @@ export default function RegisterPage({ params }: RegisterPageProps) {
 
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (!formData.name.trim()) errs.name = t('authPage.errors.nameRequired', { defaultValue: 'Ad soyad alanı zorunludur.' });
-    
+    if (!formData.name.trim())
+      errs.name = t('authPage.errors.nameRequired', { defaultValue: 'Ad soyad alanı zorunludur.' });
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
-      errs.email = t('authPage.errors.emailRequired', { defaultValue: 'E-posta alanı zorunludur.' });
+      errs.email = t('authPage.errors.emailRequired', {
+        defaultValue: 'E-posta alanı zorunludur.',
+      });
     } else if (!emailRegex.test(formData.email.trim())) {
-      errs.email = t('authPage.errors.emailInvalid', { defaultValue: 'Geçerli bir e-posta adresi giriniz.' });
+      errs.email = t('authPage.errors.emailInvalid', {
+        defaultValue: 'Geçerli bir e-posta adresi giriniz.',
+      });
     }
 
     if (!formData.password) {
-      errs.password = t('authPage.errors.passwordRequired', { defaultValue: 'Şifre alanı zorunludur.' });
+      errs.password = t('authPage.errors.passwordRequired', {
+        defaultValue: 'Şifre alanı zorunludur.',
+      });
     } else if (formData.password.length < 8) {
-      errs.password = t('authPage.errors.passwordMin', { defaultValue: 'Şifre en az 8 karakter olmalıdır.' });
+      errs.password = t('authPage.errors.passwordMin', {
+        defaultValue: 'Şifre en az 8 karakter olmalıdır.',
+      });
     }
 
     if (formData.password !== formData.confirmPassword) {
-      errs.confirmPassword = t('authPage.errors.passwordMatch', { defaultValue: 'Şifreler eşleşmiyor.' });
+      errs.confirmPassword = t('authPage.errors.passwordMatch', {
+        defaultValue: 'Şifreler eşleşmiyor.',
+      });
     }
 
     if (!formData.terms) {
-      errs.terms = t('authPage.errors.termsRequired', { defaultValue: 'Kullanım koşullarını kabul etmelisiniz.' });
+      errs.terms = t('authPage.errors.termsRequired', {
+        defaultValue: 'Kullanım koşullarını kabul etmelisiniz.',
+      });
     }
 
     return errs;
@@ -94,7 +116,9 @@ export default function RegisterPage({ params }: RegisterPageProps) {
       setIsSubmitting(false);
       setServerMessage({
         type: 'success',
-        text: t('authPage.registerSuccess', { defaultValue: 'Kayıt başarıyla tamamlandı! Hesabınıza giriş yapabilirsiniz.' }),
+        text: t('authPage.registerSuccess', {
+          defaultValue: 'Kayıt başarıyla tamamlandı! Hesabınıza giriş yapabilirsiniz.',
+        }),
       });
       setFormData({ name: '', email: '', password: '', confirmPassword: '', terms: false });
     }, 1000);
@@ -104,9 +128,11 @@ export default function RegisterPage({ params }: RegisterPageProps) {
     <div className="container mx-auto px-4 py-8 md:py-16 max-w-md">
       <Card className="border-border/60 bg-card shadow-md">
         <CardContent className="p-6 sm:p-8 space-y-6">
-          
           <div className="text-center space-y-2">
-            <Badge variant="neutral" className="uppercase text-[10px] tracking-widest px-2.5 py-0.5">
+            <Badge
+              variant="neutral"
+              className="uppercase text-[10px] tracking-widest px-2.5 py-0.5"
+            >
               {t('authPage.tabRegister', { defaultValue: 'Kayıt Ol' })}
             </Badge>
             <h1 className="text-2xl font-bold text-foreground">
@@ -137,7 +163,6 @@ export default function RegisterPage({ params }: RegisterPageProps) {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-            
             {/* Name */}
             <div className="space-y-1">
               <label className="text-xs font-semibold text-foreground">
@@ -149,7 +174,9 @@ export default function RegisterPage({ params }: RegisterPageProps) {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="John Doe"
                 className={`w-full rounded-lg border bg-background px-3.5 py-2 text-sm text-foreground transition-colors focus:outline-none focus:ring-2 ${
-                  errors.name ? 'border-destructive focus:ring-destructive/30' : 'border-border focus:ring-primary/20'
+                  errors.name
+                    ? 'border-destructive focus:ring-destructive/30'
+                    : 'border-border focus:ring-primary/20'
                 }`}
               />
               {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
@@ -166,7 +193,9 @@ export default function RegisterPage({ params }: RegisterPageProps) {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="example@werhere.io"
                 className={`w-full rounded-lg border bg-background px-3.5 py-2 text-sm text-foreground transition-colors focus:outline-none focus:ring-2 ${
-                  errors.email ? 'border-destructive focus:ring-destructive/30' : 'border-border focus:ring-primary/20'
+                  errors.email
+                    ? 'border-destructive focus:ring-destructive/30'
+                    : 'border-border focus:ring-primary/20'
                 }`}
               />
               {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
@@ -184,7 +213,9 @@ export default function RegisterPage({ params }: RegisterPageProps) {
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   placeholder="••••••••"
                   className={`w-full rounded-lg border bg-background pl-3.5 pr-10 py-2 text-sm text-foreground transition-colors focus:outline-none focus:ring-2 ${
-                    errors.password ? 'border-destructive focus:ring-destructive/30' : 'border-border focus:ring-primary/20'
+                    errors.password
+                      ? 'border-destructive focus:ring-destructive/30'
+                      : 'border-border focus:ring-primary/20'
                   }`}
                 />
                 <button
@@ -192,7 +223,9 @@ export default function RegisterPage({ params }: RegisterPageProps) {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground text-xs font-semibold"
                 >
-                  {showPassword ? t('authPage.hide', { defaultValue: 'Gizle' }) : t('authPage.show', { defaultValue: 'Göster' })}
+                  {showPassword
+                    ? t('authPage.hide', { defaultValue: 'Gizle' })
+                    : t('authPage.show', { defaultValue: 'Göster' })}
                 </button>
               </div>
               {errors.password && <p className="text-xs text-destructive">{errors.password}</p>}
@@ -207,17 +240,25 @@ export default function RegisterPage({ params }: RegisterPageProps) {
                     {passwordStrength <= 1
                       ? t('authPage.strength.weak', { defaultValue: 'Zayıf' })
                       : passwordStrength === 2
-                      ? t('authPage.strength.medium', { defaultValue: 'Orta' })
-                      : passwordStrength === 3
-                      ? t('authPage.strength.good', { defaultValue: 'İyi' })
-                      : t('authPage.strength.strong', { defaultValue: 'Çok Güçlü' })}
+                        ? t('authPage.strength.medium', { defaultValue: 'Orta' })
+                        : passwordStrength === 3
+                          ? t('authPage.strength.good', { defaultValue: 'İyi' })
+                          : t('authPage.strength.strong', { defaultValue: 'Çok Güçlü' })}
                   </span>
                 </div>
                 <div className="flex h-1.5 gap-1 w-full rounded-full bg-muted overflow-hidden">
-                  <div className={`h-full flex-1 ${passwordStrength >= 1 ? 'bg-destructive' : 'bg-transparent'}`} />
-                  <div className={`h-full flex-1 ${passwordStrength >= 2 ? 'bg-amber-500' : 'bg-transparent'}`} />
-                  <div className={`h-full flex-1 ${passwordStrength >= 3 ? 'bg-blue-500' : 'bg-transparent'}`} />
-                  <div className={`h-full flex-1 ${passwordStrength >= 4 ? 'bg-emerald-500' : 'bg-transparent'}`} />
+                  <div
+                    className={`h-full flex-1 ${passwordStrength >= 1 ? 'bg-destructive' : 'bg-transparent'}`}
+                  />
+                  <div
+                    className={`h-full flex-1 ${passwordStrength >= 2 ? 'bg-amber-500' : 'bg-transparent'}`}
+                  />
+                  <div
+                    className={`h-full flex-1 ${passwordStrength >= 3 ? 'bg-blue-500' : 'bg-transparent'}`}
+                  />
+                  <div
+                    className={`h-full flex-1 ${passwordStrength >= 4 ? 'bg-emerald-500' : 'bg-transparent'}`}
+                  />
                 </div>
               </div>
             )}
@@ -234,7 +275,9 @@ export default function RegisterPage({ params }: RegisterPageProps) {
                   onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                   placeholder="••••••••"
                   className={`w-full rounded-lg border bg-background pl-3.5 pr-10 py-2 text-sm text-foreground transition-colors focus:outline-none focus:ring-2 ${
-                    errors.confirmPassword ? 'border-destructive focus:ring-destructive/30' : 'border-border focus:ring-primary/20'
+                    errors.confirmPassword
+                      ? 'border-destructive focus:ring-destructive/30'
+                      : 'border-border focus:ring-primary/20'
                   }`}
                 />
                 <button
@@ -242,10 +285,14 @@ export default function RegisterPage({ params }: RegisterPageProps) {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground text-xs font-semibold"
                 >
-                  {showConfirmPassword ? t('authPage.hide', { defaultValue: 'Gizle' }) : t('authPage.show', { defaultValue: 'Göster' })}
+                  {showConfirmPassword
+                    ? t('authPage.hide', { defaultValue: 'Gizle' })
+                    : t('authPage.show', { defaultValue: 'Göster' })}
                 </button>
               </div>
-              {errors.confirmPassword && <p className="text-xs text-destructive">{errors.confirmPassword}</p>}
+              {errors.confirmPassword && (
+                <p className="text-xs text-destructive">{errors.confirmPassword}</p>
+              )}
             </div>
 
             {/* Terms Checkbox */}
@@ -257,7 +304,11 @@ export default function RegisterPage({ params }: RegisterPageProps) {
                   onChange={(e) => setFormData({ ...formData, terms: e.target.checked })}
                   className="rounded border-border text-primary focus:ring-primary h-4 w-4"
                 />
-                <span>{t('authPage.acceptTerms', { defaultValue: 'Kullanım Koşullarını kabul ediyorum. *' })}</span>
+                <span>
+                  {t('authPage.acceptTerms', {
+                    defaultValue: 'Kullanım Koşullarını kabul ediyorum. *',
+                  })}
+                </span>
               </label>
               {errors.terms && <p className="text-xs text-destructive">{errors.terms}</p>}
             </div>
@@ -271,11 +322,13 @@ export default function RegisterPage({ params }: RegisterPageProps) {
 
           <div className="text-center text-xs text-muted-foreground pt-2 border-t border-border/50">
             {t('authPage.hasAccount', { defaultValue: 'Zaten hesabınız var mı?' })}{' '}
-            <Link href={`/${currentLocale}/auth/login`} className="text-primary font-semibold hover:underline">
+            <Link
+              href={`/${currentLocale}/auth/login`}
+              className="text-primary font-semibold hover:underline"
+            >
               {t('authPage.loginNow', { defaultValue: 'Giriş Yapın' })}
             </Link>
           </div>
-
         </CardContent>
       </Card>
     </div>
