@@ -1,15 +1,15 @@
 import { Hero } from '@/components/landing/hero';
 import { SocialProof } from '@/components/landing/social-proof';
-import { Instructors } from '@/components/sections/instructors';
-import { Testimonials } from '@/components/sections/testimonials';
+import { Features } from '@/components/sections/features';
+import { HowItWorks } from '@/components/sections/how-it-works';
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
       <SocialProof />
-      <Instructors />
-      <Testimonials />
+      <Features />
+      <HowItWorks />
     </main>
   );
 }
