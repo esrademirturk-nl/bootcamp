@@ -1,65 +1,46 @@
 /**
  * @file src/components/bootcamps/bootcamp-card.tsx
- * @description Tekil Bootcamp Kartı Bileşeni.
- *
- * Bu dosya ne iş yapar?
- * 1. Bootcamp kurs bilgilerini (başlık, görsel, fiyat, süre, puan, rozetler) kart yapısında sunar.
- * 2. Seviyeye göre (beginner, intermediate, advanced) doğru renkte Badge render eder.
- * 3. Projedeki ortak `Bootcamp` tipini (`@/types`) kullanarak tip çakışmalarını önler.
+ * @description Tekil Bootcamp Kartı Bileşeni (liste ve detay sayfalarında kullanılır).
  */
 
-'use client';
-
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
-// Yerel interface yerine projenin ortak tip tanımını içe aktarıyoruz
-import { Bootcamp } from '@/types';
+import type { Bootcamp } from '@/types';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import i18nConfig from '../../../i18n.config';
 
-/**
- * @interface BootcampCardProps
- * @property {Bootcamp} bootcamp - Gösterilecek bootcamp nesnesi.
- * @property {string} [locale] - Aktif dil kodu (ör: 'tr', 'en', 'nl').
- */
 interface BootcampCardProps {
   bootcamp: Bootcamp;
-  locale?: string;
+  locale: string;
 }
 
-/**
- * @function getLevelBadge
- * @description Bootcamp seviyesine göre Badge varyantını ve varsayılan etiketini belirler.
- * @param {Bootcamp['level']} level - 'beginner' | 'intermediate' | 'advanced'
- */
-const getLevelBadge = (level: Bootcamp['level']) => {
+function localizedHref(path: string, locale: string) {
+  if (locale === i18nConfig.fallbackLng) return path;
+  return `/${locale}${path === '/' ? '' : path}`;
+}
+
+function getLevelBadge(level: Bootcamp['level']) {
   switch (level) {
     case 'beginner':
-      return { key: 'beginner', defaultLabel: 'Başlangıç', variant: 'success' as const };
+      return { label: 'Başlangıç', variant: 'success' as const };
     case 'intermediate':
-      return { key: 'intermediate', defaultLabel: 'Orta Seviye', variant: 'default' as const };
+      return { label: 'Orta Seviye', variant: 'default' as const };
     case 'advanced':
-      return { key: 'advanced', defaultLabel: 'İleri Seviye', variant: 'error' as const };
+      return { label: 'İleri Seviye', variant: 'error' as const };
     default:
-      return { key: level, defaultLabel: level, variant: 'neutral' as const };
+      return { label: level, variant: 'neutral' as const };
   }
-};
+}
 
-/**
- * @function BootcampCard
- * @description Tekil kart bileşeni.
- */
-export const BootcampCard: React.FC<BootcampCardProps> = ({ bootcamp, locale = 'tr' }) => {
-  const { t } = useTranslation('common');
+export function BootcampCard({ bootcamp, locale }: BootcampCardProps) {
   const levelInfo = getLevelBadge(bootcamp.level);
 
   return (
-    <Card className="group flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-lg border-border/50">
-      {/* Görsel ve Üst Rozetler Alanı */}
-      <div className="relative w-full h-48 overflow-hidden bg-muted">
+    <Card className="group flex h-full flex-col overflow-hidden border-border/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+      {/* Görsel ve üst rozetler */}
+      <div className="relative h-48 w-full overflow-hidden bg-surface-muted">
         <Image
           src={bootcamp.heroImage}
           alt={bootcamp.title}
@@ -68,47 +49,40 @@ export const BootcampCard: React.FC<BootcampCardProps> = ({ bootcamp, locale = '
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
 
-        {/* Öne Çıkan Rozeti */}
         {bootcamp.featured && (
-          <div className="absolute top-3 left-3 z-10">
-            <Badge variant="warning">
-              ★ {t('bootcampsPage.featured', { defaultValue: 'Öne Çıkan' })}
-            </Badge>
+          <div className="absolute left-3 top-3 z-10">
+            <Badge variant="warning">★ Öne Çıkan</Badge>
           </div>
         )}
 
-        {/* Seviye Rozeti */}
-        <div className="absolute top-3 right-3 z-10">
-          <Badge variant={levelInfo.variant}>
-            {t(`bootcampsPage.levelOptions.${levelInfo.key}`, {
-              defaultValue: levelInfo.defaultLabel,
-            })}
-          </Badge>
+        <div className="absolute right-3 top-3 z-10">
+          <Badge variant={levelInfo.variant}>{levelInfo.label}</Badge>
         </div>
       </div>
 
-      {/* Kart İçerik Başlığı ve Detayları */}
-      <CardHeader className="p-5 pb-2 space-y-2">
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <span className="uppercase font-semibold tracking-wider text-primary">
+      {/* Başlık alanı */}
+      <CardHeader className="space-y-2 p-5 pb-2">
+        <div className="flex items-center justify-between text-xs text-muted">
+          <span className="font-semibold uppercase tracking-wider text-primary-600">
             {bootcamp.categorySlug}
           </span>
-          <span className="capitalize px-2 py-0.5 rounded bg-muted">{bootcamp.format}</span>
+          <span className="rounded bg-surface-muted px-2 py-0.5 capitalize">{bootcamp.format}</span>
         </div>
 
-        <h3 className="font-bold text-lg leading-tight line-clamp-2 group-hover:text-primary transition-colors">
+        <h3 className="font-heading text-lg font-bold leading-tight text-foreground line-clamp-2 transition-colors group-hover:text-primary-600">
           {bootcamp.title}
         </h3>
       </CardHeader>
 
-      <CardContent className="p-5 pt-0 flex-1 space-y-4">
-        <p className="text-sm text-muted-foreground line-clamp-2">{bootcamp.shortDescription}</p>
+      {/* İçerik */}
+      <CardContent className="flex-1 space-y-4 p-5 pt-0">
+        <p className="line-clamp-2 text-sm text-muted">{bootcamp.shortDescription}</p>
 
         <div className="flex flex-wrap gap-1">
           {bootcamp.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[11px] px-2 py-0.5 rounded-full bg-secondary/50 text-secondary-foreground"
+              className="rounded-full bg-primary-50 px-2 py-0.5 text-[11px] text-primary-700"
             >
               #{tag}
             </span>
@@ -116,24 +90,23 @@ export const BootcampCard: React.FC<BootcampCardProps> = ({ bootcamp, locale = '
         </div>
       </CardContent>
 
-      <CardFooter className="p-5 pt-0 border-t border-border/40 mt-auto flex items-center justify-between gap-2">
-        <div className="flex flex-col text-xs text-muted-foreground pt-3">
+      {/* Alt bilgi ve CTA */}
+      <CardFooter className="mt-auto flex items-center justify-between gap-2 border-t border-border/40 p-5 pt-0">
+        <div className="flex flex-col pt-3 text-xs text-muted">
           <div className="flex items-center gap-2">
-            <span>
-              ⏱ {bootcamp.durationWeeks} {t('bootcampsPage.weeksLabel', { defaultValue: 'Hafta' })}
-            </span>
+            <span>⏱ {bootcamp.durationWeeks} Hafta</span>
             <span>•</span>
             <span className="font-semibold text-foreground">★ {bootcamp.rating}</span>
           </div>
-          <span className="text-lg font-bold text-primary mt-1">€{bootcamp.priceEUR}</span>
+          <span className="mt-1 text-lg font-bold text-primary-600">€{bootcamp.priceEUR}</span>
         </div>
 
-        <Link href={`/${locale}/bootcamps/${bootcamp.slug}`} className="pt-3">
+        <Link href={localizedHref(`/bootcamps/${bootcamp.slug}`, locale)} className="pt-3">
           <Button size="sm" className="font-medium">
-            {t('bootcampsPage.inspect', { defaultValue: 'İncele' })}
+            İncele
           </Button>
         </Link>
       </CardFooter>
     </Card>
   );
-};
+}

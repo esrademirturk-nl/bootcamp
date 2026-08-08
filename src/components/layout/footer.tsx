@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Rocket } from 'lucide-react';
 import { getT } from 'next-i18next/server';
 import i18nConfig from '../../../i18n.config';
 
@@ -52,9 +53,14 @@ export async function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link
               href={localizedHref('/', locale)}
-              className="font-heading text-lg font-bold text-foreground"
+              className="flex items-center gap-2.5 font-heading text-lg font-bold text-foreground"
             >
-              Bootcamp<span className="text-primary-600">.</span>
+              <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary-600 text-white">
+                <Rocket className="h-4 w-4" strokeWidth={2} />
+              </span>
+              <span>
+                <span className="text-primary-600">NextGen</span> IT Academy
+              </span>
             </Link>
             <p className="mt-2 text-sm text-muted">{t('footer.tagline')}</p>
           </div>

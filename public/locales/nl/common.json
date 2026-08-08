@@ -20,6 +20,58 @@
       "graduatesLabel": "Afgestudeerden",
       "employmentRateLabel": "Werkgelegenheidspercentage",
       "partnersLabel": "Partnerbedrijven"
+    },
+    "categories": {
+      "eyebrow": "Categorieën",
+      "title": "Vind de Bootcamp Die Bij Je Interesse Past",
+      "programCount": "{{count}} programma's beschikbaar",
+      "explore": "Ontdekken"
+    },
+    "features": {
+      "eyebrow": "Waarom Wij",
+      "title": "Functies Die het Verschil Maken in Je Carrière"
+    },
+    "featuredPrograms": {
+      "eyebrow": "Uitgelicht",
+      "title": "Populaire Bootcamp Programma’s",
+      "viewDetails": "Bekijk Details"
+    },
+    "instructors": {
+      "eyebrow": "Ons Team",
+      "title": "Ervaren Docenten Uit de Sector",
+      "prev": "Vorige",
+      "next": "Volgende"
+    },
+    "testimonials": {
+      "eyebrow": "Getuigenissen",
+      "title": "Wat Onze Afgestudeerden Zeggen"
+    },
+    "pricing": {
+      "eyebrow": "Prijzen",
+      "title": "Kies het Plan Dat Bij Je Past",
+      "popular": "Meest Populair",
+      "start": "Nu Beginnen",
+      "contact": "Neem Contact Op",
+      "perMonth": "maand",
+      "perYear": "jaar",
+      "monthly": "Maandelijks",
+      "yearly": "Jaarlijks",
+      "yearlyDiscount": "2 maanden gratis",
+      "selected": "Geselecteerd"
+    },
+
+    "newsletter": {
+      "title": "Meld Je Aan Voor Onze Nieuwsbrief",
+      "subtitle": "Wees de eerste die op de hoogte is van nieuwe bootcamps en carrièrekansen.",
+      "placeholder": "Je e-mailadres",
+      "button": "Abonneren",
+      "success": "Bedankt! Je aanmelding is ontvangen.",
+      "eyebrow": "Nieuwsbrief"
+    },
+    "closingCta": {
+      "title": "Geef Vandaag Vorm Aan Je Carrière",
+      "subtitle": "Sluit je aan bij duizenden afgestudeerden op deze reis en bouw aan je toekomst.",
+      "button": "Begin Nu"
     }
   },
   "header": {

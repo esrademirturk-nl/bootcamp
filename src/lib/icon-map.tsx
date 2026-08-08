@@ -12,6 +12,10 @@ import {
   UsersRound,
   Calendar,
   Award,
+  Server,
+  Layers,
+  Database,
+  Layout,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -29,4 +33,8 @@ export const iconMap: Record<string, LucideIcon> = {
   'users-round': UsersRound,
   calendar: Calendar,
   award: Award,
+  server: Server,
+  layers: Layers,
+  database: Database,
+  layout: Layout,
 };
