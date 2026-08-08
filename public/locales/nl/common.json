@@ -56,6 +56,44 @@
     "inspect": "Bekijken",
     "weeks": "{{count}} Weken"
   },
+  "bootcampsData": {
+    "react-nextjs-frontend-bootcamp": {
+      "shortDescription": "Bouw professionele projecten met React, Next.js en TypeScript in het moderne webontwikkelingsecosysteem."
+    },
+    "zero-to-hero-javascript": {
+      "shortDescription": "Zet je eerste stap in de software. Leer websites ontwerpen met HTML, CSS en JavaScript."
+    },
+    "advanced-vue-js-masterclass": {
+      "shortDescription": "Ontwikkel schaalbare bedrijfsapplicaties met Vue 3 Composition API en Nuxt 3."
+    },
+    "node-js-microservices-backend": {
+      "shortDescription": "Bouw microservices-architecturen met Node.js, Express, PostgreSQL en Docker."
+    },
+    "go-programming-high-performance": {
+      "shortDescription": "Schrijf hoogwaardige en gelijktijdige backend-software met de door Google ontwikkelde Go-taal."
+    },
+    "python-django-rest-framework": {
+      "shortDescription": "Stap over op backend-ontwikkeling vanaf nul met Python. Bouw veilige webdiensten."
+    },
+    "devops-kubernetes-aws-bootcamp": {
+      "shortDescription": "Word een moderne DevOps-engineer met CI/CD-processen, cloudinfrastructuur en containerorkestratie."
+    },
+    "fullstack-javascript-bootcamp": {
+      "shortDescription": "Ontwikkel van begin tot eind webapplicaties met MongoDB, Express, React en Node.js."
+    },
+    "ui-ux-design-systems": {
+      "shortDescription": "Creëer professionele interface-ontwerpen en schaalbare ontwerpsystemen met Figma."
+    },
+    "react-native-cross-platform": {
+      "shortDescription": "Bouw mobiele apps met native prestaties voor iOS en Android vanaf één codebasis."
+    },
+    "data-science-machine-learning-python": {
+      "shortDescription": "Leer waarde te genereren uit data met data-analyse, visualisatie en AI-modellen."
+    },
+    "ethical-hacking-cybersecurity": {
+      "shortDescription": "Detectie van kwetsbaarheden in systemen, penetratietesten en cyberdefensiestrategieën."
+    }
+  },
   "sortOptions": {
     "popularity": "Populariteit",
     "priceAsc": "Prijs (Laag naar Hoog)",

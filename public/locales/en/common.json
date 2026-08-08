@@ -55,6 +55,44 @@
     "inspect": "View",
     "weeks": "{{count}} Weeks"
   },
+  "bootcampsData": {
+    "react-nextjs-frontend-bootcamp": {
+      "shortDescription": "Build professional projects with React, Next.js, and TypeScript in the modern web development ecosystem."
+    },
+    "zero-to-hero-javascript": {
+      "shortDescription": "Take your first step into software. Learn to design websites with HTML, CSS, and JavaScript."
+    },
+    "advanced-vue-js-masterclass": {
+      "shortDescription": "Develop scalable enterprise applications with Vue 3 Composition API and Nuxt 3."
+    },
+    "node-js-microservices-backend": {
+      "shortDescription": "Build microservices architectures using Node.js, Express, PostgreSQL, and Docker."
+    },
+    "go-programming-high-performance": {
+      "shortDescription": "Write high-performance and concurrent backend software with the Go programming language developed by Google."
+    },
+    "python-django-rest-framework": {
+      "shortDescription": "Switch to backend development from scratch with Python. Build secure web services."
+    },
+    "devops-kubernetes-aws-bootcamp": {
+      "shortDescription": "Become a modern DevOps engineer with CI/CD processes, cloud infrastructure, and container orchestration."
+    },
+    "fullstack-javascript-bootcamp": {
+      "shortDescription": "Develop end-to-end web applications with MongoDB, Express, React, and Node.js from scratch."
+    },
+    "ui-ux-design-systems": {
+      "shortDescription": "Create professional interface designs and scalable design systems with Figma."
+    },
+    "react-native-cross-platform": {
+      "shortDescription": "Build native-performance mobile apps for iOS and Android using a single codebase."
+    },
+    "data-science-machine-learning-python": {
+      "shortDescription": "Learn to generate value from data with data analysis, visualization, and AI models."
+    },
+    "ethical-hacking-cybersecurity": {
+      "shortDescription": "System vulnerability detection, penetration testing, and cyber defense strategies."
+    }
+  },
   "sortOptions": {
     "popularity": "Popularity",
     "priceAsc": "Price (Low to High)",

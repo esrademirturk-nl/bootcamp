@@ -12,11 +12,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1490,
     rating: 4.9,
     studentCount: 340,
-    shortDescription: {
-      tr: 'Modern web geliştirme ekosisteminde React, Next.js ve TypeScript ile profesyonel projeler üretin.',
-      en: 'Build professional projects with React, Next.js, and TypeScript in the modern web development ecosystem.',
-      nl: 'Bouw professionele projecten met React, Next.js en TypeScript in het moderne webontwikkelingsecosysteem.',
-    },
+    shortDescription:
+      'Modern web geliştirme ekosisteminde React, Next.js ve TypeScript ile profesyonel projeler üretin.',
     description:
       'Bu kapsamlı eğitimde modern frontend mimarilerini, state yönetimini, Server Components mantığını ve performans optimizasyonlarını uygulamalı projelerle öğreneceksiniz.',
     heroImage: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800',
@@ -52,11 +49,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 890,
     rating: 4.7,
     studentCount: 520,
-    shortDescription: {
-      tr: 'Yazılıma ilk adımı atın. HTML, CSS ve JavaScript ile web siteleri tasarlamayı öğrenin.',
-      en: 'Take your first step into software. Learn to design websites with HTML, CSS, and JavaScript.',
-      nl: 'Zet je eerste stap in de software. Leer websites ontwerpen met HTML, CSS en JavaScript.',
-    },
+    shortDescription:
+      'Yazılıma ilk adımı atın. HTML, CSS ve JavaScript ile web siteleri tasarlamayı öğrenin.',
     description:
       'Hangi altyapıdan olursanız olun, web dünyasına giriş yapmanız için tasarlanmış temel seviye kodlama eğitimi.',
     heroImage: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=800',
@@ -87,11 +81,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1290,
     rating: 4.8,
     studentCount: 180,
-    shortDescription: {
-      tr: 'Vue 3 Composition API ve Nuxt 3 ile ölçeklenebilir kurumsal uygulamalar geliştirin.',
-      en: 'Develop scalable enterprise applications with Vue 3 Composition API and Nuxt 3.',
-      nl: 'Ontwikkel schaalbare bedrijfsapplicaties met Vue 3 Composition API en Nuxt 3.',
-    },
+    shortDescription:
+      'Vue 3 Composition API ve Nuxt 3 ile ölçeklenebilir kurumsal uygulamalar geliştirin.',
     description:
       'Büyük ölçekli projeler için Vue 3 mimarisi, Pinia state yönetimi ve Nuxt SSR sistemleri.',
     heroImage: 'https://images.unsplash.com/photo-1581276879432-15e50529f34b?w=800',
@@ -117,11 +108,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1390,
     rating: 4.9,
     studentCount: 290,
-    shortDescription: {
-      tr: 'Node.js, Express, PostgreSQL ve Docker kullanarak mikroservis mimarileri inşa edin.',
-      en: 'Build microservices architectures using Node.js, Express, PostgreSQL, and Docker.',
-      nl: 'Bouw microservices-architecturen met Node.js, Express, PostgreSQL en Docker.',
-    },
+    shortDescription:
+      'Node.js, Express, PostgreSQL ve Docker kullanarak mikroservis mimarileri inşa edin.',
     description:
       'Yüksek trafikli sistemler için backend geliştirmeyi, API güvenliğini ve veritabanı yönetimini öğrenin.',
     heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800',
@@ -147,11 +135,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1590,
     rating: 4.95,
     studentCount: 140,
-    shortDescription: {
-      tr: 'Google tarafından geliştirilen Go dili ile eşzamanlı (concurrent) ve hızlı backend yazılımı.',
-      en: 'Write high-performance and concurrent backend software with Go developed by Google.',
-      nl: 'Schrijf hoogwaardige en gelijktijdige backend-software met Go, ontwikkeld door Google.',
-    },
+    shortDescription:
+      'Google tarafından geliştirilen Go dili ile eşzamanlı (concurrent) ve hızlı backend yazılımı.',
     description:
       'Goroutine, Channel ve Go ekosistemi ile yüksek performanslı backend servisleri yazın.',
     heroImage: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800',
@@ -177,11 +162,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 990,
     rating: 4.6,
     studentCount: 410,
-    shortDescription: {
-      tr: 'Python ile sıfırdan backend geliştirmeye geçin. Güvenli web servisleri yazın.',
-      en: 'Switch to backend development from scratch with Python. Build secure web services.',
-      nl: 'Stap over op backend-ontwikkeling vanaf nul met Python. Bouw veilige webdiensten.',
-    },
+    shortDescription:
+      'Python ile sıfırdan backend geliştirmeye geçin. Güvenli web servisleri yazın.',
     description:
       'Python ekosisteminde en popüler backend framework olan Django ile veritabanı ve API yönetimi.',
     heroImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800',
@@ -207,11 +189,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1790,
     rating: 4.9,
     studentCount: 210,
-    shortDescription: {
-      tr: 'CI/CD süreçleri, bulut altyapısı ve konteyner orkestrasyonu ile modern DevOps mühendisi olun.',
-      en: 'Become a modern DevOps engineer with CI/CD processes, cloud infrastructure, and container orchestration.',
-      nl: 'Word een moderne DevOps-engineer met CI/CD-processen, cloudinfrastructuur en containerorkestratie.',
-    },
+    shortDescription:
+      'CI/CD süreçleri, bulut altyapısı ve konteyner orkestrasyonu ile modern DevOps mühendisi olun.',
     description:
       'AWS servisleri, Terraform ile Infrastructure as Code ve Kubernetes cluster yönetimi.',
     heroImage: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800',
@@ -237,11 +216,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1690,
     rating: 4.85,
     studentCount: 450,
-    shortDescription: {
-      tr: 'MongoDB, Express, React ve Node.js ile baştan sona uçtan uca web uygulamaları geliştirin.',
-      en: 'Develop end-to-end web applications with MongoDB, Express, React, and Node.js from scratch.',
-      nl: 'Ontwikkel van begin tot eind webapplicaties met MongoDB, Express, React en Node.js.',
-    },
+    shortDescription:
+      'MongoDB, Express, React ve Node.js ile baştan sona uçtan uca web uygulamaları geliştirin.',
     description: 'Tek bir dille (JavaScript) hem ön yüzü hem arka yüzü geliştirmeyi öğrenin.',
     heroImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800',
     tags: ['React', 'Node.js', 'MongoDB', 'Express'],
@@ -266,11 +242,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 790,
     rating: 4.75,
     studentCount: 310,
-    shortDescription: {
-      tr: 'Figma ile profesyonel arayüz tasarımları ve ölçeklenebilir tasarım sistemleri oluşturun.',
-      en: 'Create professional interface designs and scalable design systems with Figma.',
-      nl: 'Creëer professionele interface-ontwerpen en schaalbare ontwerpsystemen met Figma.',
-    },
+    shortDescription:
+      'Figma ile profesyonel arayüz tasarımları ve ölçeklenebilir tasarım sistemleri oluşturun.',
     description:
       'Kullanıcı araştırmasından tel çerçeve (wireframe) ve prototiplemeye kadar UI/UX metodolojileri.',
     heroImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800',
@@ -296,11 +269,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1190,
     rating: 4.8,
     studentCount: 260,
-    shortDescription: {
-      tr: 'iOS ve Android için tek bir kod tabanı üzerinden yerel (native) performanslı mobil uygulamalar yazın.',
-      en: 'Build native-performance mobile apps for iOS and Android using a single codebase.',
-      nl: 'Bouw mobiele apps met native prestaties voor iOS en Android vanaf één codebasis.',
-    },
+    shortDescription:
+      'iOS ve Android için tek bir kod tabanı üzerinden yerel (native) performanslı mobil uygulamalar yazın.',
     description:
       'React bilginizi mobil dünyaya taşıyın. Navigation, Redux Toolkit ve Cihaz Özellikleri erişimi.',
     heroImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800',
@@ -326,11 +296,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1490,
     rating: 4.9,
     studentCount: 380,
-    shortDescription: {
-      tr: 'Veri analizi, görselleştirme ve yapay zeka modelleri ile veriden değer üretmeyi öğrenin.',
-      en: 'Learn to generate value from data with data analysis, visualization, and AI models.',
-      nl: 'Leer waarde te genereren uit data met data-analyse, visualisatie en AI-modellen.',
-    },
+    shortDescription:
+      'Veri analizi, görselleştirme ve yapay zeka modelleri ile veriden değer üretmeyi öğrenin.',
     description:
       'Pandas, NumPy, Scikit-Learn ve TensorFlow kullanarak gerçek dünya verilerini işleyin.',
     heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
@@ -356,11 +323,8 @@ export const mockBootcamps: Bootcamp[] = [
     priceEUR: 1290,
     rating: 4.85,
     studentCount: 220,
-    shortDescription: {
-      tr: 'Sistem güvenlik açıkları tespiti, sızma testleri ve siber savunma stratejileri.',
-      en: 'System vulnerability detection, penetration testing, and cyber defense strategies.',
-      nl: 'Detectie van kwetsbaarheden in systemen, penetratietesten en cyberdefensiestrategieën.',
-    },
+    shortDescription:
+      'Sistem güvenlik açıkları tespiti, sızma testleri ve siber savunma stratejileri.',
     description:
       'Ağ güvenliği, web uygulama güvenliği (OWASP Top 10) ve etik korsanlık teknikleri.',
     heroImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800',

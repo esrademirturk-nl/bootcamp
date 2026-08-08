@@ -46,7 +46,7 @@ export interface Bootcamp {
   priceEUR: number; // Fiyat (Euro)
   rating: number; // Puan (0 - 5 arası float)
   studentCount: number; // Kayıtlı öğrenci sayısı
-  shortDescription: string | { [key: string]: string }; // Kartlarda görünecek kısa açıklama
+  shortDescription: string; // Kartlarda görünecek kısa açıklama
   description: string; // Detay sayfasında görünecek uzun açıklama
   heroImage: string; // Kapak görseli URL'i
   tags: string[]; // Etiketler (ör: ['React', 'Next.js'])

@@ -55,6 +55,44 @@
     "inspect": "İncele",
     "weeks": "{{count}} Hafta"
   },
+  "bootcampsData": {
+    "react-nextjs-frontend-bootcamp": {
+      "shortDescription": "Modern web geliştirme ekosisteminde React, Next.js ve TypeScript ile profesyonel projeler üretin."
+    },
+    "zero-to-hero-javascript": {
+      "shortDescription": "Yazılıma ilk adımı atın. HTML, CSS ve JavaScript ile web siteleri tasarlamayı öğrenin."
+    },
+    "advanced-vue-js-masterclass": {
+      "shortDescription": "Vue 3 Composition API ve Nuxt 3 ile ölçeklenebilir kurumsal uygulamalar geliştirin."
+    },
+    "node-js-microservices-backend": {
+      "shortDescription": "Node.js, Express, PostgreSQL ve Docker kullanarak mikroservis mimarileri inşa edin."
+    },
+    "go-programming-high-performance": {
+      "shortDescription": "Google tarafından geliştirilen Go dili ile eşzamanlı (concurrent) ve hızlı backend yazılımı."
+    },
+    "python-django-rest-framework": {
+      "shortDescription": "Python ile sıfırdan backend geliştirmeye geçin. Güvenli web servisleri yazın."
+    },
+    "devops-kubernetes-aws-bootcamp": {
+      "shortDescription": "CI/CD süreçleri, bulut altyapısı ve konteyner orkestrasyonu ile modern DevOps mühendisi olun."
+    },
+    "fullstack-javascript-bootcamp": {
+      "shortDescription": "MongoDB, Express, React ve Node.js ile baştan sona uçtan uca web uygulamaları geliştirin."
+    },
+    "ui-ux-design-systems": {
+      "shortDescription": "Figma ile profesyonel arayüz tasarımları ve ölçeklenebilir tasarım sistemleri oluşturun."
+    },
+    "react-native-cross-platform": {
+      "shortDescription": "iOS ve Android için tek bir kod tabanı üzerinden yerel (native) performanslı mobil uygulamalar yazın."
+    },
+    "data-science-machine-learning-python": {
+      "shortDescription": "Veri analizi, görselleştirme ve yapay zeka modelleri ile veriden değer üretmeyi öğrenin."
+    },
+    "ethical-hacking-cybersecurity": {
+      "shortDescription": "Sistem güvenlik açıkları tespiti, sızma testleri ve siber savunma stratejileri."
+    }
+  },
   "sortOptions": {
     "popularity": "Popülerlik",
     "priceAsc": "Fiyat (Düşükten Yükseğe)",
