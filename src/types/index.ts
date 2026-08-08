@@ -46,7 +46,7 @@ export interface Bootcamp {
   priceEUR: number; // Fiyat (Euro)
   rating: number; // Puan (0 - 5 arası float)
   studentCount: number; // Kayıtlı öğrenci sayısı
-  shortDescription: string; // Kartlarda görünecek kısa açıklama
+  shortDescription: string | { [key: string]: string }; // Kartlarda görünecek kısa açıklama
   description: string; // Detay sayfasında görünecek uzun açıklama
   heroImage: string; // Kapak görseli URL'i
   tags: string[]; // Etiketler (ör: ['React', 'Next.js'])
@@ -90,26 +90,6 @@ export interface CurriculumModule {
   title: string;
   durationHours: number;
   lessons: string[];
-}
-
-export interface Bootcamp {
-  slug: string;
-  title: string;
-  categorySlug: string;
-  level: Level;
-  format: Format;
-  durationWeeks: number;
-  languages: string[];
-  priceEUR: number;
-  rating: number;
-  studentCount: number;
-  shortDescription: string;
-  description: string;
-  heroImage: string;
-  tags: string[];
-  curriculum: CurriculumModule[];
-  instructorSlug: string;
-  featured: boolean;
 }
 export interface Stat {
   id: string;
