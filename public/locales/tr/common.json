@@ -209,5 +209,17 @@
     "medium": "Orta",
     "good": "İyi",
     "strong": "Çok Güçlü"
+  },
+  "notFoundPage": {
+    "badge": "Hata 404",
+    "title": "Aradığınız Sayfa Bulunamadı",
+    "description": "Aradığınız sayfa kaldırılmış, adı değiştirilmiş veya geçici olarak kullanım dışı kalmış olabilir.",
+    "btnHome": "Ana Sayfaya Dön",
+    "popularLinksTitle": "Popüler Sayfalar"
+  },
+  "links": {
+    "bootcamps": "Bootcamp'ler",
+    "schedule": "Program",
+    "contact": "İletişim"
   }
 }
