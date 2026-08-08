@@ -3,7 +3,9 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { useT } from 'next-i18next/client';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button-variants';
+import { cn } from '@/lib/utils';
+import i18nConfig from '../../../i18n.config';
 
 export interface NavLink {
   href: string;
@@ -16,8 +18,14 @@ interface MobileNavProps {
   links: NavLink[];
 }
 
+function localizedHref(path: string, locale: string) {
+  if (locale === i18nConfig.fallbackLng) return path;
+  return `/${locale}${path === '/' ? '' : path}`;
+}
+
 export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
-  const { t } = useT('common');
+  const { t, i18n } = useT('common');
+  const locale = i18n.language;
   const panelRef = React.useRef<HTMLDivElement>(null);
 
   // Escape ile kapatma
@@ -87,13 +95,13 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
       {/* Backdrop */}
       <div className="absolute inset-0 bg-neutral-950/50" onClick={onClose} aria-hidden="true" />
 
-      {/* Panel */}
+      {/* Panel — küçük ekranlarda tam genişlik, sm ve üzerinde 320px'e sabitlenir */}
       <div
         ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-label={t('header.menu')}
-        className="absolute right-0 top-0 flex h-full w-full max-w-xs flex-col gap-6 bg-surface p-6 shadow-lg"
+        className="absolute right-0 top-0 flex h-full w-full max-w-xs flex-col gap-6 overflow-y-auto bg-surface p-6 shadow-lg"
       >
         <div className="flex items-center justify-between">
           <span className="font-heading text-lg font-semibold">{t('header.menu')}</span>
@@ -133,9 +141,13 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
           ))}
         </nav>
 
-        <Button variant="primary" className="mt-auto w-full">
-          {t('cta.signup')}
-        </Button>
+        <Link
+          href={localizedHref('/auth/login', locale)}
+          onClick={onClose}
+          className={cn(buttonVariants({ variant: 'primary', size: 'md' }), 'mt-auto w-full')}
+        >
+          {t('footer.login')}
+        </Link>
       </div>
     </div>
   );

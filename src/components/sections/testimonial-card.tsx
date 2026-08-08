@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
+import { Quote, Star } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 import type { Testimonial } from '@/types';
 
 interface TestimonialCardProps {
@@ -8,26 +9,37 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <Card className="p-6">
-      <CardContent className="flex flex-col gap-3 p-0">
-        <div className="flex items-center gap-3">
-          <Image
-            src={testimonial.avatar}
-            alt={testimonial.name}
-            width={48}
-            height={48}
-            className="h-12 w-12 rounded-full object-cover"
+    <Card className="flex h-full flex-col gap-4 border-border/60 p-6">
+      <Quote className="h-7 w-7 text-primary-200" fill="currentColor" strokeWidth={0} />
+
+      <p className="flex-1 text-sm italic leading-relaxed text-foreground">
+        &ldquo;{testimonial.quote}&rdquo;
+      </p>
+
+      <div className="flex items-center gap-0.5">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <Star
+            key={index}
+            className={
+              index < testimonial.rating
+                ? 'h-4 w-4 fill-warning text-warning'
+                : 'h-4 w-4 text-border'
+            }
           />
-          <div>
-            <p className="font-semibold">{testimonial.name}</p>
-            <p className="text-sm text-muted">
-              {testimonial.role} · {testimonial.company}
-            </p>
-          </div>
+        ))}
+      </div>
+
+      <div className="flex items-center gap-3 border-t border-border/60 pt-4">
+        <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded-full">
+          <Image src={testimonial.avatar} alt={testimonial.name} fill className="object-cover" />
         </div>
-        <p className="text-sm text-muted">&ldquo;{testimonial.quote}&rdquo;</p>
-        <p className="text-sm text-primary">{'⭐'.repeat(testimonial.rating)}</p>
-      </CardContent>
+        <div>
+          <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
+          <p className="text-xs text-muted">
+            {testimonial.role} · {testimonial.company}
+          </p>
+        </div>
+      </div>
     </Card>
   );
 }

@@ -1,18 +1,26 @@
 import { mockInstructors } from '@/data/instructors';
-import { InstructorCard } from './instructor-card';
+import { getT } from 'next-i18next/server';
+import { InstructorCarousel } from './instructor-carousel';
 
-export function Instructors() {
-  const featured = mockInstructors.slice(0, 4);
+export async function Instructors() {
+  const { t } = await getT('common');
 
   return (
-    <section className="py-16">
+    <section className="py-20">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="mb-8 text-3xl font-bold">Eğitmenler</h2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {featured.map((instructor) => (
-            <InstructorCard key={instructor.slug} instructor={instructor} />
-          ))}
+        <div className="mb-10 text-center">
+          <span className="text-sm font-semibold uppercase tracking-wide text-primary-600">
+            {t('landing.instructors.eyebrow')}
+          </span>
+          <h2 className="mt-2 font-heading text-3xl font-bold text-foreground">
+            {t('landing.instructors.title')}
+          </h2>
         </div>
+        <InstructorCarousel
+          instructors={mockInstructors}
+          prevLabel={t('landing.instructors.prev')}
+          nextLabel={t('landing.instructors.next')}
+        />
       </div>
     </section>
   );
