@@ -22,6 +22,7 @@ import { ThemeInitScript } from '@/components/layout/theme-init-script';
 import { PageTransition } from '@/components/layout/page-transition';
 import i18nConfig from '../../../i18n.config.server';
 import './globals.css';
+import { CookieConsent } from '@/components/layout/cookie-consent';
 
 // 1. Sunucu tarafı i18next yapılandırmasını verilen konfigürasyon ile başlatıyoruz.
 initServerI18next(i18nConfig);
@@ -113,6 +114,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
 
           {/* Alt Bilgi / Footer */}
           <Footer locale={locale} />
+          <CookieConsent />
         </I18nProvider>
       </body>
     </html>
