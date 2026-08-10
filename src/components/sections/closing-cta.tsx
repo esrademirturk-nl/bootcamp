@@ -9,9 +9,12 @@ function localizedHref(path: string, locale: string) {
   return `/${locale}${path === '/' ? '' : path}`;
 }
 
-export async function ClosingCTA() {
-  const { t, i18n } = await getT('common');
-  const locale = i18n.language;
+interface ClosingCTAProps {
+  locale: string;
+}
+
+export async function ClosingCTA({ locale }: ClosingCTAProps) {
+  const { t } = await getT('common', { lng: locale });
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary-700 via-primary-800 to-primary-950 py-20 text-center text-white">

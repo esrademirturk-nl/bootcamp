@@ -6,10 +6,11 @@ import type { Category } from '@/types';
 
 interface CategoryCardProps {
   category: Category;
+  locale: string;
 }
 
-export async function CategoryCard({ category }: CategoryCardProps) {
-  const { t } = await getT('common');
+export async function CategoryCard({ category, locale }: CategoryCardProps) {
+  const { t } = await getT('common', { lng: locale });
   const Icon = iconMap[category.icon];
 
   return (

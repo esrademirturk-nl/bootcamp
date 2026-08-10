@@ -2,9 +2,12 @@ import { getT } from 'next-i18next/server';
 import { mockBootcamps } from '@/data/bootcamps';
 import { BootcampCard } from './bootcamp-card';
 
-export async function FeaturedPrograms() {
-  const { t, i18n } = await getT('common');
-  const locale = i18n.language;
+interface FeaturedProgramsProps {
+  locale: string;
+}
+
+export async function FeaturedPrograms({ locale }: FeaturedProgramsProps) {
+  const { t } = await getT('common', { lng: locale });
   const featured = mockBootcamps.filter((bootcamp) => bootcamp.featured).slice(0, 3);
 
   return (

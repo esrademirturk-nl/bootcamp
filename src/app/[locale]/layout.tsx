@@ -45,6 +45,14 @@ export const metadata: Metadata = {
 };
 
 /**
+ * Her desteklenen dil için build-time statik path üretir. `[locale]` segmentini
+ * kullanan tüm alt sayfalar (ek dinamik segmenti olmayanlar) bu sayede statik üretilir.
+ */
+export function generateStaticParams() {
+  return i18nConfig.supportedLngs.map((locale) => ({ locale }));
+}
+
+/**
  * @interface RootLayoutProps
  * @property {React.ReactNode} children - Düzenin içine render edilecek olan sayfa bileşenleri.
  * @property {Promise<{ locale: string }>} params - URL'den gelen dinamik dil parametresi (ör: 'tr', 'en', 'nl').
@@ -66,7 +74,9 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
   const { locale } = await params;
 
   // 2. Sunucu tarafı i18n çeviri fonksiyonunu (getT) çağırarak aktif i18n örneğini alıyoruz.
-  const { i18n } = await getT();
+  // `lng` route param'dan geliyor; headers()/cookies() tabanlı otomatik algılamaya
+  // düşülmüyor, aksi halde tüm route ağacı dynamic render'a zorlanır.
+  const { i18n } = await getT(undefined, { lng: locale });
 
   // 3. Geliştirme (development) ortamındaysak çeviri dosyalarının anlık güncellenmesini sağlıyoruz.
   if (process.env.NODE_ENV === 'development') {
@@ -99,7 +109,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
           <div className="flex-1">{children}</div>
 
           {/* Alt Bilgi / Footer */}
-          <Footer />
+          <Footer locale={locale} />
         </I18nProvider>
       </body>
     </html>

@@ -2,8 +2,12 @@ import { getT } from 'next-i18next/server';
 import { mockCategories } from '@/data/categories';
 import { CategoryCard } from './category-card';
 
-export async function CategoryGrid() {
-  const { t } = await getT('common');
+interface CategoryGridProps {
+  locale: string;
+}
+
+export async function CategoryGrid({ locale }: CategoryGridProps) {
+  const { t } = await getT('common', { lng: locale });
 
   return (
     <section className="bg-surface-muted py-20">
@@ -18,7 +22,7 @@ export async function CategoryGrid() {
         </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-4">
           {mockCategories.map((category) => (
-            <CategoryCard key={category.slug} category={category} />
+            <CategoryCard key={category.slug} category={category} locale={locale} />
           ))}
         </div>
       </div>

@@ -2,8 +2,12 @@ import { mockInstructors } from '@/data/instructors';
 import { getT } from 'next-i18next/server';
 import { InstructorCarousel } from './instructor-carousel';
 
-export async function Instructors() {
-  const { t } = await getT('common');
+interface InstructorsProps {
+  locale: string;
+}
+
+export async function Instructors({ locale }: InstructorsProps) {
+  const { t } = await getT('common', { lng: locale });
 
   return (
     <section className="py-20">

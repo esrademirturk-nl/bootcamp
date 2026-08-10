@@ -2,8 +2,12 @@ import { getT } from 'next-i18next/server';
 import { pricingPlans } from '@/data/pricing';
 import { PricingSelector } from './pricing-selector';
 
-export async function Pricing() {
-  const { t } = await getT('common');
+interface PricingProps {
+  locale: string;
+}
+
+export async function Pricing({ locale }: PricingProps) {
+  const { t } = await getT('common', { lng: locale });
 
   return (
     <section className="py-20">
