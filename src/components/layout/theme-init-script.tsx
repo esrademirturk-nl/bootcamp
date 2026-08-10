@@ -1,10 +1,10 @@
 /**
  * @file src/components/layout/theme-init-script.tsx
  * @description Tema (Light/Dark) başlangıç betiği.
- * 
+ *
  * Bu dosya ne iş yapar?
- * Sayfa henüz yüklenirken `localStorage` veya sistem temasını okuyarak 
- * `<html>` etiketine `dark` sınıfını ekler. `afterInteractive` stratejisi ile 
+ * Sayfa henüz yüklenirken `localStorage` veya sistem temasını okuyarak
+ * `<html>` etiketine `dark` sınıfını ekler. `afterInteractive` stratejisi ile
  * React client render script uyarısını önler.
  */
 

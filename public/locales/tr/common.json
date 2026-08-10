@@ -20,6 +20,61 @@
       "graduatesLabel": "Mezun",
       "employmentRateLabel": "İstihdam Oranı",
       "partnersLabel": "Partner Şirket"
+    },
+    "categories": {
+      "eyebrow": "Kategoriler",
+      "title": "İlgi Alanına Uygun Bootcamp'i Bul",
+      "programCount": "{{count}} program mevcut",
+      "explore": "Keşfet"
+    },
+    "features": {
+      "eyebrow": "Neden Biz",
+      "title": "Kariyerinde Fark Yaratacak Özellikler"
+    },
+    "featuredPrograms": {
+      "eyebrow": "Öne Çıkanlar",
+      "title": "Popüler Bootcamp Programları",
+      "viewDetails": "Detayları Gör"
+    },
+    "howItWorks": {
+      "eyebrow": "Süreç",
+      "title": "Nasıl Çalışır"
+    },
+    "instructors": {
+      "eyebrow": "Kadromuz",
+      "title": "Sektörden Deneyimli Eğitmenler",
+      "prev": "Önceki",
+      "next": "Sonraki"
+    },
+    "testimonials": {
+      "eyebrow": "Yorumlar",
+      "title": "Mezunlarımız Ne Diyor?"
+    },
+    "pricing": {
+      "eyebrow": "Fiyatlandırma",
+      "title": "Sana Uygun Planı Seç",
+      "popular": "En Popüler",
+      "start": "Şimdi Başla",
+      "contact": "Bize Ulaşın",
+      "perMonth": "ay",
+      "perYear": "yıl",
+      "monthly": "Aylık",
+      "yearly": "Yıllık",
+      "yearlyDiscount": "2 ay ücretsiz",
+      "selected": "Seçildi"
+    },
+    "newsletter": {
+      "eyebrow": "Bültenimiz",
+      "title": "Bültenimize Katılın",
+      "subtitle": "Yeni bootcamp'ler ve kariyer fırsatları hakkında ilk siz haberdar olun.",
+      "placeholder": "E-posta adresiniz",
+      "button": "Abone Ol",
+      "success": "Teşekkürler! Abonelik talebiniz alındı."
+    },
+    "closingCta": {
+      "title": "Kariyerine Bugün Yön Ver",
+      "subtitle": "Binlerce mezunun katıldığı yolculuğa sen de katıl, geleceğini şekillendir.",
+      "button": "Hemen Başvur"
     }
   },
   "header": {

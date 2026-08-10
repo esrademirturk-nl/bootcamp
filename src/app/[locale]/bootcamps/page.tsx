@@ -1,6 +1,10 @@
 /**
  * @file src/app/[locale]/bootcamps/page.tsx
  * @description D-01 & D-02 Bootcamp Liste, Arama ve Filtreleme Ana Sayfası.
+ *
+ * Bu dosya ne iş yapar?
+ * 1. URL parametrelerini (q, categories, level, sort) okuyarak sunucu tarafında veri filtreleme ve sıralama yapar.
+ * 2. `mockBootcamps` ve `mockCategories` verilerini doğru modül yollarından içe aktarır.
  */
 
 'use client';

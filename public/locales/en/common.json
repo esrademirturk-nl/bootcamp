@@ -20,6 +20,61 @@
       "graduatesLabel": "Graduates",
       "employmentRateLabel": "Employment Rate",
       "partnersLabel": "Partner Companies"
+    },
+    "categories": {
+      "eyebrow": "Categories",
+      "title": "Find the Bootcamp That Matches Your Interest",
+      "programCount": "{{count}} programs available",
+      "explore": "Explore"
+    },
+    "features": {
+      "eyebrow": "Why Us",
+      "title": "Features That Make a Difference in Your Career"
+    },
+    "featuredPrograms": {
+      "eyebrow": "Featured",
+      "title": "Popular Bootcamp Programs",
+      "viewDetails": "View Details"
+    },
+    "howItWorks": {
+      "eyebrow": "Proces",
+      "title": "Hoe Het Werkt"
+    },
+    "instructors": {
+      "eyebrow": "Our Team",
+      "title": "Experienced Instructors From the Industry",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "testimonials": {
+      "eyebrow": "Testimonials",
+      "title": "What Our Graduates Say"
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "Choose the Plan That Fits You",
+      "popular": "Most Popular",
+      "start": "Get Started",
+      "contact": "Contact Us",
+      "perMonth": "month",
+      "perYear": "year",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "yearlyDiscount": "2 months free",
+      "selected": "Selected"
+    },
+    "newsletter": {
+      "title": "Join Our Newsletter",
+      "subtitle": "Be the first to know about new bootcamps and career opportunities.",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "success": "Thanks! Your subscription request has been received.",
+      "eyebrow": "Newsletter"
+    },
+    "closingCta": {
+      "title": "Shape Your Career Today",
+      "subtitle": "Join thousands of graduates on this journey and shape your future.",
+      "button": "Get Started Now"
     }
   },
   "header": {
@@ -34,7 +89,7 @@
     "columnPlatform": "Platform",
     "columnResources": "Resources",
     "columnLegal": "Legal",
-    "login": "Log In",
+    "login": "Sign In",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "rights": "All rights reserved."
