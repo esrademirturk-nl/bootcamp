@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { useT } from 'next-i18next/client';
 import { buttonVariants } from '@/components/ui/button-variants';
@@ -90,7 +91,13 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
 
   if (!isOpen) return null;
 
-  return (
+  // Header'daki backdrop-blur (backdrop-filter), position:fixed elemanlar için
+  // yeni bir containing block oluşturuyor — bu yüzden panel header içinde kalıp
+  // (fixed inset-0) viewport yerine header'ın kendi kutusuna (64px) sıkışıyordu.
+  // document.body'ye portal ederek bu sorunu tamamen ortadan kaldırıyoruz.
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
     <div className="fixed inset-0 z-50 md:hidden">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-neutral-950/50" onClick={onClose} aria-hidden="true" />
@@ -149,6 +156,7 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
           {t('footer.login')}
         </Link>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

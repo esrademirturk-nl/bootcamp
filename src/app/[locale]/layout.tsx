@@ -19,6 +19,7 @@ import { I18nProvider } from 'next-i18next/client';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ThemeInitScript } from '@/components/layout/theme-init-script';
+import { PageTransition } from '@/components/layout/page-transition';
 import i18nConfig from '../../../i18n.config.server';
 import './globals.css';
 
@@ -106,7 +107,9 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
           <Header />
 
           {/* Sayfa İçeriklerinin Render Edildiği Ana Alan */}
-          <div className="flex-1">{children}</div>
+          <div className="flex-1">
+            <PageTransition>{children}</PageTransition>
+          </div>
 
           {/* Alt Bilgi / Footer */}
           <Footer locale={locale} />
