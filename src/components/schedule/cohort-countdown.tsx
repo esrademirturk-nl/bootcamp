@@ -57,10 +57,7 @@ function calculateTimeLeft(dateStr: string): TimeLeft {
  * @function CohortCountdown
  * @description Canlı geri sayım sayacı bileşeni.
  */
-export const CohortCountdown: React.FC<CohortCountdownProps> = ({
-  targetDate,
-  bootcampTitle,
-}) => {
+export const CohortCountdown: React.FC<CohortCountdownProps> = ({ targetDate, bootcampTitle }) => {
   const { t } = useTranslation('common');
 
   // SSR / Client hydration uyumsuzluğunu önlemek için mount kontrolü
@@ -68,6 +65,7 @@ export const CohortCountdown: React.FC<CohortCountdownProps> = ({
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => calculateTimeLeft(targetDate));
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
 
     // Her 1 saniyede (1000ms) kalan süreyi hesaplayan zamanlayıcı
@@ -99,12 +97,12 @@ export const CohortCountdown: React.FC<CohortCountdownProps> = ({
           <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             🚀 {t('countdown.nextCohortTag', { defaultValue: 'En Yakın Kohort' })}
           </span>
-          <h2 className="mt-1 text-xl font-bold text-foreground md:text-2xl">
-            {bootcampTitle}
-          </h2>
+          <h2 className="mt-1 text-xl font-bold text-foreground md:text-2xl">{bootcampTitle}</h2>
           <p className="text-sm text-muted-foreground">
             {timeLeft.isPassed
-              ? t('countdown.startedDesc', { defaultValue: 'Bu kohort için kayıtlar tamamlandı ve eğitim başladı.' })
+              ? t('countdown.startedDesc', {
+                  defaultValue: 'Bu kohort için kayıtlar tamamlandı ve eğitim başladı.',
+                })
               : t('countdown.remainingDesc', { defaultValue: 'Eğitimin başlamasına kalan süre:' })}
           </p>
         </div>

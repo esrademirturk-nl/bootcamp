@@ -6,6 +6,64 @@
     "about": "Over Ons",
     "contact": "Contact"
   },
+  "cookieConsent": {
+    "message": "We gebruiken cookies om je ervaring te verbeteren. Bekijk ons Privacybeleid voor meer informatie.",
+    "privacyLink": "Privacybeleid",
+    "accept": "Accepteren",
+    "reject": "Weigeren",
+    "preferences": "Voorkeuren",
+    "preferencesTitle": "Cookievoorkeuren",
+    "preferencesDescription": "Kies welke cookiecategorieën je wilt toestaan. Noodzakelijke cookies zijn vereist voor de werking van de site en kunnen niet worden uitgeschakeld.",
+    "necessaryLabel": "Noodzakelijke Cookies",
+    "necessaryDescription": "Vereist voor de kernfunctionaliteit van de site (sessies, beveiliging, themavoorkeur).",
+    "analyticsLabel": "Analytische Cookies",
+    "analyticsDescription": "Helpt ons het bezoekersgedrag anoniem te analyseren.",
+    "marketingLabel": "Marketingcookies",
+    "marketingDescription": "Stelt ons in staat je relevantere content en advertenties te tonen.",
+    "savePreferences": "Voorkeuren Opslaan",
+    "close": "Sluiten",
+    "alwaysOn": "Altijd aan"
+  },
+  "privacyPage": {
+    "title": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: 10 augustus 2026",
+    "intro": "Bij NextGen IT Academy nemen we je privacy serieus. Dit beleid legt uit welke informatie we verzamelen wanneer je ons platform gebruikt, hoe we deze gebruiken en welke rechten je hebt.",
+    "section1Title": "Informatie die we verzamelen",
+    "section1Body": "Wanneer je een account aanmaakt, verzamelen we je naam, e-mailadres en contactgegevens. Terwijl je het platform gebruikt, kunnen we ook gebruiksgegevens registreren, zoals welke bootcamppagina's je bezoekt en je voorkeurstaal.",
+    "section2Title": "Hoe we je informatie gebruiken",
+    "section2Body": "We gebruiken de verzamelde informatie om je account te beheren, je bootcampaanmeldingen te verwerken, je te informeren over relevante programma's en het platform te verbeteren.",
+    "section3Title": "Cookies",
+    "section3Body": "Onze site gebruikt noodzakelijke cookies voor de kernfunctionaliteit; analytische en marketingcookies worden alleen ingeschakeld met jouw toestemming. Je kunt je voorkeuren op elk moment bijwerken via de cookiebanner onderaan de pagina.",
+    "section4Title": "Delen van gegevens",
+    "section4Body": "We delen je informatie niet met derden, tenzij wettelijk verplicht of met jouw uitdrukkelijke toestemming. Alleen de minimale informatie die nodig is om je aanmelding te verwerken, wordt gedeeld met docenten en partners.",
+    "section5Title": "Gegevensbeveiliging",
+    "section5Body": "We nemen redelijke technische en organisatorische maatregelen om je gegevens te beschermen tegen ongeautoriseerde toegang, verlies of misbruik. Geen enkele overdracht via internet is echter 100% veilig.",
+    "section6Title": "Jouw rechten",
+    "section6Body": "Je hebt het recht om je gegevens in te zien, te corrigeren, te laten verwijderen en bezwaar te maken tegen de verwerking ervan. Neem contact met ons op om deze rechten uit te oefenen.",
+    "contactTitle": "Neem contact op",
+    "contactBody": "Heb je vragen over privacy? Neem dan contact met ons op via onze contactpagina."
+  },
+  "termsPage": {
+    "title": "Gebruiksvoorwaarden",
+    "lastUpdated": "Laatst bijgewerkt: 10 augustus 2026",
+    "intro": "Deze Gebruiksvoorwaarden bepalen de rechten en verplichtingen tussen jou en NextGen IT Academy bij het gebruik van ons platform. Door het platform te gebruiken, ga je akkoord met deze voorwaarden.",
+    "section1Title": "Aanvaarding van de Voorwaarden",
+    "section1Body": "Door je te registreren op het platform of je aan te melden voor een van onze bootcamps, ga je akkoord met deze Gebruiksvoorwaarden en ons Privacybeleid. Als je niet akkoord gaat, mag je het platform niet gebruiken.",
+    "section2Title": "Beschrijving van de Dienst",
+    "section2Body": "NextGen IT Academy is een onderwijsplatform dat technologie-bootcamps aanbiedt. Deze site is gebouwd als een studieproject; de getoonde bootcamps, docenten en cohorten zijn nepgegevens.",
+    "section3Title": "Verantwoordelijkheden van de Gebruiker",
+    "section3Body": "Je bent verantwoordelijk voor de juistheid van je accountgegevens en voor de beveiliging van je account. Je mag het platform niet gebruiken voor onwettige doeleinden of op een manier die de rechten van anderen schendt.",
+    "section4Title": "Intellectueel Eigendom",
+    "section4Body": "Het ontwerp, logo, tekst en visuele inhoud op het platform zijn eigendom van NextGen IT Academy. Ze mogen niet zonder toestemming worden gekopieerd of commercieel gebruikt.",
+    "section5Title": "Betaling en Annulering",
+    "section5Body": "Bootcampkosten staan vermeld op de betreffende programmapagina. Annulerings- en restitutievoorwaarden worden apart gedeeld tijdens het aanmeldproces. Op dit demoplatform wordt geen echte betaling verwerkt.",
+    "section6Title": "Beperking van Aansprakelijkheid",
+    "section6Body": "Het platform wordt aangeboden \"zoals het is\". We garanderen geen ononderbroken of foutloze dienstverlening en zijn niet aansprakelijk voor indirecte schade als gevolg van het gebruik ervan.",
+    "section7Title": "Wijzigingen in deze Voorwaarden",
+    "section7Body": "We kunnen deze voorwaarden van tijd tot tijd bijwerken. Belangrijke wijzigingen worden aangekondigd op het platform. Als je het platform na een update blijft gebruiken, betekent dit dat je de herziene voorwaarden accepteert.",
+    "contactTitle": "Neem Contact Op",
+    "contactBody": "Heb je vragen over deze voorwaarden? Neem dan contact met ons op via onze contactpagina."
+  },
   "cta": {
     "signup": "Aanmelden"
   },
@@ -20,6 +78,58 @@
       "graduatesLabel": "Afgestudeerden",
       "employmentRateLabel": "Werkgelegenheidspercentage",
       "partnersLabel": "Partnerbedrijven"
+    },
+    "categories": {
+      "eyebrow": "Categorieën",
+      "title": "Vind de Bootcamp Die Bij Je Interesse Past",
+      "programCount": "{{count}} programma's beschikbaar",
+      "explore": "Ontdekken"
+    },
+    "features": {
+      "eyebrow": "Waarom Wij",
+      "title": "Functies Die het Verschil Maken in Je Carrière"
+    },
+    "featuredPrograms": {
+      "eyebrow": "Uitgelicht",
+      "title": "Populaire Bootcamp Programma’s",
+      "viewDetails": "Bekijk Details"
+    },
+    "instructors": {
+      "eyebrow": "Ons Team",
+      "title": "Ervaren Docenten Uit de Sector",
+      "prev": "Vorige",
+      "next": "Volgende"
+    },
+    "testimonials": {
+      "eyebrow": "Getuigenissen",
+      "title": "Wat Onze Afgestudeerden Zeggen"
+    },
+    "pricing": {
+      "eyebrow": "Prijzen",
+      "title": "Kies het Plan Dat Bij Je Past",
+      "popular": "Meest Populair",
+      "start": "Nu Beginnen",
+      "contact": "Neem Contact Op",
+      "perMonth": "maand",
+      "perYear": "jaar",
+      "monthly": "Maandelijks",
+      "yearly": "Jaarlijks",
+      "yearlyDiscount": "2 maanden gratis",
+      "selected": "Geselecteerd"
+    },
+
+    "newsletter": {
+      "title": "Meld Je Aan Voor Onze Nieuwsbrief",
+      "subtitle": "Wees de eerste die op de hoogte is van nieuwe bootcamps en carrièrekansen.",
+      "placeholder": "Je e-mailadres",
+      "button": "Abonneren",
+      "success": "Bedankt! Je aanmelding is ontvangen.",
+      "eyebrow": "Nieuwsbrief"
+    },
+    "closingCta": {
+      "title": "Geef Vandaag Vorm Aan Je Carrière",
+      "subtitle": "Sluit je aan bij duizenden afgestudeerden op deze reis en bouw aan je toekomst.",
+      "button": "Begin Nu"
     }
   },
   "header": {
@@ -136,7 +246,7 @@
     "minutes": "MINUTEN",
     "seconds": "SECONDEN"
   },
- "aboutPage": {
+  "aboutPage": {
     "badge": "Onze Missie & Visie",
     "title": "Het Opleiden van de Technologieleiders van de Toekomst",
     "missionText": "Bij Werhere IT is ons doel om verder te gaan dan theoretische kennis en individuen via praktische, projectgerichte en actuele lesprogramma's volledig voor te bereiden op de wereldwijde technologiemarkt.",

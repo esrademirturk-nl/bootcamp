@@ -6,6 +6,64 @@
     "about": "About",
     "contact": "Contact"
   },
+  "cookieConsent": {
+    "message": "We use cookies to improve your experience. See our Privacy Policy for details.",
+    "privacyLink": "Privacy Policy",
+    "accept": "Accept",
+    "reject": "Reject",
+    "preferences": "Preferences",
+    "preferencesTitle": "Cookie Preferences",
+    "preferencesDescription": "Choose which cookie categories you want to allow. Necessary cookies are required for the site to function and cannot be turned off.",
+    "necessaryLabel": "Necessary Cookies",
+    "necessaryDescription": "Required for core site functionality (sessions, security, theme preference).",
+    "analyticsLabel": "Analytics Cookies",
+    "analyticsDescription": "Helps us anonymously analyze visitor behavior.",
+    "marketingLabel": "Marketing Cookies",
+    "marketingDescription": "Allows us to show you more relevant content and ads.",
+    "savePreferences": "Save Preferences",
+    "close": "Close",
+    "alwaysOn": "Always on"
+  },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: August 10, 2026",
+    "intro": "At NextGen IT Academy, we take your privacy seriously. This policy explains what information we collect when you use our platform, how we use it, and what rights you have.",
+    "section1Title": "Information We Collect",
+    "section1Body": "When you create an account, we collect your name, email address, and contact details. As you use the platform, we may also record usage data such as which bootcamp pages you visit and your preferred language.",
+    "section2Title": "How We Use Your Information",
+    "section2Body": "We use the information we collect to manage your account, process your bootcamp applications, inform you about relevant programs, and improve the platform.",
+    "section3Title": "Cookies",
+    "section3Body": "Our site uses necessary cookies for core functionality; analytics and marketing cookies are only enabled with your consent. You can update your preferences at any time via the cookie banner at the bottom of the page.",
+    "section4Title": "Data Sharing",
+    "section4Body": "We do not share your information with third parties unless legally required or with your explicit consent. Only the minimum information needed to move your application forward is shared with instructors and partners.",
+    "section5Title": "Data Security",
+    "section5Body": "We take reasonable technical and administrative measures to protect your data from unauthorized access, loss, or misuse. That said, no transmission over the internet is ever 100% secure.",
+    "section6Title": "Your Rights",
+    "section6Body": "You have the right to access, correct, delete, and object to the processing of your data. You can contact us to exercise these rights.",
+    "contactTitle": "Contact Us",
+    "contactBody": "If you have questions about privacy, please reach out via our contact page."
+  },
+  "termsPage": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: August 10, 2026",
+    "intro": "These Terms of Service set out the rights and obligations between you and NextGen IT Academy when using our platform. By using the platform, you agree to these terms.",
+    "section1Title": "Acceptance of Terms",
+    "section1Body": "By registering on the platform or applying to one of our bootcamps, you agree to these Terms of Service and our Privacy Policy. If you do not agree to these terms, you should not use the platform.",
+    "section2Title": "Description of Service",
+    "section2Body": "NextGen IT Academy is an education platform offering technology bootcamp programs. This site was built as a course project; the bootcamps, instructors, and cohorts shown are mock data.",
+    "section3Title": "User Responsibilities",
+    "section3Body": "You are responsible for the accuracy of your account information and for keeping your account secure. You may not use the platform for unlawful purposes or in ways that infringe on others' rights.",
+    "section4Title": "Intellectual Property",
+    "section4Body": "The design, logo, text, and visual content on the platform belong to NextGen IT Academy. They may not be copied or used commercially without permission.",
+    "section5Title": "Payment and Cancellation",
+    "section5Body": "Bootcamp fees are listed on the relevant program page. Cancellation and refund terms are shared separately during the application process. No real payment is processed on this demo platform.",
+    "section6Title": "Limitation of Liability",
+    "section6Body": "The platform is provided \"as is.\" We do not guarantee uninterrupted or error-free service and are not liable for any indirect damages arising from its use.",
+    "section7Title": "Changes to These Terms",
+    "section7Body": "We may update these terms from time to time. Significant changes will be announced on the platform. Continuing to use the platform after an update means you accept the revised terms.",
+    "contactTitle": "Contact Us",
+    "contactBody": "If you have questions about these terms, please reach out via our contact page."
+  },
   "cta": {
     "signup": "Sign Up"
   },
@@ -20,6 +78,61 @@
       "graduatesLabel": "Graduates",
       "employmentRateLabel": "Employment Rate",
       "partnersLabel": "Partner Companies"
+    },
+    "categories": {
+      "eyebrow": "Categories",
+      "title": "Find the Bootcamp That Matches Your Interest",
+      "programCount": "{{count}} programs available",
+      "explore": "Explore"
+    },
+    "features": {
+      "eyebrow": "Why Us",
+      "title": "Features That Make a Difference in Your Career"
+    },
+    "featuredPrograms": {
+      "eyebrow": "Featured",
+      "title": "Popular Bootcamp Programs",
+      "viewDetails": "View Details"
+    },
+    "howItWorks": {
+      "eyebrow": "Proces",
+      "title": "Hoe Het Werkt"
+    },
+    "instructors": {
+      "eyebrow": "Our Team",
+      "title": "Experienced Instructors From the Industry",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "testimonials": {
+      "eyebrow": "Testimonials",
+      "title": "What Our Graduates Say"
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "Choose the Plan That Fits You",
+      "popular": "Most Popular",
+      "start": "Get Started",
+      "contact": "Contact Us",
+      "perMonth": "month",
+      "perYear": "year",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "yearlyDiscount": "2 months free",
+      "selected": "Selected"
+    },
+    "newsletter": {
+      "title": "Join Our Newsletter",
+      "subtitle": "Be the first to know about new bootcamps and career opportunities.",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "success": "Thanks! Your subscription request has been received.",
+      "eyebrow": "Newsletter"
+    },
+    "closingCta": {
+      "title": "Shape Your Career Today",
+      "subtitle": "Join thousands of graduates on this journey and shape your future.",
+      "button": "Get Started Now"
     }
   },
   "header": {
@@ -34,7 +147,7 @@
     "columnPlatform": "Platform",
     "columnResources": "Resources",
     "columnLegal": "Legal",
-    "login": "Log In",
+    "login": "Sign In",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "rights": "All rights reserved."

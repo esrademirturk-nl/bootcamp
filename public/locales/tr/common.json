@@ -6,6 +6,64 @@
     "about": "Hakkımızda",
     "contact": "İletişim"
   },
+  "cookieConsent": {
+    "message": "Deneyiminizi geliştirmek için çerezler kullanıyoruz. Detaylar için Gizlilik Politikamızı inceleyebilirsiniz.",
+    "privacyLink": "Gizlilik Politikası",
+    "accept": "Kabul Et",
+    "reject": "Reddet",
+    "preferences": "Tercihler",
+    "preferencesTitle": "Çerez Tercihleri",
+    "preferencesDescription": "Hangi çerez kategorilerine izin vermek istediğinizi seçin. Zorunlu çerezler sitenin çalışması için gereklidir ve kapatılamaz.",
+    "necessaryLabel": "Zorunlu Çerezler",
+    "necessaryDescription": "Sitenin temel işlevleri (oturum, güvenlik, tema tercihi) için gereklidir.",
+    "analyticsLabel": "Analitik Çerezler",
+    "analyticsDescription": "Ziyaretçi davranışlarını anonim olarak analiz etmemize yardımcı olur.",
+    "marketingLabel": "Pazarlama Çerezleri",
+    "marketingDescription": "Size daha ilgili içerik ve reklamlar gösterebilmemizi sağlar.",
+    "savePreferences": "Tercihleri Kaydet",
+    "close": "Kapat",
+    "alwaysOn": "Her zaman açık"
+  },
+  "privacyPage": {
+    "title": "Gizlilik Politikası",
+    "lastUpdated": "Son güncelleme: 10 Ağustos 2026",
+    "intro": "NextGen IT Academy olarak gizliliğinize önem veriyoruz. Bu politika, platformumuzu kullanırken hangi bilgileri topladığımızı, bu bilgileri nasıl kullandığımızı ve haklarınızın neler olduğunu açıklar.",
+    "section1Title": "Topladığımız Bilgiler",
+    "section1Body": "Hesap oluşturduğunuzda ad, e-posta adresi ve iletişim bilgilerinizi topluyoruz. Platformu kullanırken, hangi bootcamp sayfalarını ziyaret ettiğiniz ve tercih ettiğiniz dil gibi kullanım verilerini de kaydedebiliriz.",
+    "section2Title": "Bilgilerin Kullanımı",
+    "section2Body": "Topladığımız bilgileri hesabınızı yönetmek, bootcamp başvurularınızı işlemek, size ilgili programlar hakkında bilgi vermek ve platformu geliştirmek için kullanırız.",
+    "section3Title": "Çerezler",
+    "section3Body": "Sitemiz, temel işlevsellik için zorunlu çerezler kullanır; analitik ve pazarlama çerezleri ise yalnızca onayınızla etkinleştirilir. Tercihlerinizi dilediğiniz zaman sayfanın altındaki çerez banner'ı üzerinden güncelleyebilirsiniz.",
+    "section4Title": "Veri Paylaşımı",
+    "section4Body": "Bilgilerinizi, yasal bir zorunluluk olmadıkça veya açık onayınız olmadıkça üçüncü taraflarla paylaşmayız. Eğitmenler ve iş ortaklarımızla yalnızca başvuru sürecinizi ilerletmek için gerekli asgari bilgi paylaşılır.",
+    "section5Title": "Veri Güvenliği",
+    "section5Body": "Verilerinizi yetkisiz erişime, kayba veya kötüye kullanıma karşı korumak için makul teknik ve idari önlemler alıyoruz. Ancak internet üzerinden hiçbir aktarımın %100 güvenli olmadığını hatırlatmak isteriz.",
+    "section6Title": "Haklarınız",
+    "section6Body": "Verilerinize erişme, düzeltilmesini isteme, silinmesini talep etme ve işlenmesine itiraz etme hakkına sahipsiniz. Bu haklarınızı kullanmak için bizimle iletişime geçebilirsiniz.",
+    "contactTitle": "Bize Ulaşın",
+    "contactBody": "Gizlilikle ilgili sorularınız için iletişim sayfamız üzerinden bize ulaşabilirsiniz."
+  },
+  "termsPage": {
+    "title": "Kullanım Koşulları",
+    "lastUpdated": "Son güncelleme: 10 Ağustos 2026",
+    "intro": "Bu Kullanım Koşulları, NextGen IT Academy platformunu kullanırken sizinle aramızdaki hak ve yükümlülükleri belirler. Platformu kullanarak bu koşulları kabul etmiş sayılırsınız.",
+    "section1Title": "Koşulların Kabulü",
+    "section1Body": "Platforma kayıt olarak veya bootcamp'lerimize başvurarak bu Kullanım Koşulları'nı ve Gizlilik Politikamızı kabul etmiş olursunuz. Koşulları kabul etmiyorsanız platformu kullanmamalısınız.",
+    "section2Title": "Hizmet Tanımı",
+    "section2Body": "NextGen IT Academy, teknoloji alanında bootcamp programları sunan bir eğitim platformudur. Bu site bir ders projesi kapsamında geliştirilmiştir; içerikteki bootcamp'ler, eğitmenler ve kohortlar örnek (mock) verilerdir.",
+    "section3Title": "Kullanıcı Sorumlulukları",
+    "section3Body": "Hesabınızla ilgili bilgilerin doğruluğundan ve hesap güvenliğinden siz sorumlusunuz. Platformu yasa dışı amaçlarla veya başkalarının haklarını ihlal edecek şekilde kullanamazsınız.",
+    "section4Title": "Fikri Mülkiyet",
+    "section4Body": "Platformdaki tasarım, logo, metin ve görsel içeriklerin hakları NextGen IT Academy'ye aittir. İzinsiz kopyalanamaz veya ticari amaçla kullanılamaz.",
+    "section5Title": "Ödeme ve İptal",
+    "section5Body": "Bootcamp ücretleri ilgili program sayfasında belirtilir. İptal ve iade koşulları, başvuru sürecinde ayrıca paylaşılır. Bu demo platformda gerçek bir ödeme işlemi gerçekleşmez.",
+    "section6Title": "Sorumluluğun Sınırlandırılması",
+    "section6Body": "Platform \"olduğu gibi\" sunulur. Hizmetin kesintisiz veya hatasız olacağını garanti etmiyoruz; kullanımdan doğabilecek dolaylı zararlardan sorumlu tutulamayız.",
+    "section7Title": "Koşullardaki Değişiklikler",
+    "section7Body": "Bu koşulları zaman zaman güncelleyebiliriz. Önemli değişiklikler platform üzerinden duyurulur. Güncellemelerden sonra platformu kullanmaya devam etmeniz, yeni koşulları kabul ettiğiniz anlamına gelir.",
+    "contactTitle": "Bize Ulaşın",
+    "contactBody": "Kullanım koşullarıyla ilgili sorularınız için iletişim sayfamız üzerinden bize ulaşabilirsiniz."
+  },
   "cta": {
     "signup": "Kayıt Ol"
   },
@@ -20,6 +78,61 @@
       "graduatesLabel": "Mezun",
       "employmentRateLabel": "İstihdam Oranı",
       "partnersLabel": "Partner Şirket"
+    },
+    "categories": {
+      "eyebrow": "Kategoriler",
+      "title": "İlgi Alanına Uygun Bootcamp'i Bul",
+      "programCount": "{{count}} program mevcut",
+      "explore": "Keşfet"
+    },
+    "features": {
+      "eyebrow": "Neden Biz",
+      "title": "Kariyerinde Fark Yaratacak Özellikler"
+    },
+    "featuredPrograms": {
+      "eyebrow": "Öne Çıkanlar",
+      "title": "Popüler Bootcamp Programları",
+      "viewDetails": "Detayları Gör"
+    },
+    "howItWorks": {
+      "eyebrow": "Süreç",
+      "title": "Nasıl Çalışır"
+    },
+    "instructors": {
+      "eyebrow": "Kadromuz",
+      "title": "Sektörden Deneyimli Eğitmenler",
+      "prev": "Önceki",
+      "next": "Sonraki"
+    },
+    "testimonials": {
+      "eyebrow": "Yorumlar",
+      "title": "Mezunlarımız Ne Diyor?"
+    },
+    "pricing": {
+      "eyebrow": "Fiyatlandırma",
+      "title": "Sana Uygun Planı Seç",
+      "popular": "En Popüler",
+      "start": "Şimdi Başla",
+      "contact": "Bize Ulaşın",
+      "perMonth": "ay",
+      "perYear": "yıl",
+      "monthly": "Aylık",
+      "yearly": "Yıllık",
+      "yearlyDiscount": "2 ay ücretsiz",
+      "selected": "Seçildi"
+    },
+    "newsletter": {
+      "eyebrow": "Bültenimiz",
+      "title": "Bültenimize Katılın",
+      "subtitle": "Yeni bootcamp'ler ve kariyer fırsatları hakkında ilk siz haberdar olun.",
+      "placeholder": "E-posta adresiniz",
+      "button": "Abone Ol",
+      "success": "Teşekkürler! Abonelik talebiniz alındı."
+    },
+    "closingCta": {
+      "title": "Kariyerine Bugün Yön Ver",
+      "subtitle": "Binlerce mezunun katıldığı yolculuğa sen de katıl, geleceğini şekillendir.",
+      "button": "Hemen Başvur"
     }
   },
   "header": {

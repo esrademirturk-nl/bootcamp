@@ -17,7 +17,8 @@ import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampCurriculum } from '@/components/bootcamps/bootcamp-curriculum';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
+import i18nConfig from '../../../../../i18n.config';
 
 interface PageProps {
   params: Promise<{
@@ -27,13 +28,13 @@ interface PageProps {
 }
 
 /**
- * generateStaticParams:
- * Next.js'in derleme (build) anında tüm bootcamp slug'larını statik olarak üretmesini sağlar.
+ * Her locale x bootcamp kombinasyonu için build-time statik path üretir,
+ * böylece route build çıktısında dynamic (ƒ) değil static olarak işaretlenir.
  */
-export async function generateStaticParams() {
-  return mockBootcamps.map((bootcamp) => ({
-    slug: bootcamp.slug,
-  }));
+export function generateStaticParams() {
+  return i18nConfig.supportedLngs.flatMap((locale) =>
+    mockBootcamps.map((bootcamp) => ({ locale, slug: bootcamp.slug }))
+  );
 }
 
 export default async function BootcampDetailPage({ params }: PageProps) {

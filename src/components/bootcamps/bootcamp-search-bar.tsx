@@ -1,9 +1,9 @@
 /**
  * @file src/components/bootcamps/bootcamp-search-bar.tsx
  * @description Ana arama çubuğu bileşeni.
- * 
+ *
  * Bu dosya ne iş yapar?
- * Kullanıcının aramak istediği bootcamp/teknoloji kelimesini alıp 
+ * Kullanıcının aramak istediği bootcamp/teknoloji kelimesini alıp
  * URL'deki `q` parametresini günceller. `useTranslation` ile placeholder dilye uyarlanır.
  */
 
@@ -59,7 +59,6 @@ export function BootcampSearchBar() {
       />
     </div>
   );
-};
+}
 
 export default BootcampSearchBar;
-

@@ -79,21 +79,24 @@ export interface Testimonial {
   bootcampSlug?: string; // Hangi bootcamp için yapıldığı
 }
 
-export interface Category {
-  slug: string;
-  name: string;
-  icon: string;
-  courseCount: number;
-}
-
-export interface CurriculumModule {
-  title: string;
-  durationHours: number;
-  lessons: string[];
-}
 export interface Stat {
   id: string;
   value: number;
   suffix: string;
   label: string;
+}
+export interface Feature {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+export interface Stat {
+  id: string;
+  name: string;
+  priceEUR: number | null;
+  period: 'month' | 'year' | null;
+  description: string;
+  features: string[];
+  highlighted: boolean;
 }
