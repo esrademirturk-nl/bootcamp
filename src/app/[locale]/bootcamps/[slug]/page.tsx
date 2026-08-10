@@ -18,12 +18,23 @@ import { BootcampCurriculum } from '@/components/bootcamps/bootcamp-curriculum';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import i18nConfig from '../../../../../i18n.config';
 
 interface PageProps {
   params: Promise<{
     locale: string;
     slug: string;
   }>;
+}
+
+/**
+ * Her locale x bootcamp kombinasyonu için build-time statik path üretir,
+ * böylece route build çıktısında dynamic (ƒ) değil static olarak işaretlenir.
+ */
+export function generateStaticParams() {
+  return i18nConfig.supportedLngs.flatMap((locale) =>
+    mockBootcamps.map((bootcamp) => ({ locale, slug: bootcamp.slug }))
+  );
 }
 
 export default async function BootcampDetailPage({ params }: PageProps) {

@@ -2,8 +2,12 @@ import { mockTestimonials } from '@/data/testimonials';
 import { TestimonialCard } from './testimonial-card';
 import { getT } from 'next-i18next/server';
 
-export async function Testimonials() {
-  const { t } = await getT('common');
+interface TestimonialsProps {
+  locale: string;
+}
+
+export async function Testimonials({ locale }: TestimonialsProps) {
+  const { t } = await getT('common', { lng: locale });
 
   return (
     <section className="bg-surface-muted py-20">

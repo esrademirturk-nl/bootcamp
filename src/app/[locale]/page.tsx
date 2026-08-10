@@ -10,20 +10,26 @@ import { Pricing } from '@/components/sections/pricing';
 import { Newsletter } from '@/components/sections/newsletter';
 import { ClosingCTA } from '@/components/sections/closing-cta';
 
-export default function HomePage() {
+interface HomePageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function HomePage({ params }: HomePageProps) {
+  const { locale } = await params;
+
   return (
     <main>
-      <Hero />
-      <SocialProof />
-      <FeaturedPrograms />
-      <CategoryGrid />
-      <Features />
+      <Hero locale={locale} />
+      <SocialProof locale={locale} />
+      <FeaturedPrograms locale={locale} />
+      <CategoryGrid locale={locale} />
+      <Features locale={locale} />
       <HowItWorks id="how-it-works" />
-      <Instructors />
-      <Testimonials />
-      <Pricing />
+      <Instructors locale={locale} />
+      <Testimonials locale={locale} />
+      <Pricing locale={locale} />
       <Newsletter />
-      <ClosingCTA />
+      <ClosingCTA locale={locale} />
     </main>
   );
 }

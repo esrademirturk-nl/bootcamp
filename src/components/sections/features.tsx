@@ -2,8 +2,12 @@ import { features } from '@/data/features';
 import { FeatureCard } from './feature-card';
 import { getT } from 'next-i18next/server';
 
-export async function Features() {
-  const { t } = await getT('common');
+interface FeaturesProps {
+  locale: string;
+}
+
+export async function Features({ locale }: FeaturesProps) {
+  const { t } = await getT('common', { lng: locale });
   return (
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-4">

@@ -8,8 +8,12 @@ const labelKeys: Record<string, string> = {
   partners: 'landing.stats.partnersLabel',
 };
 
-export async function SocialProof() {
-  const { t } = await getT('common');
+interface SocialProofProps {
+  locale: string;
+}
+
+export async function SocialProof({ locale }: SocialProofProps) {
+  const { t } = await getT('common', { lng: locale });
 
   const stats = siteStats.map((stat) => ({
     id: stat.id,

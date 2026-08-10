@@ -14,9 +14,12 @@ const socialLinks = [
   { href: 'https://instagram.com', label: 'Instagram' },
 ];
 
-export async function Footer() {
-  const { t, i18n } = await getT('common');
-  const locale = i18n.language;
+interface FooterProps {
+  locale: string;
+}
+
+export async function Footer({ locale }: FooterProps) {
+  const { t } = await getT('common', { lng: locale });
 
   const footerColumns = [
     {
