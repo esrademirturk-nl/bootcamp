@@ -9,11 +9,26 @@ import { Testimonials } from '@/components/sections/testimonials';
 import { Pricing } from '@/components/sections/pricing';
 import { Newsletter } from '@/components/sections/newsletter';
 import { ClosingCTA } from '@/components/sections/closing-cta';
+import type { Metadata } from 'next';
+import { getT } from 'next-i18next/server';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const { t } = await getT('common', { lng: locale });
+  return {
+    title: t('landing.hero.title'),
+    description: t('landing.hero.subtitle'),
+    openGraph: { title: t('landing.hero.title'), description: t('landing.hero.subtitle'), locale },
+  };
+}
 export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
 
