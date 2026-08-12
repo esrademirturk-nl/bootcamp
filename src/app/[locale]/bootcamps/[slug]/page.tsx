@@ -13,6 +13,7 @@ import type { Metadata } from 'next';
 import { mockInstructors } from '@/data/instructors';
 import { mockTestimonials } from '@/data/testimonials';
 import { mockBootcamps } from '@/data/bootcamps';
+import { mockCohorts } from '@/data/cohorts';
 
 import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampCurriculum } from '@/components/bootcamps/bootcamp-curriculum';
@@ -57,6 +58,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+/**
+ * Bir bootcamp'e ait "sonraki kohort" tarihini hesaplar — D-04'teki schedule
+ * sayfasıyla aynı veri kaynağından (src/data/cohorts.ts) besleniyor, artık
+ * hardcoded değil. Gelecekteki en yakın kohort tercih edilir; hiç gelecek
+ * kohort yoksa (tüm kohortlar başlamışsa) en güncel kohort fallback olarak
+ * gösterilir. Component gövdesi dışında tanımlandı ki `Date.now()` çağrısı
+ * render sırasında "impure function" olarak işaretlenmesin.
+ */
+function getNextCohortLabel(bootcampSlug: string): string {
+  const bootcampCohorts = mockCohorts
+    .filter((c) => c.bootcampSlug === bootcampSlug)
+    .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime());
+
+  if (bootcampCohorts.length === 0) return 'Yakında Duyurulacak';
+
+  const now = Date.now();
+  const nextCohort =
+    bootcampCohorts.find((c) => new Date(c.startDate).getTime() > now) ??
+    bootcampCohorts[bootcampCohorts.length - 1];
+
+  return new Date(nextCohort.startDate).toLocaleDateString('tr-TR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+}
+
 export default async function BootcampDetailPage({ params }: PageProps) {
   const { locale, slug } = await params;
 
@@ -78,6 +106,9 @@ export default async function BootcampDetailPage({ params }: PageProps) {
   const relatedBootcamps = mockBootcamps
     .filter((item) => item.categorySlug === bootcamp.categorySlug && item.slug !== bootcamp.slug)
     .slice(0, 3);
+
+  // 5. Bu bootcamp'e ait "sonraki kohort" etiketi
+  const nextCohortLabel = getNextCohortLabel(bootcamp.slug);
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
@@ -217,7 +248,7 @@ export default async function BootcampDetailPage({ params }: PageProps) {
             <div className="space-y-3 text-sm text-muted-foreground border-t border-b border-border/40 py-4">
               <div className="flex justify-between">
                 <span>Sonraki Kohort:</span>
-                <strong className="text-foreground">15 Eylül 2026</strong>
+                <strong className="text-foreground">{nextCohortLabel}</strong>
               </div>
               <div className="flex justify-between">
                 <span>Format:</span>
