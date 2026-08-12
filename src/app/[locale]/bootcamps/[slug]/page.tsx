@@ -9,6 +9,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { mockInstructors } from '@/data/instructors';
 import { mockTestimonials } from '@/data/testimonials';
 import { mockBootcamps } from '@/data/bootcamps';
@@ -35,6 +36,25 @@ export function generateStaticParams() {
   return i18nConfig.supportedLngs.flatMap((locale) =>
     mockBootcamps.map((bootcamp) => ({ locale, slug: bootcamp.slug }))
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const bootcamp = mockBootcamps.find((item) => item.slug === slug);
+
+  if (!bootcamp) {
+    return { title: 'Bootcamp Bulunamadı' };
+  }
+
+  return {
+    title: bootcamp.title,
+    description: bootcamp.shortDescription,
+    openGraph: {
+      title: bootcamp.title,
+      description: bootcamp.shortDescription,
+      images: bootcamp.heroImage ? [bootcamp.heroImage] : undefined,
+    },
+  };
 }
 
 export default async function BootcampDetailPage({ params }: PageProps) {

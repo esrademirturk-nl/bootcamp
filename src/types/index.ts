@@ -106,3 +106,10 @@ export interface PricingPlan {
   features: string[];
   highlighted: boolean;
 }
+export interface TimelineEvent {
+  year: string;
+  titleKey: string;
+  descKey: string;
+  defaultTitle: string;
+  defaultDesc: string;
+}
