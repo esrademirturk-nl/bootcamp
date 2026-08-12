@@ -11,17 +11,12 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'next/navigation';
-import { mockCohorts } from '@/data/cohort';
+import { mockCohorts } from '@/data/cohorts';
 import { mockBootcamps as bootcamps } from '@/data/bootcamps';
 import { Bootcamp } from '@/types';
 import { CohortCountdown } from '@/components/schedule/cohort-countdown';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-
-/**
- * @variable mockCohorts
- * @description Bootcamp slug'ları projedeki veri slug'ları ile tam eşleşecek şekilde ayarlandı.
- */
 
 export function ScheduleContent() {
   const routeParams = useParams();
