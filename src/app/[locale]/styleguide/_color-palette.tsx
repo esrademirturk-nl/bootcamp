@@ -77,7 +77,7 @@ function ColorSwatchGrid({
 export function ColorPaletteSection() {
   return (
     <section className="flex flex-col gap-8">
-      <h2 className="font-heading text-2xl font-semibold">Renkler</h2>
+      <h2 className="font-heading text-2xl font-semibold">Colors</h2>
 
       <div>
         <h3 className="mb-3 text-sm font-medium text-muted">Primary</h3>
