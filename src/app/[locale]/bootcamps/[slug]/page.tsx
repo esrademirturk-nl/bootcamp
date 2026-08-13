@@ -351,7 +351,7 @@ export default async function BootcampDetailPage({ params }: PageProps) {
                   count: item.durationWeeks,
                   defaultValue: `${item.durationWeeks} Hafta`,
                 })}
-                viewDetailsLabel={t('bootcampsPage.inspect', { defaultValue: 'İncele' })}
+                detailsLabel={t('bootcampsPage.inspect', { defaultValue: 'İncele' })}
               />
             ))}
           </div>

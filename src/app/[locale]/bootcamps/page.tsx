@@ -164,7 +164,7 @@ async function BootcampListContent({
                 count: bootcamp.durationWeeks,
                 defaultValue: `${bootcamp.durationWeeks} Hafta`,
               })}
-              viewDetailsLabel={detailsLabel}
+              detailsLabel={detailsLabel}
             />
           ))}
         </div>

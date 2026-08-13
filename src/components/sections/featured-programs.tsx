@@ -2,7 +2,7 @@ import { getT } from 'next-i18next/server';
 import { mockBootcamps } from '@/data/bootcamps';
 import { mockCategories } from '@/data/categories';
 import { resolveBootcamp, resolveCategoryName } from '@/lib/resolve-mock-data';
-import { BootcampCard } from './bootcamp-card';
+import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 
 interface FeaturedProgramsProps {
   locale: string;
@@ -25,6 +25,8 @@ export async function FeaturedPrograms({ locale }: FeaturedProgramsProps) {
     mockCategories.map((category) => [category.slug, resolveCategoryName(category, t)])
   );
 
+  const featuredLabel = t('bootcampsPage.featuredBadge', { defaultValue: 'Öne Çıkan' });
+
   return (
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-4">
@@ -46,6 +48,7 @@ export async function FeaturedPrograms({ locale }: FeaturedProgramsProps) {
               categoryLabel={
                 categoryLabelBySlug.get(bootcamp.categorySlug) ?? bootcamp.categorySlug
               }
+              featuredLabel={featuredLabel}
               durationLabel={t('bootcampsPage.weeks', {
                 count: bootcamp.durationWeeks,
                 defaultValue: `${bootcamp.durationWeeks} Hafta`,

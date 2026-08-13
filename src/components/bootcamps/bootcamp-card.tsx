@@ -18,7 +18,7 @@ interface BootcampCardProps {
   categoryLabel: string;
   featuredLabel: string;
   durationLabel: string;
-  viewDetailsLabel: string;
+  detailsLabel: string;
 }
 
 function localizedHref(path: string, locale: string) {
@@ -49,7 +49,7 @@ export function BootcampCard({
   categoryLabel,
   featuredLabel,
   durationLabel,
-  viewDetailsLabel,
+  detailsLabel,
 }: BootcampCardProps) {
   const levelInfo = getLevelBadge(bootcamp.level, levelLabels);
 
@@ -95,7 +95,7 @@ export function BootcampCard({
         <p className="line-clamp-2 text-sm text-muted">{bootcamp.shortDescription}</p>
 
         <div className="flex flex-wrap gap-1">
-          {bootcamp.tags.map((tag) => (
+          {bootcamp.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
               className="rounded-full bg-primary-50 px-2 py-0.5 text-[11px] text-primary-700"
@@ -119,7 +119,7 @@ export function BootcampCard({
 
         <Link href={localizedHref(`/bootcamps/${bootcamp.slug}`, locale)} className="pt-3">
           <Button size="sm" className="font-medium">
-            {viewDetailsLabel}
+            {detailsLabel}
           </Button>
         </Link>
       </CardFooter>
