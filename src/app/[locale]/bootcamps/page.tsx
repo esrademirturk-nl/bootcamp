@@ -8,6 +8,7 @@
  */
 
 import React, { Suspense } from 'react';
+import type { Metadata } from 'next';
 // mockCategories ayrı bir veri dosyasında olduğu için import yollarını ayırıyoruz
 import { getT } from 'next-i18next/server';
 import { mockBootcamps } from '@/data/bootcamps';
@@ -34,7 +35,24 @@ interface PageProps {
     sort?: string;
   }>;
 }
-
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const { t } = await getT('common', { lng: locale });
+  const title = t('bootcampsPage.title', { defaultValue: 'Bootcamp Programları' });
+  const description = t('bootcampsPage.subtitle', {
+    defaultValue:
+      'Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen başvurun.',
+  });
+  return {
+    title,
+    description,
+    openGraph: { title, description, locale },
+  };
+}
 /**
  * @function BootcampSkeletonGrid
  * @description Yükleme esnasında gösterilen iskelet tasarımı.
