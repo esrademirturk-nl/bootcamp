@@ -334,5 +334,35 @@
     "bootcamps": "Bootcamps",
     "schedule": "Schedule",
     "contact": "Contact"
+  },
+  "dashboard": {
+    "title": "Student Dashboard",
+    "nav": {
+      "overview": "Overview",
+      "myBootcamps": "My Bootcamps",
+      "profile": "Profile",
+      "toggle": "Toggle menu"
+    },
+    "overview": {
+      "title": "Overview",
+      "myProgress": "My Progress",
+      "empty": "You are not enrolled in any bootcamp yet."
+    },
+    "myBootcamps": {
+      "title": "My Bootcamps",
+      "empty": "You are not enrolled in any bootcamp yet.",
+      "browse": "Browse Bootcamps",
+      "completed": "completed"
+    },
+    "bootcampDetail": {
+      "progress": "Your Progress"
+    },
+    "profile": {
+      "title": "Profile",
+      "name": "Name",
+      "email": "Email",
+      "save": "Save",
+      "saved": "Your profile has been saved successfully."
+    }
   }
 }

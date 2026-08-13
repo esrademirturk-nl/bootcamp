@@ -331,5 +331,35 @@
     "bootcamps": "Bootcamps",
     "schedule": "Programma",
     "contact": "Contact"
+  },
+  "dashboard": {
+    "title": "Studentenpaneel",
+    "nav": {
+      "overview": "Overzicht",
+      "myBootcamps": "Mijn Bootcamps",
+      "profile": "Profiel",
+      "toggle": "Menu openen/sluiten"
+    },
+    "overview": {
+      "title": "Overzicht",
+      "myProgress": "Mijn Voortgang",
+      "empty": "U bent nog niet ingeschreven voor een bootcamp."
+    },
+    "myBootcamps": {
+      "title": "Mijn Bootcamps",
+      "empty": "U bent nog niet ingeschreven voor een bootcamp.",
+      "browse": "Bootcamps Bekijken",
+      "completed": "voltooid"
+    },
+    "bootcampDetail": {
+      "progress": "Uw Voortgang"
+    },
+    "profile": {
+      "title": "Profiel",
+      "name": "Naam",
+      "email": "E-mail",
+      "save": "Opslaan",
+      "saved": "Uw profiel is succesvol opgeslagen."
+    }
   }
 }
