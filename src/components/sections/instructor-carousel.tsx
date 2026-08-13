@@ -3,10 +3,10 @@
 import * as React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { InstructorCard } from './instructor-card';
-import type { Instructor } from '@/types';
+import type { ResolvedInstructor } from '@/types';
 
 interface InstructorCarouselProps {
-  instructors: Instructor[];
+  instructors: ResolvedInstructor[];
   prevLabel: string;
   nextLabel: string;
 }

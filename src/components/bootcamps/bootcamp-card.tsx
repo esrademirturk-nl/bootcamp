@@ -5,15 +5,19 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import type { Bootcamp } from '@/types';
+import type { ResolvedBootcamp } from '@/types';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import i18nConfig from '../../../i18n.config';
 
 interface BootcampCardProps {
-  bootcamp: Bootcamp;
+  bootcamp: ResolvedBootcamp;
   locale: string;
+  levelLabels: Record<ResolvedBootcamp['level'], string>;
+  featuredLabel: string;
+  durationLabel: string;
+  viewDetailsLabel: string;
 }
 
 function localizedHref(path: string, locale: string) {
@@ -21,21 +25,31 @@ function localizedHref(path: string, locale: string) {
   return `/${locale}${path === '/' ? '' : path}`;
 }
 
-function getLevelBadge(level: Bootcamp['level']) {
+function getLevelBadge(
+  level: ResolvedBootcamp['level'],
+  levelLabels: BootcampCardProps['levelLabels']
+) {
   switch (level) {
     case 'beginner':
-      return { label: 'Başlangıç', variant: 'success' as const };
+      return { label: levelLabels.beginner, variant: 'success' as const };
     case 'intermediate':
-      return { label: 'Orta Seviye', variant: 'default' as const };
+      return { label: levelLabels.intermediate, variant: 'default' as const };
     case 'advanced':
-      return { label: 'İleri Seviye', variant: 'error' as const };
+      return { label: levelLabels.advanced, variant: 'error' as const };
     default:
       return { label: level, variant: 'neutral' as const };
   }
 }
 
-export function BootcampCard({ bootcamp, locale }: BootcampCardProps) {
-  const levelInfo = getLevelBadge(bootcamp.level);
+export function BootcampCard({
+  bootcamp,
+  locale,
+  levelLabels,
+  featuredLabel,
+  durationLabel,
+  viewDetailsLabel,
+}: BootcampCardProps) {
+  const levelInfo = getLevelBadge(bootcamp.level, levelLabels);
 
   return (
     <Card className="group flex h-full flex-col overflow-hidden border-border/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -51,7 +65,7 @@ export function BootcampCard({ bootcamp, locale }: BootcampCardProps) {
 
         {bootcamp.featured && (
           <div className="absolute left-3 top-3 z-10">
-            <Badge variant="warning">★ Öne Çıkan</Badge>
+            <Badge variant="warning">★ {featuredLabel}</Badge>
           </div>
         )}
 
@@ -94,7 +108,7 @@ export function BootcampCard({ bootcamp, locale }: BootcampCardProps) {
       <CardFooter className="mt-auto flex items-center justify-between gap-2 border-t border-border/40 p-5 pt-0">
         <div className="flex flex-col pt-3 text-xs text-muted">
           <div className="flex items-center gap-2">
-            <span>⏱ {bootcamp.durationWeeks} Hafta</span>
+            <span>⏱ {durationLabel}</span>
             <span>•</span>
             <span className="font-semibold text-foreground">★ {bootcamp.rating}</span>
           </div>
@@ -103,7 +117,7 @@ export function BootcampCard({ bootcamp, locale }: BootcampCardProps) {
 
         <Link href={localizedHref(`/bootcamps/${bootcamp.slug}`, locale)} className="pt-3">
           <Button size="sm" className="font-medium">
-            İncele
+            {viewDetailsLabel}
           </Button>
         </Link>
       </CardFooter>

@@ -56,8 +56,16 @@ export function HowItWorks({ id }: HowItWorksProps) {
               >
                 {item.step}
               </div>
-              <h3 className="mb-2 font-heading font-semibold text-foreground">{item.title}</h3>
-              <p className="text-sm text-muted">{item.description}</p>
+              <h3 className="mb-2 font-heading font-semibold text-foreground">
+                {t(`landing.howItWorks.steps.${item.titleKey}`, {
+                  defaultValue: item.defaultTitle,
+                })}
+              </h3>
+              <p className="text-sm text-muted">
+                {t(`landing.howItWorks.steps.${item.descriptionKey}`, {
+                  defaultValue: item.defaultDescription,
+                })}
+              </p>
             </motion.div>
           ))}
         </div>

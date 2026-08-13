@@ -17,7 +17,6 @@ import { Bootcamp } from '@/types';
 import { CohortCountdown } from '@/components/schedule/cohort-countdown';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-
 export function ScheduleContent() {
   const routeParams = useParams();
   const currentLocale = (routeParams?.locale as string) || 'tr';
@@ -35,6 +34,9 @@ export function ScheduleContent() {
   const getBootcamp = (slug: string): Bootcamp | undefined => {
     return bootcamps.find((b) => b.slug === slug);
   };
+
+  const getBootcampTitle = (bootcamp: Bootcamp): string =>
+    t(`bootcamps.${bootcamp.slug}.title`, { defaultValue: bootcamp.defaultTitle });
 
   // Gelecekteki en yakın kohortu buluyoruz
   const nextCohort = useMemo(() => {
@@ -89,7 +91,9 @@ export function ScheduleContent() {
   };
 
   const nextCohortBootcamp = getBootcamp(nextCohort.bootcampSlug);
-  const countdownTitle = nextCohortBootcamp?.title || nextCohort.bootcampSlug;
+  const countdownTitle = nextCohortBootcamp
+    ? getBootcampTitle(nextCohortBootcamp)
+    : nextCohort.bootcampSlug;
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
@@ -170,7 +174,7 @@ export function ScheduleContent() {
                     const bootcamp = getBootcamp(cohort.bootcampSlug);
                     const isPassed = new Date(cohort.startDate).getTime() < new Date().getTime();
                     const isFull = cohort.seatsLeft === 0;
-                    const displayName = bootcamp?.title || cohort.bootcampSlug;
+                    const displayName = bootcamp ? getBootcampTitle(bootcamp) : cohort.bootcampSlug;
 
                     return (
                       <tr key={cohort.id} className="hover:bg-muted/30 transition-colors">

@@ -9,10 +9,10 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import type { PricingPlan } from '@/types';
+import type { ResolvedPricingPlan } from '@/types';
 
 interface PricingCardProps {
-  plan: PricingPlan;
+  plan: ResolvedPricingPlan;
   isSelected: boolean;
   onSelect: () => void;
   selectedLabel: string;

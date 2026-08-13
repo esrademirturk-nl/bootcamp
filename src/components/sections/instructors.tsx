@@ -9,6 +9,11 @@ interface InstructorsProps {
 export async function Instructors({ locale }: InstructorsProps) {
   const { t } = await getT('common', { lng: locale });
 
+  const translatedInstructors = mockInstructors.map((instructor) => ({
+    ...instructor,
+    bio: t(`instructors.${instructor.slug}.bio`, { defaultValue: instructor.defaultBio }),
+  }));
+
   return (
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-4">
@@ -21,7 +26,7 @@ export async function Instructors({ locale }: InstructorsProps) {
           </h2>
         </div>
         <InstructorCarousel
-          instructors={mockInstructors}
+          instructors={translatedInstructors}
           prevLabel={t('landing.instructors.prev')}
           nextLabel={t('landing.instructors.next')}
         />

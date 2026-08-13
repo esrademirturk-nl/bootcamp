@@ -1,12 +1,13 @@
 import { iconMap } from '@/lib/icon-map';
-import type { Feature } from '@/types';
 
 interface FeatureCardProps {
-  feature: Feature;
+  icon: string;
+  title: string;
+  description: string;
 }
 
-export function FeatureCard({ feature }: FeatureCardProps) {
-  const Icon = iconMap[feature.icon];
+export function FeatureCard({ icon, title, description }: FeatureCardProps) {
+  const Icon = iconMap[icon];
 
   return (
     <div className="group relative overflow-hidden rounded-xl border border-border/60 bg-surface p-7 transition-all hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-lg">
@@ -19,8 +20,8 @@ export function FeatureCard({ feature }: FeatureCardProps) {
         </div>
       )}
 
-      <h3 className="font-heading text-lg font-semibold text-foreground">{feature.title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{feature.description}</p>
+      <h3 className="font-heading text-lg font-semibold text-foreground">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
     </div>
   );
 }

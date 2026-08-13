@@ -1,5 +1,6 @@
 import { getT } from 'next-i18next/server';
 import { mockBootcamps } from '@/data/bootcamps';
+import { resolveBootcamp } from '@/lib/resolve-mock-data';
 import { BootcampCard } from './bootcamp-card';
 
 interface FeaturedProgramsProps {
@@ -8,7 +9,16 @@ interface FeaturedProgramsProps {
 
 export async function FeaturedPrograms({ locale }: FeaturedProgramsProps) {
   const { t } = await getT('common', { lng: locale });
-  const featured = mockBootcamps.filter((bootcamp) => bootcamp.featured).slice(0, 3);
+  const featured = mockBootcamps
+    .filter((bootcamp) => bootcamp.featured)
+    .slice(0, 3)
+    .map((bootcamp) => resolveBootcamp(bootcamp, t));
+
+  const levelLabels = {
+    beginner: t('levelOptions.beginner', { defaultValue: 'Başlangıç' }),
+    intermediate: t('levelOptions.intermediate', { defaultValue: 'Orta Seviye' }),
+    advanced: t('levelOptions.advanced', { defaultValue: 'İleri Seviye' }),
+  };
 
   return (
     <section className="py-20">
@@ -27,6 +37,11 @@ export async function FeaturedPrograms({ locale }: FeaturedProgramsProps) {
               key={bootcamp.slug}
               bootcamp={bootcamp}
               locale={locale}
+              levelLabels={levelLabels}
+              durationLabel={t('bootcampsPage.weeks', {
+                count: bootcamp.durationWeeks,
+                defaultValue: `${bootcamp.durationWeeks} Hafta`,
+              })}
               detailsLabel={t('landing.featuredPrograms.viewDetails')}
             />
           ))}
