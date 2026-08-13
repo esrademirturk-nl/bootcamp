@@ -102,7 +102,7 @@ export function AboutContent() {
                 <h3 className="font-bold text-lg text-foreground leading-snug">{member.name}</h3>
                 <p className="text-xs font-semibold text-primary">{member.title}</p>
                 <p className="text-xs text-muted-foreground leading-relaxed pt-1">
-                  {t(`aboutPage.bios.${member.bio}`, { defaultValue: member.bio })}
+                  {t(`instructors.${member.slug}.bio`, { defaultValue: member.defaultBio })}
                 </p>
               </CardContent>
             </Card>

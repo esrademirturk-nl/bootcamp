@@ -1,13 +1,20 @@
 import type { PricingPlan } from '@/types';
 
+/**
+ * @file src/data/pricing.ts
+ * @description Fiyatlandırma planı mock verisi. name/description/features
+ * artık i18n key + defaultValue mantığıyla çözülüyor (bkz. timelineEvents.ts
+ * pattern'i). Anahtarlar -> public/locales/{lng}/common.json içindeki
+ * `pricingPlans.<id>.name|description|features[]`.
+ */
 export const pricingPlans: PricingPlan[] = [
   {
     id: 'self-paced',
-    name: 'Kendi Hızında',
     priceEUR: 49,
     period: 'month',
-    description: 'Bireysel öğrenciler için esnek, kendi hızında ilerleme imkanı.',
-    features: [
+    defaultName: 'Kendi Hızında',
+    defaultDescription: 'Bireysel öğrenciler için esnek, kendi hızında ilerleme imkanı.',
+    defaultFeatures: [
       'Tüm kurs içeriklerine erişim',
       'Topluluk forumuna katılım',
       'Aylık grup mentorluk oturumu',
@@ -17,11 +24,11 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     id: 'guided-bootcamp',
-    name: 'Rehberli Bootcamp',
     priceEUR: 199,
     period: 'month',
-    description: 'Canlı derslerle, eğitmen desteğiyle yapılandırılmış öğrenme deneyimi.',
-    features: [
+    defaultName: 'Rehberli Bootcamp',
+    defaultDescription: 'Canlı derslerle, eğitmen desteğiyle yapılandırılmış öğrenme deneyimi.',
+    defaultFeatures: [
       'Kendi Hızında planındaki her şey',
       'Haftalık canlı dersler',
       'Birebir eğitmen mentorluğu',
@@ -32,11 +39,11 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     id: 'enterprise',
-    name: 'Kurumsal',
     priceEUR: null,
     period: null,
-    description: 'Ekipler ve şirketler için özelleştirilmiş eğitim çözümleri.',
-    features: [
+    defaultName: 'Kurumsal',
+    defaultDescription: 'Ekipler ve şirketler için özelleştirilmiş eğitim çözümleri.',
+    defaultFeatures: [
       'Rehberli Bootcamp planındaki her şey',
       'Özel kohort planlaması',
       'Şirkete özel müfredat',

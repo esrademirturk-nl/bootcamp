@@ -4,91 +4,31 @@
  *
  * Bu dosya ne iş yapar?
  * 1. URL parametrelerinden aktif dili (`locale`) okur.
- * 2. Dilden bağımsız olarak filtre etiket ve seçeneklerini anında seçili dilde (TR/EN/NL) dinamik gösterir.
+ * 2. Merkezi next-i18next sistemi (`useT`) üzerinden filtre etiket ve
+ *    seçeneklerini seçili dilde (TR/EN/NL) dinamik gösterir. Daha önce bu
+ *    bileşen kendi lokal `dict` nesnesini kullanıyordu — proje genelindeki
+ *    `common.json` dosyalarıyla içerik olarak neredeyse birebir çakışıyordu
+ *    (bkz. `bootcampsPage.*`, `sortOptions.*`, `levelOptions.*`). Artık tek
+ *    kaynaktan besleniyor.
  */
 
 'use client';
 
 import React, { useTransition } from 'react';
-import { useRouter, useSearchParams, usePathname, useParams } from 'next/navigation';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { useT } from 'next-i18next/client';
 import { Category } from '@/types';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
 
-// Dinamik Dictionaries (Çeviri Sözlükleri)
-const dict = {
-  tr: {
-    searchLabel: 'Arama',
-    searchPlaceholder: 'Bootcamp veya teknoloji ara...',
-    sortLabel: 'Sırala',
-    levelLabel: 'Seviye',
-    categoriesLabel: 'Kategoriler',
-    clearFilters: 'Filtreleri Temizle',
-    sortOptions: {
-      popularity: 'Popülerlik',
-      priceAsc: 'Fiyat: Düşükten Yükseğe',
-      priceDesc: 'Fiyat: Yüksekten Düşüğe',
-      duration: 'Süreye Göre',
-    },
-    levelOptions: {
-      all: 'Tüm Seviyeler',
-      beginner: 'Başlangıç (Beginner)',
-      intermediate: 'Orta Seviye (Intermediate)',
-      advanced: 'İleri Seviye (Advanced)',
-    },
-  },
-  en: {
-    searchLabel: 'Search',
-    searchPlaceholder: 'Search bootcamp or technology...',
-    sortLabel: 'Sort By',
-    levelLabel: 'Level',
-    categoriesLabel: 'Categories',
-    clearFilters: 'Clear Filters',
-    sortOptions: {
-      popularity: 'Popularity',
-      priceAsc: 'Price: Low to High',
-      priceDesc: 'Price: High to Low',
-      duration: 'Duration',
-    },
-    levelOptions: {
-      all: 'All Levels',
-      beginner: 'Beginner',
-      intermediate: 'Intermediate',
-      advanced: 'Advanced',
-    },
-  },
-  nl: {
-    searchLabel: 'Zoeken',
-    searchPlaceholder: 'Zoek bootcamp of technologie...',
-    sortLabel: 'Sorteren op',
-    levelLabel: 'Niveau',
-    categoriesLabel: 'Categorieën',
-    clearFilters: 'Filters Wis',
-    sortOptions: {
-      popularity: 'Populariteit',
-      priceAsc: 'Prijs: Laag naar Hoog',
-      priceDesc: 'Prijs: Hoog naar Laag',
-      duration: 'Duur',
-    },
-    levelOptions: {
-      all: 'Alle Niveaus',
-      beginner: 'Beginnersniveau',
-      intermediate: 'Gemiddeld Niveau',
-      advanced: 'Gevorderd Niveau',
-    },
-  },
-};
-
 interface BootcampFiltersProps {
   categories: Category[];
 }
 
 export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) => {
-  const params = useParams();
-  const currentLocale = ((params?.locale as string) || 'tr') as 'tr' | 'en' | 'nl';
-  const t = dict[currentLocale] || dict.tr;
+  const { t } = useT('common');
 
   const router = useRouter();
   const pathname = usePathname();
@@ -153,10 +93,14 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
     <div className="space-y-6 bg-card p-5 rounded-xl border border-border/60 shadow-sm">
       {/* 1. Arama Kutusu */}
       <div className="space-y-2">
-        <label className="text-sm font-semibold text-foreground">{t.searchLabel}</label>
+        <label className="text-sm font-semibold text-foreground">
+          {t('bootcampsPage.searchLabel', { defaultValue: 'Arama' })}
+        </label>
         <Input
           type="text"
-          placeholder={t.searchPlaceholder}
+          placeholder={t('bootcampsPage.filterSearchPlaceholder', {
+            defaultValue: 'Bootcamp veya teknoloji ara...',
+          })}
           value={currentSearch}
           onChange={handleSearchChange}
           className="w-full"
@@ -165,29 +109,49 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
 
       {/* 2. Sıralama Seçimi (Sort By) */}
       <div className="space-y-2">
-        <label className="text-sm font-semibold text-foreground">{t.sortLabel}</label>
+        <label className="text-sm font-semibold text-foreground">
+          {t('bootcampsPage.sortLabel', { defaultValue: 'Sırala' })}
+        </label>
         <Select value={currentSort} onChange={handleSortChange} className="w-full">
-          <option value="popularity">{t.sortOptions.popularity}</option>
-          <option value="price-asc">{t.sortOptions.priceAsc}</option>
-          <option value="price-desc">{t.sortOptions.priceDesc}</option>
-          <option value="duration">{t.sortOptions.duration}</option>
+          <option value="popularity">
+            {t('sortOptions.popularity', { defaultValue: 'Popülerlik' })}
+          </option>
+          <option value="price-asc">
+            {t('sortOptions.priceAsc', { defaultValue: 'Fiyat: Düşükten Yükseğe' })}
+          </option>
+          <option value="price-desc">
+            {t('sortOptions.priceDesc', { defaultValue: 'Fiyat: Yüksekten Düşüğe' })}
+          </option>
+          <option value="duration">
+            {t('sortOptions.duration', { defaultValue: 'Süreye Göre' })}
+          </option>
         </Select>
       </div>
 
       {/* 3. Seviye Filtresi (Level) */}
       <div className="space-y-2">
-        <label className="text-sm font-semibold text-foreground">{t.levelLabel}</label>
+        <label className="text-sm font-semibold text-foreground">
+          {t('bootcampsPage.levelLabel', { defaultValue: 'Seviye' })}
+        </label>
         <Select value={currentLevel} onChange={handleLevelChange} className="w-full">
-          <option value="all">{t.levelOptions.all}</option>
-          <option value="beginner">{t.levelOptions.beginner}</option>
-          <option value="intermediate">{t.levelOptions.intermediate}</option>
-          <option value="advanced">{t.levelOptions.advanced}</option>
+          <option value="all">{t('levelOptions.all', { defaultValue: 'Tüm Seviyeler' })}</option>
+          <option value="beginner">
+            {t('levelOptions.beginner', { defaultValue: 'Başlangıç' })}
+          </option>
+          <option value="intermediate">
+            {t('levelOptions.intermediate', { defaultValue: 'Orta Seviye' })}
+          </option>
+          <option value="advanced">
+            {t('levelOptions.advanced', { defaultValue: 'İleri Seviye' })}
+          </option>
         </Select>
       </div>
 
       {/* 4. Kategori Filtresi */}
       <div className="space-y-3">
-        <label className="text-sm font-semibold text-foreground">{t.categoriesLabel}</label>
+        <label className="text-sm font-semibold text-foreground">
+          {t('bootcampsPage.categoriesLabel', { defaultValue: 'Kategoriler' })}
+        </label>
         <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
           {categories.map((cat) => {
             const isChecked = currentCategories.includes(cat.slug);
@@ -204,7 +168,8 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
                   htmlFor={`cat-${cat.slug}`}
                   className="text-sm text-muted-foreground hover:text-foreground cursor-pointer select-none"
                 >
-                  {cat.name} ({cat.courseCount})
+                  {t(`categories.${cat.slug}.name`, { defaultValue: cat.defaultName })} (
+                  {cat.courseCount})
                 </label>
               </div>
             );
@@ -220,7 +185,7 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
           onClick={handleClearFilters}
           className="w-full text-xs"
         >
-          {t.clearFilters}
+          {t('bootcampsPage.clearFilters', { defaultValue: 'Filtreleri Temizle' })}
         </Button>
       )}
 

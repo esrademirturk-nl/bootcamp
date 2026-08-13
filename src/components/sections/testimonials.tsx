@@ -9,6 +9,11 @@ interface TestimonialsProps {
 export async function Testimonials({ locale }: TestimonialsProps) {
   const { t } = await getT('common', { lng: locale });
 
+  const translatedTestimonials = mockTestimonials.map((testimonial) => ({
+    ...testimonial,
+    quote: t(`testimonials.${testimonial.id}.quote`, { defaultValue: testimonial.defaultQuote }),
+  }));
+
   return (
     <section className="bg-surface-muted py-20">
       <div className="mx-auto max-w-6xl px-4">
@@ -21,7 +26,7 @@ export async function Testimonials({ locale }: TestimonialsProps) {
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {mockTestimonials.map((testimonial) => (
+          {translatedTestimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>

@@ -117,7 +117,6 @@
       "yearlyDiscount": "2 maanden gratis",
       "selected": "Geselecteerd"
     },
-
     "newsletter": {
       "title": "Meld Je Aan Voor Onze Nieuwsbrief",
       "subtitle": "Wees de eerste die op de hoogte is van nieuwe bootcamps en carrièrekansen.",
@@ -130,6 +129,28 @@
       "title": "Geef Vandaag Vorm Aan Je Carrière",
       "subtitle": "Sluit je aan bij duizenden afgestudeerden op deze reis en bouw aan je toekomst.",
       "button": "Begin Nu"
+    },
+    "howItWorks": {
+      "eyebrow": "Proces",
+      "title": "Hoe Het Werkt",
+      "steps": {
+        "step1": {
+          "title": "Solliciteer",
+          "description": "Kies de bootcamp die je interesseert en voltooi je online aanmelding in enkele minuten."
+        },
+        "step2": {
+          "title": "Gesprek",
+          "description": "Voer een kort gesprek met ons team om samen je doelen en niveau te bespreken."
+        },
+        "step3": {
+          "title": "Schrijf Je In",
+          "description": "Kies de juiste cohort, rond je betaling af en verzeker je plek."
+        },
+        "step4": {
+          "title": "Begin Met Leren",
+          "description": "Start je bootcampreis samen met je docenten en community."
+        }
+      }
     }
   },
   "header": {
@@ -163,7 +184,8 @@
     "levelLabel": "Niveau",
     "categoriesLabel": "Categorieën",
     "inspect": "Bekijken",
-    "weeks": "{{count}} Weken"
+    "weeks": "{{count}} Weken",
+    "featuredBadge": "Uitgelicht"
   },
   "sortOptions": {
     "popularity": "Populariteit",
@@ -297,28 +319,28 @@
     "loginNow": "Inloggen",
     "failHint": "* Typ fail@example.com om het foutscenario te testen.",
     "acceptTerms": "Ik accepteer de Gebruiksvoorwaarden. *",
-    "strengthLabel": "Wachtwoordsterkte:"
-  },
-  "fields": {
-    "name": "Volledige Naam",
-    "email": "E-mailadres",
-    "password": "Wachtwoord",
-    "confirmPassword": "Wachtwoord bevestigen"
-  },
-  "errors": {
-    "emailRequired": "E-mail is verplicht.",
-    "emailInvalid": "Voer een geldig e-mailadres in.",
-    "passwordRequired": "Wachtwoord is verplicht.",
-    "passwordMin": "Wachtwoord moet minimaal 8 tekens lang zijn.",
-    "passwordMatch": "Wachtwoorden komen niet overeen.",
-    "nameRequired": "Volledige naam is verplicht.",
-    "termsRequired": "U moet de gebruiksvoorwaarden accepteren."
-  },
-  "strength": {
-    "weak": "Zwak",
-    "medium": "Gemiddeld",
-    "good": "Goed",
-    "strong": "Zeer sterk"
+    "strengthLabel": "Wachtwoordsterkte:",
+    "fields": {
+      "name": "Volledige Naam",
+      "email": "E-mailadres",
+      "password": "Wachtwoord",
+      "confirmPassword": "Wachtwoord Bevestigen"
+    },
+    "errors": {
+      "nameRequired": "Volledige naam is verplicht.",
+      "emailRequired": "E-mailadres is verplicht.",
+      "emailInvalid": "Voer een geldig e-mailadres in.",
+      "passwordRequired": "Wachtwoord is verplicht.",
+      "passwordMin": "Wachtwoord moet minimaal 8 tekens bevatten.",
+      "passwordMatch": "Wachtwoorden komen niet overeen.",
+      "termsRequired": "U moet akkoord gaan met de Gebruiksvoorwaarden."
+    },
+    "strength": {
+      "weak": "Zwak",
+      "medium": "Gemiddeld",
+      "good": "Goed",
+      "strong": "Zeer Sterk"
+    }
   },
   "notFoundPage": {
     "badge": "Fout 404",
@@ -360,6 +382,253 @@
       "email": "E-mail",
       "save": "Opslaan",
       "saved": "Uw profiel is succesvol opgeslagen."
+  "features": {
+    "expertInstructors": {
+      "title": "Ervaren Docenten",
+      "description": "Leer rechtstreeks van ervaren professionals die actief werkzaam zijn in de sector."
+    },
+    "handsOnProjects": {
+      "title": "Praktijkprojecten",
+      "description": "Versterk je portfolio met projecten gebaseerd op praktijksituaties."
+    },
+    "flexibleSchedule": {
+      "title": "Flexibel Programma",
+      "description": "Ga in je eigen tempo verder met online, hybride of fysieke opties."
+    },
+    "careerSupport": {
+      "title": "Carrièrebegeleiding",
+      "description": "CV-advies, sollicitatietraining en matching met werkgevers."
+    },
+    "community": {
+      "title": "Sterke Community",
+      "description": "Sluit je aan bij een actief netwerk van afgestudeerden en studenten."
+    },
+    "certification": {
+      "title": "Certificering",
+      "description": "Behaal aan het einde van het programma een branche-erkend certificaat."
+    }
+  },
+  "pricingPlans": {
+    "self-paced": {
+      "name": "Eigen Tempo",
+      "description": "Flexibele voortgang in eigen tempo voor individuele leerlingen.",
+      "features": [
+        "Toegang tot alle cursusinhoud",
+        "Toegang tot communityforum",
+        "Maandelijkse groepsmentoring",
+        "Certificaat van voltooiing"
+      ]
+    },
+    "guided-bootcamp": {
+      "name": "Begeleide Bootcamp",
+      "description": "Een gestructureerde leerervaring met live lessen en docentbegeleiding.",
+      "features": [
+        "Alles uit Eigen Tempo",
+        "Wekelijkse live lessen",
+        "Persoonlijke docentbegeleiding",
+        "Carrièrecoaching en cv-ondersteuning",
+        "Matching voor sollicitatiegesprekken"
+      ]
+    },
+    "enterprise": {
+      "name": "Zakelijk",
+      "description": "Maatwerk trainingsoplossingen voor teams en bedrijven.",
+      "features": [
+        "Alles uit Begeleide Bootcamp",
+        "Aangepaste cohortplanning",
+        "Bedrijfsspecifiek curriculum",
+        "Gedetailleerde voortgangsrapportage"
+      ]
+    }
+  },
+  "instructors": {
+    "ahmet-yilmaz": {
+      "bio": "10+ jaar ervaring met webtechnologieën, voormalig Spotify-ontwikkelaar."
+    },
+    "elena-rodriguez": {
+      "bio": "AWS Certified Solutions Architect en DevOps-liefhebber."
+    },
+    "can-ozkan": {
+      "bio": "Expert in Go en gedistribueerde systemen."
+    },
+    "sarah-jenkins": {
+      "bio": "Specialist in gebruikersgerichte ontwerpsystemen."
+    },
+    "mehmet-kaya": {
+      "bio": "Academische en praktijkervaring met Python en Machine Learning."
+    },
+    "zeynep-iron": {
+      "bio": "React Native- en native iOS-app-ontwikkelaar."
+    }
+  },
+  "testimonials": {
+    "1": {
+      "quote": "Dankzij de React & Next.js bootcamp leerde ik projecten op sectorniveau te bouwen en clean code discipline toe te passen."
+    },
+    "2": {
+      "quote": "Het ervaren van Kubernetes- en AWS-workflows op live projecten was geweldig."
+    },
+    "3": {
+      "quote": "Mijn reis die begon met Figma werd een portfolio ondersteund door echte gebruikerstests."
+    },
+    "4": {
+      "quote": "Ik maakte een carrièreswitch door mijn SQL- en datavisualisatievaardigheden te ontwikkelen."
+    },
+    "5": {
+      "quote": "Ik volgde de Python & Django bootcamp om beter te communiceren met technische teams; nu kan ik veel makkelijker meepraten over backendbeslissingen."
+    },
+    "6": {
+      "quote": "Ik begon een maand na het afronden van de full-stack bootcamp aan mijn nieuwe baan."
+    },
+    "7": {
+      "quote": "In de React Native bootcamp leerde ik met één codebase te publiceren voor zowel iOS als Android, en voegde ik een echte mobiele app toe aan mijn portfolio."
+    },
+    "8": {
+      "quote": "De Ethical Hacking bootcamp liet me pentestprocessen end-to-end oefenen, waardoor ik veel beter voorbereid was op het certificeringsexamen."
+    }
+  },
+  "bootcamps": {
+    "react-nextjs-frontend-bootcamp": {
+      "title": "React & Next.js Frontend Bootcamp",
+      "shortDescription": "Bouw professionele projecten in het moderne webontwikkelingsecosysteem met React, Next.js en TypeScript.",
+      "description": "In deze uitgebreide cursus leer je moderne frontend-architecturen, state management, Server Components-concepten en performance-optimalisatie aan de hand van praktijkprojecten.",
+      "curriculum": {
+        "module1": "Module 1: TypeScript en Moderne JS",
+        "module2": "Module 2: Geavanceerd React",
+        "module3": "Module 3: Next.js App Router"
+      }
+    },
+    "zero-to-hero-javascript": {
+      "title": "Frontend Webontwikkeling van Nul af",
+      "shortDescription": "Zet je eerste stap in softwareontwikkeling. Leer websites ontwerpen met HTML, CSS en JavaScript.",
+      "description": "Een cursus voor beginners, ontworpen om je te introduceren in de wereld van het web, ongeacht je achtergrond.",
+      "curriculum": {
+        "module1": "Module 1: Webbasis",
+        "module2": "Module 2: JavaScript-basis"
+      }
+    },
+    "advanced-vue-js-masterclass": {
+      "title": "Advanced Vue.js & Nuxt 3 Masterclass",
+      "shortDescription": "Bouw schaalbare bedrijfsapplicaties met de Vue 3 Composition API en Nuxt 3.",
+      "description": "Vue 3-architectuur, Pinia state management en Nuxt SSR-systemen voor grootschalige projecten.",
+      "curriculum": {
+        "module1": "Module 1: Composition API"
+      }
+    },
+    "node-js-microservices-backend": {
+      "title": "Node.js & Microservices Backend",
+      "shortDescription": "Bouw microservice-architecturen met Node.js, Express, PostgreSQL en Docker.",
+      "description": "Leer backendontwikkeling, API-beveiliging en databasebeheer voor systemen met veel verkeer.",
+      "curriculum": {
+        "module1": "Module 1: REST API-ontwerp"
+      }
+    },
+    "go-programming-high-performance": {
+      "title": "Go (Golang) High Performance Backend",
+      "shortDescription": "Bouw gelijktijdige, snelle backendsoftware met Go, de taal ontwikkeld door Google.",
+      "description": "Schrijf krachtige backendservices met Goroutines, Channels en het Go-ecosysteem.",
+      "curriculum": {
+        "module1": "Module 1: Go Internals"
+      }
+    },
+    "python-django-rest-framework": {
+      "title": "Python & Django REST Framework",
+      "shortDescription": "Stap over naar backendontwikkeling met Python, vanaf nul. Bouw veilige webservices.",
+      "description": "Database- en API-beheer met Django, het populairste backend-framework binnen het Python-ecosysteem.",
+      "curriculum": {
+        "module1": "Module 1: Python-basis"
+      }
+    },
+    "devops-kubernetes-aws-bootcamp": {
+      "title": "DevOps, AWS & Kubernetes Mastery",
+      "shortDescription": "Word een moderne DevOps-engineer met CI/CD-pipelines, cloudinfrastructuur en containerorkestratie.",
+      "description": "AWS-diensten, Infrastructure as Code met Terraform en Kubernetes-clusterbeheer.",
+      "curriculum": {
+        "module1": "Module 1: Containerarchitectuur"
+      }
+    },
+    "fullstack-javascript-bootcamp": {
+      "title": "Fullstack JavaScript (MERN)",
+      "shortDescription": "Bouw end-to-end webapplicaties van begin tot eind met MongoDB, Express, React en Node.js.",
+      "description": "Leer zowel de frontend als de backend te bouwen met één taal: JavaScript.",
+      "curriculum": {
+        "module1": "Module 1: Fullstack-architectuur"
+      }
+    },
+    "ui-ux-design-systems": {
+      "title": "UI/UX Design & Design Systems",
+      "shortDescription": "Maak professionele interface-ontwerpen en schaalbare designsystemen met Figma.",
+      "description": "UI/UX-methodologieën van gebruikersonderzoek tot wireframing en prototyping.",
+      "curriculum": {
+        "module1": "Module 1: Ontwerpbasis"
+      }
+    },
+    "react-native-cross-platform": {
+      "title": "Mobiele App-ontwikkeling met React Native",
+      "shortDescription": "Schrijf mobiele apps met native performance voor iOS en Android vanuit één codebase.",
+      "description": "Breng je React-kennis naar de mobiele wereld. Navigation, Redux Toolkit en toegang tot apparaatfuncties.",
+      "curriculum": {
+        "module1": "Module 1: Mobiele UI"
+      }
+    },
+    "data-science-machine-learning-python": {
+      "title": "Data Science & Machine Learning met Python",
+      "shortDescription": "Leer waarde uit data te halen via data-analyse, visualisatie en AI-modellen.",
+      "description": "Verwerk praktijkdata met Pandas, NumPy, Scikit-Learn en TensorFlow.",
+      "curriculum": {
+        "module1": "Module 1: Dataverwerking"
+      }
+    },
+    "ethical-hacking-cybersecurity": {
+      "title": "Ethical Hacking & Cyber Security",
+      "shortDescription": "Detectie van systeemkwetsbaarheden, penetratietests en cyberdefensiestrategieën.",
+      "description": "Netwerkbeveiliging, webapplicatiebeveiliging (OWASP Top 10) en ethical hacking-technieken.",
+      "curriculum": {
+        "module1": "Module 1: Beveiligingsbasis"
+      }
+    }
+  },
+  "bootcampDetailPage": {
+    "notFoundTitle": "Bootcamp Niet Gevonden",
+    "comingSoon": "Binnenkort Bekend",
+    "graduatesLabel": "Afgestudeerden",
+    "durationSuffix": "Duur",
+    "languagesLabel": "Talen",
+    "curriculumTitle": "Curriculum",
+    "hoursSuffix": "Uur",
+    "instructorTitle": "Jouw Docent",
+    "testimonialsTitle": "Ervaringen van Afgestudeerden",
+    "priceLabel": "Cursusgeld",
+    "nextCohortLabel": "Volgende Cohort:",
+    "formatLabel": "Formaat:",
+    "durationLabel": "Duur:",
+    "ctaButton": "Direct Aanmelden",
+    "relatedTitle": "Andere Programma’s Die Je Wellicht Interesseren"
+  },
+  "categories": {
+    "frontend": {
+      "name": "Frontend-ontwikkeling"
+    },
+    "backend": {
+      "name": "Backend-ontwikkeling"
+    },
+    "fullstack": {
+      "name": "Fullstack-ontwikkeling"
+    },
+    "devops": {
+      "name": "DevOps & Cloud"
+    },
+    "mobile": {
+      "name": "Mobiele Ontwikkeling"
+    },
+    "data": {
+      "name": "Data Science & AI"
+    },
+    "cybersecurity": {
+      "name": "Cyberbeveiliging"
+    },
+    "uiux": {
+      "name": "UI/UX Ontwerp"
     }
   }
 }

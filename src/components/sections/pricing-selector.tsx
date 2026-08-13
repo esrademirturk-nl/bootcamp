@@ -2,10 +2,10 @@
 
 import * as React from 'react';
 import { PricingCard } from './pricing-card';
-import type { PricingPlan } from '@/types';
+import type { ResolvedPricingPlan } from '@/types';
 
 interface PricingSelectorProps {
-  plans: PricingPlan[];
+  plans: ResolvedPricingPlan[];
   selectedLabel: string;
   startLabel: string;
   contactLabel: string;

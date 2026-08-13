@@ -9,8 +9,10 @@
 
 import React, { Suspense } from 'react';
 // mockCategories ayrı bir veri dosyasında olduğu için import yollarını ayırıyoruz
+import { getT } from 'next-i18next/server';
 import { mockBootcamps } from '@/data/bootcamps';
 import { mockCategories } from '@/data/categories';
+import { resolveBootcamp, resolveCategoryName } from '@/lib/resolve-mock-data';
 import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampFilters } from '@/components/bootcamps/bootcamp-filters';
 import { BootcampSearchBar } from '@/components/bootcamps/bootcamp-search-bar';
@@ -67,13 +69,18 @@ async function BootcampListContent({
   locale: string;
   searchParams: { q?: string; categories?: string; level?: string; sort?: string };
 }) {
+  const { t } = await getT('common', { lng: locale });
   const query = searchParams.q?.toLowerCase() || '';
   const selectedCategories = searchParams.categories?.split(',').filter(Boolean) || [];
   const selectedLevel = searchParams.level || 'all';
   const selectedSort = searchParams.sort || 'popularity';
 
+  // Çeviri, arama/filtreleme yapılmadan önce çözülüyor ki kullanıcı hangi
+  // dilde görüyorsa arama da o metne göre çalışsın.
+  const translatedBootcamps = mockBootcamps.map((bootcamp) => resolveBootcamp(bootcamp, t));
+
   // Filtre kombinasyon mantığı (Arama + Kategori + Seviye)
-  let filtered = mockBootcamps.filter((bootcamp) => {
+  let filtered = translatedBootcamps.filter((bootcamp) => {
     const matchesSearch =
       !query ||
       bootcamp.title.toLowerCase().includes(query) ||
@@ -96,12 +103,26 @@ async function BootcampListContent({
     return b.rating - a.rating;
   });
 
+  const levelLabels = {
+    beginner: t('levelOptions.beginner', { defaultValue: 'Başlangıç' }),
+    intermediate: t('levelOptions.intermediate', { defaultValue: 'Orta Seviye' }),
+    advanced: t('levelOptions.advanced', { defaultValue: 'İleri Seviye' }),
+  };
+  const featuredLabel = t('bootcampsPage.featuredBadge', { defaultValue: 'Öne Çıkan' });
+  const detailsLabel = t('bootcampsPage.inspect', { defaultValue: 'İncele' });
+  const categoryLabelBySlug = new Map(
+    mockCategories.map((category) => [category.slug, resolveCategoryName(category, t)])
+  );
+
   return (
     <div className="space-y-6">
       {/* Bulunan Sonuç Sayısı Göstergesi */}
       <div className="flex items-center justify-between pb-2 border-b border-border/40">
         <h2 className="text-lg font-semibold text-foreground">
-          {filtered.length} Bootcamp Bulundu
+          {t('bootcampsPage.foundCount', {
+            count: filtered.length,
+            defaultValue: '{{count}} Bootcamp Bulundu',
+          })}
         </h2>
       </div>
 
@@ -109,13 +130,20 @@ async function BootcampListContent({
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center p-12 text-center rounded-xl border border-dashed border-border bg-card/50 space-y-4">
           <div className="text-4xl">🔍</div>
-          <h3 className="text-xl font-bold text-foreground">Aramanıza Uygun Bootcamp Bulunamadı</h3>
+          <h3 className="text-xl font-bold text-foreground">
+            {t('bootcampsPage.notFoundTitle', {
+              defaultValue: 'Aramanıza Uygun Bootcamp Bulunamadı',
+            })}
+          </h3>
           <p className="text-sm text-muted-foreground max-w-md">
-            Farklı arama terimleri denemeyi veya seçili filtreleri temizlemeyi deneyebilirsiniz.
+            {t('bootcampsPage.notFoundDesc', {
+              defaultValue:
+                'Farklı arama terimleri denemeyi veya seçili filtreleri temizlemeyi deneyebilirsiniz.',
+            })}
           </p>
           <Link href={`/${locale}/bootcamps`}>
             <Button variant="secondary" size="sm">
-              Filtreleri Temizle
+              {t('bootcampsPage.clearFilters', { defaultValue: 'Filtreleri Temizle' })}
             </Button>
           </Link>
         </div>
@@ -123,7 +151,21 @@ async function BootcampListContent({
         /* Kart Izgarası */
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((bootcamp) => (
-            <BootcampCard key={bootcamp.slug} bootcamp={bootcamp} locale={locale} />
+            <BootcampCard
+              key={bootcamp.slug}
+              bootcamp={bootcamp}
+              locale={locale}
+              levelLabels={levelLabels}
+              categoryLabel={
+                categoryLabelBySlug.get(bootcamp.categorySlug) ?? bootcamp.categorySlug
+              }
+              featuredLabel={featuredLabel}
+              durationLabel={t('bootcampsPage.weeks', {
+                count: bootcamp.durationWeeks,
+                defaultValue: `${bootcamp.durationWeeks} Hafta`,
+              })}
+              viewDetailsLabel={detailsLabel}
+            />
           ))}
         </div>
       )}
@@ -138,6 +180,7 @@ async function BootcampListContent({
 export default async function BootcampsPage({ params, searchParams }: PageProps) {
   const { locale } = await params;
   const resolvedSearchParams = await searchParams;
+  const { t } = await getT('common', { lng: locale });
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
@@ -145,11 +188,13 @@ export default async function BootcampsPage({ params, searchParams }: PageProps)
       <div className="space-y-4">
         <div className="space-y-2">
           <h1 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-            Bootcamp Programları
+            {t('bootcampsPage.title', { defaultValue: 'Bootcamp Programları' })}
           </h1>
           <p className="text-muted-foreground text-base max-w-2xl">
-            Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen
-            başvurun.
+            {t('bootcampsPage.subtitle', {
+              defaultValue:
+                'Kariyerinize yön verecek modern teknoloji eğitimlerini keşfedin, filtreleyin ve hemen başvurun.',
+            })}
           </p>
         </div>
 

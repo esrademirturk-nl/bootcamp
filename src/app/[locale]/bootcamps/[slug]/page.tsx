@@ -10,10 +10,13 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { getT } from 'next-i18next/server';
 import { mockInstructors } from '@/data/instructors';
 import { mockTestimonials } from '@/data/testimonials';
 import { mockBootcamps } from '@/data/bootcamps';
 import { mockCohorts } from '@/data/cohorts';
+import { mockCategories } from '@/data/categories';
+import { resolveBootcamp, resolveCategoryName } from '@/lib/resolve-mock-data';
 
 import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampCurriculum } from '@/components/bootcamps/bootcamp-curriculum';
@@ -40,19 +43,24 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  const { t } = await getT('common', { lng: locale });
   const bootcamp = mockBootcamps.find((item) => item.slug === slug);
 
   if (!bootcamp) {
-    return { title: 'Bootcamp Bulunamadı' };
+    return {
+      title: t('bootcampDetailPage.notFoundTitle', { defaultValue: 'Bootcamp Bulunamadı' }),
+    };
   }
 
+  const resolved = resolveBootcamp(bootcamp, t);
+
   return {
-    title: bootcamp.title,
-    description: bootcamp.shortDescription,
+    title: resolved.title,
+    description: resolved.shortDescription,
     openGraph: {
-      title: bootcamp.title,
-      description: bootcamp.shortDescription,
+      title: resolved.title,
+      description: resolved.shortDescription,
       images: bootcamp.heroImage ? [bootcamp.heroImage] : undefined,
     },
   };
@@ -66,19 +74,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
  * gösterilir. Component gövdesi dışında tanımlandı ki `Date.now()` çağrısı
  * render sırasında "impure function" olarak işaretlenmesin.
  */
-function getNextCohortLabel(bootcampSlug: string): string {
+function getNextCohortLabel(bootcampSlug: string, locale: string, comingSoonLabel: string): string {
   const bootcampCohorts = mockCohorts
     .filter((c) => c.bootcampSlug === bootcampSlug)
     .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime());
 
-  if (bootcampCohorts.length === 0) return 'Yakında Duyurulacak';
+  if (bootcampCohorts.length === 0) return comingSoonLabel;
 
   const now = Date.now();
   const nextCohort =
     bootcampCohorts.find((c) => new Date(c.startDate).getTime() > now) ??
     bootcampCohorts[bootcampCohorts.length - 1];
 
-  return new Date(nextCohort.startDate).toLocaleDateString('tr-TR', {
+  const dateLocale = i18nConfig.supportedLngs.includes(locale) ? locale : i18nConfig.fallbackLng;
+
+  return new Date(nextCohort.startDate).toLocaleDateString(dateLocale, {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -87,28 +97,60 @@ function getNextCohortLabel(bootcampSlug: string): string {
 
 export default async function BootcampDetailPage({ params }: PageProps) {
   const { locale, slug } = await params;
+  const { t } = await getT('common', { lng: locale });
 
   // 1. Slug'a göre bootcamp verisini buluyoruz
-  const bootcamp = mockBootcamps.find((item) => item.slug === slug);
+  const rawBootcamp = mockBootcamps.find((item) => item.slug === slug);
 
   // Invalid slug triggers notFound() -> 404 page
-  if (!bootcamp) {
+  if (!rawBootcamp) {
     notFound();
   }
 
+  const bootcamp = resolveBootcamp(rawBootcamp, t);
+
   // 2. İlgili Eğitmen Verisini Buluyoruz
-  const instructor = mockInstructors.find((item) => item.slug === bootcamp.instructorSlug);
+  const rawInstructor = mockInstructors.find((item) => item.slug === rawBootcamp.instructorSlug);
+  const instructor = rawInstructor
+    ? {
+        ...rawInstructor,
+        bio: t(`instructors.${rawInstructor.slug}.bio`, { defaultValue: rawInstructor.defaultBio }),
+      }
+    : undefined;
 
   // 3. İlgili Yorumları Buluyoruz
-  const testimonials = mockTestimonials.filter((item) => item.bootcampSlug === bootcamp.slug);
+  const testimonials = mockTestimonials
+    .filter((item) => item.bootcampSlug === rawBootcamp.slug)
+    .map((item) => ({
+      ...item,
+      quote: t(`testimonials.${item.id}.quote`, { defaultValue: item.defaultQuote }),
+    }));
 
   // 4. İlgili Diğer Bootcamp'ler (Aynı kategorideki diğer eğitimler)
   const relatedBootcamps = mockBootcamps
-    .filter((item) => item.categorySlug === bootcamp.categorySlug && item.slug !== bootcamp.slug)
-    .slice(0, 3);
+    .filter(
+      (item) => item.categorySlug === rawBootcamp.categorySlug && item.slug !== rawBootcamp.slug
+    )
+    .slice(0, 3)
+    .map((item) => resolveBootcamp(item, t));
 
   // 5. Bu bootcamp'e ait "sonraki kohort" etiketi
-  const nextCohortLabel = getNextCohortLabel(bootcamp.slug);
+  const nextCohortLabel = getNextCohortLabel(
+    rawBootcamp.slug,
+    locale,
+    t('bootcampDetailPage.comingSoon', { defaultValue: 'Yakında Duyurulacak' })
+  );
+
+  const levelLabels = {
+    beginner: t('levelOptions.beginner', { defaultValue: 'Başlangıç' }),
+    intermediate: t('levelOptions.intermediate', { defaultValue: 'Orta Seviye' }),
+    advanced: t('levelOptions.advanced', { defaultValue: 'İleri Seviye' }),
+  };
+
+  const categoryLabelBySlug = new Map(
+    mockCategories.map((category) => [category.slug, resolveCategoryName(category, t)])
+  );
+  const categoryLabel = categoryLabelBySlug.get(bootcamp.categorySlug) ?? bootcamp.categorySlug;
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
@@ -117,7 +159,7 @@ export default async function BootcampDetailPage({ params }: PageProps) {
         <div className="flex flex-wrap items-center gap-2">
           {/* Kategori için varsayılan Badge */}
           <Badge variant="default" className="uppercase tracking-wider">
-            {bootcamp.categorySlug}
+            {categoryLabel}
           </Badge>
 
           {/* Seviye (Level) için R1 varyantlarına uyumlu Badge */}
@@ -148,17 +190,25 @@ export default async function BootcampDetailPage({ params }: PageProps) {
           </div>
           <div className="flex items-center space-x-2">
             <span>
-              👨‍🎓 <strong className="text-foreground">{bootcamp.studentCount}+</strong> Mezun
+              👨‍🎓 <strong className="text-foreground">{bootcamp.studentCount}+</strong>{' '}
+              {t('bootcampDetailPage.graduatesLabel', { defaultValue: 'Mezun' })}
             </span>
           </div>
           <div className="flex items-center space-x-2">
             <span>
-              ⏱ <strong className="text-foreground">{bootcamp.durationWeeks} Hafta</strong> Süre
+              ⏱{' '}
+              <strong className="text-foreground">
+                {t('bootcampsPage.weeks', {
+                  count: bootcamp.durationWeeks,
+                  defaultValue: `${bootcamp.durationWeeks} Hafta`,
+                })}
+              </strong>{' '}
+              {t('bootcampDetailPage.durationSuffix', { defaultValue: 'Süre' })}
             </span>
           </div>
           <div className="flex items-center space-x-2">
             <span>
-              🌐 Diller:{' '}
+              🌐 {t('bootcampDetailPage.languagesLabel', { defaultValue: 'Diller' })}:{' '}
               <strong className="text-foreground">{bootcamp.languages.join(', ')}</strong>
             </span>
           </div>
@@ -186,7 +236,9 @@ export default async function BootcampDetailPage({ params }: PageProps) {
           {/* Eğitmen Kartı (Instructor Card) */}
           {instructor && (
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-foreground">Eğitmeniniz</h2>
+              <h2 className="text-2xl font-bold text-foreground">
+                {t('bootcampDetailPage.instructorTitle', { defaultValue: 'Eğitmeniniz' })}
+              </h2>
               <Card className="p-6 flex flex-col md:flex-row items-center md:items-start gap-6 border-border/60">
                 <div className="relative w-24 h-24 rounded-full overflow-hidden shrink-0 border-2 border-primary/20">
                   <Image
@@ -212,22 +264,24 @@ export default async function BootcampDetailPage({ params }: PageProps) {
           {/* Öğrenci Yorumları (Testimonials) */}
           {testimonials.length > 0 && (
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-foreground">Mezun Yorumları</h2>
+              <h2 className="text-2xl font-bold text-foreground">
+                {t('bootcampDetailPage.testimonialsTitle', { defaultValue: 'Mezun Yorumları' })}
+              </h2>
               <div className="grid grid-cols-1 gap-4">
-                {testimonials.map((t) => (
-                  <Card key={t.id} className="p-5 border-border/60 space-y-3">
+                {testimonials.map((item) => (
+                  <Card key={item.id} className="p-5 border-border/60 space-y-3">
                     <div className="flex items-center space-x-3">
                       <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                        <Image src={t.avatar} alt={t.name} fill className="object-cover" />
+                        <Image src={item.avatar} alt={item.name} fill className="object-cover" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-foreground">{t.name}</h4>
+                        <h4 className="text-sm font-bold text-foreground">{item.name}</h4>
                         <p className="text-xs text-muted-foreground">
-                          {t.role} @ {t.company}
+                          {item.role} @ {item.company}
                         </p>
                       </div>
                     </div>
-                    <p className="text-sm text-muted-foreground italic">&quot;{t.quote}&quot;</p>
+                    <p className="text-sm text-muted-foreground italic">&quot;{item.quote}&quot;</p>
                   </Card>
                 ))}
               </div>
@@ -240,29 +294,36 @@ export default async function BootcampDetailPage({ params }: PageProps) {
           <Card className="p-6 space-y-6 border-border/80 shadow-md">
             <div className="space-y-1">
               <span className="text-xs uppercase font-semibold text-muted-foreground">
-                Eğitim Ücreti
+                {t('bootcampDetailPage.priceLabel', { defaultValue: 'Eğitim Ücreti' })}
               </span>
               <div className="text-3xl font-extrabold text-primary">€{bootcamp.priceEUR}</div>
             </div>
 
             <div className="space-y-3 text-sm text-muted-foreground border-t border-b border-border/40 py-4">
               <div className="flex justify-between">
-                <span>Sonraki Kohort:</span>
+                <span>
+                  {t('bootcampDetailPage.nextCohortLabel', { defaultValue: 'Sonraki Kohort:' })}
+                </span>
                 <strong className="text-foreground">{nextCohortLabel}</strong>
               </div>
               <div className="flex justify-between">
-                <span>Format:</span>
+                <span>{t('bootcampDetailPage.formatLabel', { defaultValue: 'Format:' })}</span>
                 <strong className="text-foreground capitalize">{bootcamp.format}</strong>
               </div>
               <div className="flex justify-between">
-                <span>Süre:</span>
-                <strong className="text-foreground">{bootcamp.durationWeeks} Hafta</strong>
+                <span>{t('bootcampDetailPage.durationLabel', { defaultValue: 'Süre:' })}</span>
+                <strong className="text-foreground">
+                  {t('bootcampsPage.weeks', {
+                    count: bootcamp.durationWeeks,
+                    defaultValue: `${bootcamp.durationWeeks} Hafta`,
+                  })}
+                </strong>
               </div>
             </div>
 
             <Link href={`/${locale}/contact`} className="block w-full">
               <Button size="lg" className="w-full font-bold">
-                Hemen Başvur / Kaydol
+                {t('bootcampDetailPage.ctaButton', { defaultValue: 'Hemen Başvur / Kaydol' })}
               </Button>
             </Link>
           </Card>
@@ -273,11 +334,25 @@ export default async function BootcampDetailPage({ params }: PageProps) {
       {relatedBootcamps.length > 0 && (
         <section className="space-y-6 pt-8 border-t border-border/40">
           <h2 className="text-2xl font-bold text-foreground">
-            İlgini Çekebilecek Diğer Programlar
+            {t('bootcampDetailPage.relatedTitle', {
+              defaultValue: 'İlgini Çekebilecek Diğer Programlar',
+            })}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedBootcamps.map((item) => (
-              <BootcampCard key={item.slug} bootcamp={item} locale={locale} />
+              <BootcampCard
+                key={item.slug}
+                bootcamp={item}
+                locale={locale}
+                levelLabels={levelLabels}
+                categoryLabel={categoryLabelBySlug.get(item.categorySlug) ?? item.categorySlug}
+                featuredLabel={t('bootcampsPage.featuredBadge', { defaultValue: 'Öne Çıkan' })}
+                durationLabel={t('bootcampsPage.weeks', {
+                  count: item.durationWeeks,
+                  defaultValue: `${item.durationWeeks} Hafta`,
+                })}
+                viewDetailsLabel={t('bootcampsPage.inspect', { defaultValue: 'İncele' })}
+              />
             ))}
           </div>
         </section>

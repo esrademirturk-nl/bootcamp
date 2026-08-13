@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { Quote, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import type { Testimonial } from '@/types';
+import type { ResolvedTestimonial } from '@/types';
 
 interface TestimonialCardProps {
-  testimonial: Testimonial;
+  testimonial: ResolvedTestimonial;
 }
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
