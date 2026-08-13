@@ -10,6 +10,7 @@ interface BootcampCardProps {
   bootcamp: ResolvedBootcamp;
   locale: string;
   levelLabels: Record<ResolvedBootcamp['level'], string>;
+  categoryLabel: string;
   durationLabel: string;
   detailsLabel: string;
 }
@@ -39,6 +40,7 @@ export function BootcampCard({
   bootcamp,
   locale,
   levelLabels,
+  categoryLabel,
   durationLabel,
   detailsLabel,
 }: BootcampCardProps) {
@@ -62,7 +64,7 @@ export function BootcampCard({
       <CardHeader className="space-y-2 p-5 pb-2">
         <div className="flex items-center justify-between text-xs text-muted">
           <span className="font-semibold uppercase tracking-wider text-primary-600">
-            {bootcamp.categorySlug}
+            {categoryLabel}
           </span>
           <span className="rounded bg-surface-muted px-2 py-0.5 capitalize">{bootcamp.format}</span>
         </div>

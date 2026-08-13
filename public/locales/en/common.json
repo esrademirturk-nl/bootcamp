@@ -576,5 +576,31 @@
     "durationLabel": "Duration:",
     "ctaButton": "Apply / Enroll Now",
     "relatedTitle": "Other Programs You Might Like"
+  },
+  "categories": {
+    "frontend": {
+      "name": "Frontend Development"
+    },
+    "backend": {
+      "name": "Backend Development"
+    },
+    "fullstack": {
+      "name": "Fullstack Development"
+    },
+    "devops": {
+      "name": "DevOps & Cloud"
+    },
+    "mobile": {
+      "name": "Mobile Development"
+    },
+    "data": {
+      "name": "Data Science & AI"
+    },
+    "cybersecurity": {
+      "name": "Cyber Security"
+    },
+    "uiux": {
+      "name": "UI/UX Design"
+    }
   }
 }

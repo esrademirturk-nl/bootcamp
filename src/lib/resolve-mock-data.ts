@@ -9,7 +9,11 @@
  */
 
 import type { TFunction } from 'i18next';
-import type { Bootcamp, ResolvedBootcamp } from '@/types';
+import type { Bootcamp, Category, ResolvedBootcamp } from '@/types';
+
+export function resolveCategoryName(category: Category, t: TFunction): string {
+  return t(`categories.${category.slug}.name`, { defaultValue: category.defaultName });
+}
 
 export function resolveBootcamp(bootcamp: Bootcamp, t: TFunction): ResolvedBootcamp {
   return {

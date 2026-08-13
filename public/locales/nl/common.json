@@ -576,5 +576,31 @@
     "durationLabel": "Duur:",
     "ctaButton": "Direct Aanmelden",
     "relatedTitle": "Andere Programma’s Die Je Wellicht Interesseren"
+  },
+  "categories": {
+    "frontend": {
+      "name": "Frontend-ontwikkeling"
+    },
+    "backend": {
+      "name": "Backend-ontwikkeling"
+    },
+    "fullstack": {
+      "name": "Fullstack-ontwikkeling"
+    },
+    "devops": {
+      "name": "DevOps & Cloud"
+    },
+    "mobile": {
+      "name": "Mobiele Ontwikkeling"
+    },
+    "data": {
+      "name": "Data Science & AI"
+    },
+    "cybersecurity": {
+      "name": "Cyberbeveiliging"
+    },
+    "uiux": {
+      "name": "UI/UX Ontwerp"
+    }
   }
 }

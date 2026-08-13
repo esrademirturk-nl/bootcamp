@@ -576,5 +576,31 @@
     "durationLabel": "Süre:",
     "ctaButton": "Hemen Başvur / Kaydol",
     "relatedTitle": "İlgini Çekebilecek Diğer Programlar"
+  },
+  "categories": {
+    "frontend": {
+      "name": "Frontend Geliştirme"
+    },
+    "backend": {
+      "name": "Backend Geliştirme"
+    },
+    "fullstack": {
+      "name": "Fullstack Geliştirme"
+    },
+    "devops": {
+      "name": "DevOps & Bulut"
+    },
+    "mobile": {
+      "name": "Mobil Geliştirme"
+    },
+    "data": {
+      "name": "Veri Bilimi & Yapay Zeka"
+    },
+    "cybersecurity": {
+      "name": "Siber Güvenlik"
+    },
+    "uiux": {
+      "name": "UI/UX Tasarım"
+    }
   }
 }

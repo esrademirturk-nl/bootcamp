@@ -12,7 +12,7 @@ import React, { Suspense } from 'react';
 import { getT } from 'next-i18next/server';
 import { mockBootcamps } from '@/data/bootcamps';
 import { mockCategories } from '@/data/categories';
-import { resolveBootcamp } from '@/lib/resolve-mock-data';
+import { resolveBootcamp, resolveCategoryName } from '@/lib/resolve-mock-data';
 import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampFilters } from '@/components/bootcamps/bootcamp-filters';
 import { BootcampSearchBar } from '@/components/bootcamps/bootcamp-search-bar';
@@ -110,6 +110,9 @@ async function BootcampListContent({
   };
   const featuredLabel = t('bootcampsPage.featuredBadge', { defaultValue: 'Öne Çıkan' });
   const detailsLabel = t('bootcampsPage.inspect', { defaultValue: 'İncele' });
+  const categoryLabelBySlug = new Map(
+    mockCategories.map((category) => [category.slug, resolveCategoryName(category, t)])
+  );
 
   return (
     <div className="space-y-6">
@@ -153,6 +156,9 @@ async function BootcampListContent({
               bootcamp={bootcamp}
               locale={locale}
               levelLabels={levelLabels}
+              categoryLabel={
+                categoryLabelBySlug.get(bootcamp.categorySlug) ?? bootcamp.categorySlug
+              }
               featuredLabel={featuredLabel}
               durationLabel={t('bootcampsPage.weeks', {
                 count: bootcamp.durationWeeks,
