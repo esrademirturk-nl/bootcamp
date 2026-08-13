@@ -11,7 +11,7 @@ import { Spinner } from '@/components/ui/spinner';
 export function ComponentsSection() {
   return (
     <section className="flex flex-col gap-10">
-      <h2 className="font-heading text-2xl font-semibold">Komponentler</h2>
+      <h2 className="font-heading text-2xl font-semibold">Components</h2>
 
       <div>
         <h3 className="mb-3 text-sm font-medium text-muted">Button</h3>
@@ -48,30 +48,30 @@ export function ComponentsSection() {
         <Card className="max-w-sm">
           <CardHeader>
             <CardTitle>Full-Stack Web Development</CardTitle>
-            <CardDescription>12 hafta · Beginner seviye</CardDescription>
+            <CardDescription>12 weeks · Beginner level</CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-foreground">
-              Next.js, TypeScript ve React ile modern web geliştirme.
+              Modern web development with Next.js, TypeScript, and React.
             </p>
           </CardContent>
         </Card>
       </div>
 
       <div>
-        <h3 className="mb-3 text-sm font-medium text-muted">Form Elemanları</h3>
+        <h3 className="mb-3 text-sm font-medium text-muted">Form Elements</h3>
         <div className="flex max-w-sm flex-col gap-4">
-          <Input placeholder="Ad Soyad" />
-          <Input placeholder="Hatalı alan" error />
-          <Textarea placeholder="Mesajınız" />
+          <Input placeholder="Full Name" />
+          <Input placeholder="Error field" error />
+          <Textarea placeholder="Your message" />
           <Select defaultValue="">
             <option value="" disabled>
-              Kategori seç
+              Select category
             </option>
             <option value="frontend">Frontend</option>
             <option value="backend">Backend</option>
           </Select>
-          <Checkbox label="Kullanım koşullarını kabul ediyorum" />
+          <Checkbox label="I accept the Terms of Service" />
         </div>
       </div>
 
