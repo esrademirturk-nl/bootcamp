@@ -15,7 +15,8 @@ import { mockInstructors } from '@/data/instructors';
 import { mockTestimonials } from '@/data/testimonials';
 import { mockBootcamps } from '@/data/bootcamps';
 import { mockCohorts } from '@/data/cohorts';
-import { resolveBootcamp } from '@/lib/resolve-mock-data';
+import { mockCategories } from '@/data/categories';
+import { resolveBootcamp, resolveCategoryName } from '@/lib/resolve-mock-data';
 
 import { BootcampCard } from '@/components/bootcamps/bootcamp-card';
 import { BootcampCurriculum } from '@/components/bootcamps/bootcamp-curriculum';
@@ -146,6 +147,11 @@ export default async function BootcampDetailPage({ params }: PageProps) {
     advanced: t('levelOptions.advanced', { defaultValue: 'İleri Seviye' }),
   };
 
+  const categoryLabelBySlug = new Map(
+    mockCategories.map((category) => [category.slug, resolveCategoryName(category, t)])
+  );
+  const categoryLabel = categoryLabelBySlug.get(bootcamp.categorySlug) ?? bootcamp.categorySlug;
+
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
       {/* 1. HERO BÖLÜMÜ */}
@@ -153,7 +159,7 @@ export default async function BootcampDetailPage({ params }: PageProps) {
         <div className="flex flex-wrap items-center gap-2">
           {/* Kategori için varsayılan Badge */}
           <Badge variant="default" className="uppercase tracking-wider">
-            {bootcamp.categorySlug}
+            {categoryLabel}
           </Badge>
 
           {/* Seviye (Level) için R1 varyantlarına uyumlu Badge */}
@@ -339,6 +345,7 @@ export default async function BootcampDetailPage({ params }: PageProps) {
                 bootcamp={item}
                 locale={locale}
                 levelLabels={levelLabels}
+                categoryLabel={categoryLabelBySlug.get(item.categorySlug) ?? item.categorySlug}
                 featuredLabel={t('bootcampsPage.featuredBadge', { defaultValue: 'Öne Çıkan' })}
                 durationLabel={t('bootcampsPage.weeks', {
                   count: item.durationWeeks,

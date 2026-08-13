@@ -1,6 +1,7 @@
 import { getT } from 'next-i18next/server';
 import { mockBootcamps } from '@/data/bootcamps';
-import { resolveBootcamp } from '@/lib/resolve-mock-data';
+import { mockCategories } from '@/data/categories';
+import { resolveBootcamp, resolveCategoryName } from '@/lib/resolve-mock-data';
 import { BootcampCard } from './bootcamp-card';
 
 interface FeaturedProgramsProps {
@@ -20,6 +21,10 @@ export async function FeaturedPrograms({ locale }: FeaturedProgramsProps) {
     advanced: t('levelOptions.advanced', { defaultValue: 'İleri Seviye' }),
   };
 
+  const categoryLabelBySlug = new Map(
+    mockCategories.map((category) => [category.slug, resolveCategoryName(category, t)])
+  );
+
   return (
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-4">
@@ -38,6 +43,9 @@ export async function FeaturedPrograms({ locale }: FeaturedProgramsProps) {
               bootcamp={bootcamp}
               locale={locale}
               levelLabels={levelLabels}
+              categoryLabel={
+                categoryLabelBySlug.get(bootcamp.categorySlug) ?? bootcamp.categorySlug
+              }
               durationLabel={t('bootcampsPage.weeks', {
                 count: bootcamp.durationWeeks,
                 defaultValue: `${bootcamp.durationWeeks} Hafta`,

@@ -2,6 +2,7 @@ import { getT } from 'next-i18next/server';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { iconMap } from '@/lib/icon-map';
+import { resolveCategoryName } from '@/lib/resolve-mock-data';
 import type { Category } from '@/types';
 
 interface CategoryCardProps {
@@ -12,12 +13,13 @@ interface CategoryCardProps {
 export async function CategoryCard({ category, locale }: CategoryCardProps) {
   const { t } = await getT('common', { lng: locale });
   const Icon = iconMap[category.icon];
+  const name = resolveCategoryName(category, t);
 
   return (
     <Card className="flex flex-col items-center gap-3 border-border/60 p-8 text-center transition-shadow hover:shadow-md">
       {Icon && <Icon className="h-8 w-8 text-foreground" strokeWidth={1.75} />}
 
-      <h3 className="font-heading text-lg font-bold text-foreground">{category.name}</h3>
+      <h3 className="font-heading text-lg font-bold text-foreground">{name}</h3>
 
       <p className="text-sm text-muted">
         {t('landing.categories.programCount', { count: category.courseCount })}
