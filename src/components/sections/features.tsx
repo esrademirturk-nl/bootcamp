@@ -21,7 +21,14 @@ export async function Features({ locale }: FeaturesProps) {
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
-            <FeatureCard key={feature.id} feature={feature} />
+            <FeatureCard
+              key={feature.id}
+              icon={feature.icon}
+              title={t(`features.${feature.titleKey}`, { defaultValue: feature.defaultTitle })}
+              description={t(`features.${feature.descriptionKey}`, {
+                defaultValue: feature.defaultDescription,
+              })}
+            />
           ))}
         </div>
       </div>

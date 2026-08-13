@@ -9,6 +9,17 @@ interface PricingProps {
 export async function Pricing({ locale }: PricingProps) {
   const { t } = await getT('common', { lng: locale });
 
+  const translatedPlans = pricingPlans.map((plan) => ({
+    ...plan,
+    name: t(`pricingPlans.${plan.id}.name`, { defaultValue: plan.defaultName }),
+    description: t(`pricingPlans.${plan.id}.description`, {
+      defaultValue: plan.defaultDescription,
+    }),
+    features: plan.defaultFeatures.map((defaultFeature, index) =>
+      t(`pricingPlans.${plan.id}.features.${index}`, { defaultValue: defaultFeature })
+    ),
+  }));
+
   return (
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-4">
@@ -22,7 +33,7 @@ export async function Pricing({ locale }: PricingProps) {
         </div>
 
         <PricingSelector
-          plans={pricingPlans}
+          plans={translatedPlans}
           selectedLabel={t('landing.pricing.selected')}
           startLabel={t('landing.pricing.start')}
           contactLabel={t('landing.pricing.contact')}

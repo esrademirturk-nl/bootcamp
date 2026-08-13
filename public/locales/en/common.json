@@ -95,8 +95,26 @@
       "viewDetails": "View Details"
     },
     "howItWorks": {
-      "eyebrow": "Proces",
-      "title": "Hoe Het Werkt"
+      "eyebrow": "Process",
+      "title": "How It Works",
+      "steps": {
+        "step1": {
+          "title": "Apply",
+          "description": "Choose the bootcamp you are interested in and complete your online application in minutes."
+        },
+        "step2": {
+          "title": "Interview",
+          "description": "Have a short conversation with our team to assess your goals and level together."
+        },
+        "step3": {
+          "title": "Enroll",
+          "description": "Pick the cohort that suits you, complete your payment, and secure your seat."
+        },
+        "step4": {
+          "title": "Start Learning",
+          "description": "Begin your bootcamp journey together with your instructors and community."
+        }
+      }
     },
     "instructors": {
       "eyebrow": "Our Team",
@@ -166,7 +184,8 @@
     "levelLabel": "Level",
     "categoriesLabel": "Categories",
     "inspect": "View",
-    "weeks": "{{count}} Weeks"
+    "weeks": "{{count}} Weeks",
+    "featuredBadge": "Featured"
   },
   "sortOptions": {
     "popularity": "Popularity",
@@ -300,28 +319,28 @@
     "loginNow": "Sign in",
     "failHint": "* You can type fail@example.com to test error scenario.",
     "acceptTerms": "I accept the Terms of Use. *",
-    "strengthLabel": "Password Strength:"
-  },
-  "fields": {
-    "name": "Full Name",
-    "email": "Email Address",
-    "password": "Password",
-    "confirmPassword": "Confirm Password"
-  },
-  "errors": {
-    "emailRequired": "Email is required.",
-    "emailInvalid": "Please enter a valid email address.",
-    "passwordRequired": "Password is required.",
-    "passwordMin": "Password must be at least 8 characters.",
-    "passwordMatch": "Passwords do not match.",
-    "nameRequired": "Full name is required.",
-    "termsRequired": "You must accept the terms of use."
-  },
-  "strength": {
-    "weak": "Weak",
-    "medium": "Medium",
-    "good": "Good",
-    "strong": "Very Strong"
+    "strengthLabel": "Password Strength:",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "errors": {
+      "nameRequired": "Full name is required.",
+      "emailRequired": "Email address is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "passwordRequired": "Password is required.",
+      "passwordMin": "Password must be at least 8 characters.",
+      "passwordMatch": "Passwords do not match.",
+      "termsRequired": "You must accept the Terms of Service."
+    },
+    "strength": {
+      "weak": "Weak",
+      "medium": "Medium",
+      "good": "Good",
+      "strong": "Very Strong"
+    }
   },
   "notFoundPage": {
     "badge": "Error 404",
@@ -334,5 +353,228 @@
     "bootcamps": "Bootcamps",
     "schedule": "Schedule",
     "contact": "Contact"
+  },
+  "features": {
+    "expertInstructors": {
+      "title": "Expert Instructors",
+      "description": "Learn directly from experienced professionals actively working in the industry."
+    },
+    "handsOnProjects": {
+      "title": "Hands-On Projects",
+      "description": "Strengthen your portfolio with projects based on real-world scenarios."
+    },
+    "flexibleSchedule": {
+      "title": "Flexible Schedule",
+      "description": "Progress at your own pace with online, hybrid, or in-person options."
+    },
+    "careerSupport": {
+      "title": "Career Support",
+      "description": "CV coaching, interview preparation, and job interview matching."
+    },
+    "community": {
+      "title": "Strong Community",
+      "description": "Join an active network of graduates and students."
+    },
+    "certification": {
+      "title": "Certification",
+      "description": "Earn an industry-recognized completion certificate at the end of the program."
+    }
+  },
+  "pricingPlans": {
+    "self-paced": {
+      "name": "Self-Paced",
+      "description": "Flexible, self-paced progress for individual learners.",
+      "features": [
+        "Access to all course content",
+        "Community forum access",
+        "Monthly group mentoring session",
+        "Completion certificate"
+      ]
+    },
+    "guided-bootcamp": {
+      "name": "Guided Bootcamp",
+      "description": "A structured learning experience with live classes and instructor support.",
+      "features": [
+        "Everything in Self-Paced",
+        "Weekly live classes",
+        "One-on-one instructor mentoring",
+        "Career coaching and CV support",
+        "Job interview matching"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "description": "Customized training solutions for teams and companies.",
+      "features": [
+        "Everything in Guided Bootcamp",
+        "Custom cohort planning",
+        "Company-specific curriculum",
+        "Detailed progress reporting"
+      ]
+    }
+  },
+  "instructors": {
+    "ahmet-yilmaz": {
+      "bio": "10+ years of Web Technologies experience, former Spotify engineer."
+    },
+    "elena-rodriguez": {
+      "bio": "AWS Certified Solutions Architect and DevOps enthusiast."
+    },
+    "can-ozkan": {
+      "bio": "Expert in Go and Distributed Systems."
+    },
+    "sarah-jenkins": {
+      "bio": "Specialist in user-centered design systems."
+    },
+    "mehmet-kaya": {
+      "bio": "Academic and industry experience in Python and Machine Learning."
+    },
+    "zeynep-iron": {
+      "bio": "React Native and native iOS app developer."
+    }
+  },
+  "testimonials": {
+    "1": {
+      "quote": "Thanks to the React & Next.js bootcamp, I learned to build industry-standard projects and adopted clean code discipline."
+    },
+    "2": {
+      "quote": "Experiencing Kubernetes and AWS workflows on live projects was fantastic."
+    },
+    "3": {
+      "quote": "My journey that started with Figma turned into a portfolio backed by real user testing."
+    },
+    "4": {
+      "quote": "I made a career change by developing my SQL and data visualization skills."
+    },
+    "5": {
+      "quote": "I joined the Python & Django bootcamp to communicate more effectively with technical teams; now I can discuss backend decisions much more confidently."
+    },
+    "6": {
+      "quote": "I started my new job one month after completing the full-stack bootcamp."
+    },
+    "7": {
+      "quote": "In the React Native bootcamp I learned to ship to both iOS and Android from a single codebase, adding a real mobile app to my portfolio."
+    },
+    "8": {
+      "quote": "The Ethical Hacking bootcamp let me practice penetration testing workflows end-to-end, leaving me much better prepared for the certification exam."
+    }
+  },
+  "bootcamps": {
+    "react-nextjs-frontend-bootcamp": {
+      "title": "React & Next.js Frontend Bootcamp",
+      "shortDescription": "Build professional projects in the modern web development ecosystem with React, Next.js, and TypeScript.",
+      "description": "In this comprehensive course, you will learn modern frontend architectures, state management, Server Components concepts, and performance optimization through hands-on projects.",
+      "curriculum": {
+        "module1": "Module 1: TypeScript and Modern JS",
+        "module2": "Module 2: Advanced React",
+        "module3": "Module 3: Next.js App Router"
+      }
+    },
+    "zero-to-hero-javascript": {
+      "title": "Frontend Web Development from Zero",
+      "shortDescription": "Take your first step into software development. Learn to design websites with HTML, CSS, and JavaScript.",
+      "description": "A beginner-level coding course designed to introduce you to the world of the web, regardless of your background.",
+      "curriculum": {
+        "module1": "Module 1: Web Fundamentals",
+        "module2": "Module 2: JavaScript Fundamentals"
+      }
+    },
+    "advanced-vue-js-masterclass": {
+      "title": "Advanced Vue.js & Nuxt 3 Masterclass",
+      "shortDescription": "Build scalable enterprise applications with the Vue 3 Composition API and Nuxt 3.",
+      "description": "Vue 3 architecture, Pinia state management, and Nuxt SSR systems for large-scale projects.",
+      "curriculum": {
+        "module1": "Module 1: Composition API"
+      }
+    },
+    "node-js-microservices-backend": {
+      "title": "Node.js & Microservices Backend",
+      "shortDescription": "Build microservice architectures using Node.js, Express, PostgreSQL, and Docker.",
+      "description": "Learn backend development, API security, and database management for high-traffic systems.",
+      "curriculum": {
+        "module1": "Module 1: REST API Design"
+      }
+    },
+    "go-programming-high-performance": {
+      "title": "Go (Golang) High Performance Backend",
+      "shortDescription": "Build concurrent, high-speed backend software with Go, the language developed by Google.",
+      "description": "Write high-performance backend services using Goroutines, Channels, and the Go ecosystem.",
+      "curriculum": {
+        "module1": "Module 1: Go Internals"
+      }
+    },
+    "python-django-rest-framework": {
+      "title": "Python & Django REST Framework",
+      "shortDescription": "Move into backend development from scratch with Python. Build secure web services.",
+      "description": "Database and API management with Django, the most popular backend framework in the Python ecosystem.",
+      "curriculum": {
+        "module1": "Module 1: Python Basics"
+      }
+    },
+    "devops-kubernetes-aws-bootcamp": {
+      "title": "DevOps, AWS & Kubernetes Mastery",
+      "shortDescription": "Become a modern DevOps engineer with CI/CD pipelines, cloud infrastructure, and container orchestration.",
+      "description": "AWS services, Infrastructure as Code with Terraform, and Kubernetes cluster management.",
+      "curriculum": {
+        "module1": "Module 1: Container Architecture"
+      }
+    },
+    "fullstack-javascript-bootcamp": {
+      "title": "Fullstack JavaScript (MERN)",
+      "shortDescription": "Build end-to-end web applications from start to finish with MongoDB, Express, React, and Node.js.",
+      "description": "Learn to build both the frontend and backend with a single language: JavaScript.",
+      "curriculum": {
+        "module1": "Module 1: Fullstack Architecture"
+      }
+    },
+    "ui-ux-design-systems": {
+      "title": "UI/UX Design & Design Systems",
+      "shortDescription": "Create professional interface designs and scalable design systems with Figma.",
+      "description": "UI/UX methodologies from user research to wireframing and prototyping.",
+      "curriculum": {
+        "module1": "Module 1: Design Fundamentals"
+      }
+    },
+    "react-native-cross-platform": {
+      "title": "Mobile App Development with React Native",
+      "shortDescription": "Write mobile apps with native-level performance for iOS and Android from a single codebase.",
+      "description": "Bring your React knowledge into the mobile world. Navigation, Redux Toolkit, and device feature access.",
+      "curriculum": {
+        "module1": "Module 1: Mobile UI"
+      }
+    },
+    "data-science-machine-learning-python": {
+      "title": "Data Science & Machine Learning with Python",
+      "shortDescription": "Learn to generate value from data through data analysis, visualization, and AI models.",
+      "description": "Process real-world data using Pandas, NumPy, Scikit-Learn, and TensorFlow.",
+      "curriculum": {
+        "module1": "Module 1: Data Processing"
+      }
+    },
+    "ethical-hacking-cybersecurity": {
+      "title": "Ethical Hacking & Cyber Security",
+      "shortDescription": "System vulnerability detection, penetration testing, and cyber defense strategies.",
+      "description": "Network security, web application security (OWASP Top 10), and ethical hacking techniques.",
+      "curriculum": {
+        "module1": "Module 1: Security Fundamentals"
+      }
+    }
+  },
+  "bootcampDetailPage": {
+    "notFoundTitle": "Bootcamp Not Found",
+    "comingSoon": "Coming Soon",
+    "graduatesLabel": "Graduates",
+    "durationSuffix": "Duration",
+    "languagesLabel": "Languages",
+    "curriculumTitle": "Curriculum",
+    "hoursSuffix": "Hours",
+    "instructorTitle": "Your Instructor",
+    "testimonialsTitle": "Graduate Testimonials",
+    "priceLabel": "Tuition",
+    "nextCohortLabel": "Next Cohort:",
+    "formatLabel": "Format:",
+    "durationLabel": "Duration:",
+    "ctaButton": "Apply / Enroll Now",
+    "relatedTitle": "Other Programs You Might Like"
   }
 }

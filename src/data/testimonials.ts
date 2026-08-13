@@ -8,7 +8,9 @@ import type { Testimonial } from '@/types';
  * fundamentals' → doğrusu 'ui-ux-design-systems', 'product-management-bootcamp'
  * diye bir bootcamp hiç yok) — bu sessiz kopukluk, bootcamp detay sayfasında
  * ilgili yorumların hiç görünmemesine yol açıyordu. Tamamı doğru slug'lara
- * bağlandı.
+ * bağlandı. `defaultQuote` TR fallback'tir; gösterim anında
+ * `t(\`testimonials.${id}.quote\`, { defaultValue: defaultQuote })` ile
+ * çözülür (bkz. timelineEvents.ts pattern'i).
  */
 export const mockTestimonials: Testimonial[] = [
   {
@@ -17,7 +19,7 @@ export const mockTestimonials: Testimonial[] = [
     role: 'Frontend Developer',
     company: 'Trendyol',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200',
-    quote:
+    defaultQuote:
       'React & Next.js bootcamp sayesinde sektör standartlarında proje geliştirmeyi ve clean code disiplinini kazandım.',
     rating: 5,
     bootcampSlug: 'react-nextjs-frontend-bootcamp',
@@ -28,7 +30,7 @@ export const mockTestimonials: Testimonial[] = [
     role: 'DevOps Engineer',
     company: 'Getir',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200',
-    quote: 'Kubernetes ve AWS süreçlerini canlı projeler üzerinde deneyimlemek harikaydı.',
+    defaultQuote: 'Kubernetes ve AWS süreçlerini canlı projeler üzerinde deneyimlemek harikaydı.',
     rating: 5,
     bootcampSlug: 'devops-kubernetes-aws-bootcamp',
   },
@@ -38,7 +40,7 @@ export const mockTestimonials: Testimonial[] = [
     role: 'UI/UX Designer',
     company: 'Hepsiburada',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200',
-    quote:
+    defaultQuote:
       'Figma ile başlayan yolculuğum, gerçek kullanıcı testleriyle desteklenen bir portföye dönüştü.',
     rating: 5,
     bootcampSlug: 'ui-ux-design-systems',
@@ -49,7 +51,8 @@ export const mockTestimonials: Testimonial[] = [
     role: 'Data Analyst',
     company: 'Migros',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200',
-    quote: 'SQL ve veri görselleştirme becerilerimi geliştirerek kariyer değişikliği yaptım.',
+    defaultQuote:
+      'SQL ve veri görselleştirme becerilerimi geliştirerek kariyer değişikliği yaptım.',
     rating: 4,
     bootcampSlug: 'data-science-machine-learning-python',
   },
@@ -59,7 +62,7 @@ export const mockTestimonials: Testimonial[] = [
     role: 'Product Manager',
     company: 'Insider',
     avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200',
-    quote:
+    defaultQuote:
       'Teknik ekiplerle daha güçlü iletişim kurabilmek için Python & Django bootcamp\u2019ine katıldım; artık backend kararlarını çok daha rahat tartışabiliyorum.',
     rating: 5,
     bootcampSlug: 'python-django-rest-framework',
@@ -70,7 +73,7 @@ export const mockTestimonials: Testimonial[] = [
     role: 'Full-Stack Developer',
     company: 'Sahibinden.com',
     avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200',
-    quote: "Full-stack bootcamp'i tamamladıktan bir ay sonra yeni işime başladım.",
+    defaultQuote: "Full-stack bootcamp'i tamamladıktan bir ay sonra yeni işime başladım.",
     rating: 5,
     bootcampSlug: 'fullstack-javascript-bootcamp',
   },
@@ -80,7 +83,7 @@ export const mockTestimonials: Testimonial[] = [
     role: 'Mobile Developer',
     company: 'Yemeksepeti',
     avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200',
-    quote:
+    defaultQuote:
       'React Native bootcamp\u2019inde tek kod tabanıyla hem iOS hem Android\u2019e yayın yapmayı öğrendim, portföyüme gerçek bir mobil uygulama ekledim.',
     rating: 5,
     bootcampSlug: 'react-native-cross-platform',
@@ -91,7 +94,7 @@ export const mockTestimonials: Testimonial[] = [
     role: 'Security Analyst',
     company: 'Turkcell',
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200',
-    quote:
+    defaultQuote:
       'Ethical Hacking bootcamp\u2019i sızma testi (pentest) süreçlerini uçtan uca uygulamalı görmemi sağladı, sertifikasyon sınavına çok daha hazır girdim.',
     rating: 5,
     bootcampSlug: 'ethical-hacking-cybersecurity',

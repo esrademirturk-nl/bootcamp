@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
-import type { Instructor } from '@/types';
+import type { ResolvedInstructor } from '@/types';
 
 interface InstructorCardProps {
-  instructor: Instructor;
+  instructor: ResolvedInstructor;
 }
 
 export function InstructorCard({ instructor }: InstructorCardProps) {
