@@ -18,6 +18,8 @@ import React, { useTransition } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import { useT } from 'next-i18next/client';
 import { Category } from '@/types';
+import { mockBootcamps } from '@/data/bootcamps';
+import { getCategoryCourseCount } from '@/lib/resolve-mock-data';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
@@ -169,7 +171,7 @@ export const BootcampFilters: React.FC<BootcampFiltersProps> = ({ categories }) 
                   className="text-sm text-muted-foreground hover:text-foreground cursor-pointer select-none"
                 >
                   {t(`categories.${cat.slug}.name`, { defaultValue: cat.defaultName })} (
-                  {cat.courseCount})
+                  {getCategoryCourseCount(cat.slug, mockBootcamps)})
                 </label>
               </div>
             );
