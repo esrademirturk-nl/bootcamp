@@ -150,3 +150,17 @@ export interface TimelineEvent {
   defaultTitle: string;
   defaultDesc: string;
 }
+// Öğrencinin bir bootcamp'e kayıt bilgisi (dashboard için mock enrollment verisi)
+export interface EnrollmentModuleProgress {
+  moduleTitle: string; // CurriculumModule.title ile eşleşir
+  completed: boolean; // Modül tamamlandı mı
+}
+
+export interface Enrollment {
+  id: string; // Benzersiz kayıt ID
+  bootcampSlug: string; // İlgili bootcamp
+  cohortId: string; // İlgili kohort
+  enrolledAt: string; // Kayıt tarihi (ISO format)
+  progressPercent: number; // Genel ilerleme yüzdesi (0-100)
+  moduleProgress: EnrollmentModuleProgress[]; // Modül bazlı ilerleme
+}

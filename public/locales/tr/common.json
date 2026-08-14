@@ -354,6 +354,34 @@
     "schedule": "Program",
     "contact": "İletişim"
   },
+  "dashboard": {
+    "title": "Öğrenci Paneli",
+    "nav": {
+      "overview": "Genel Bakış",
+      "myBootcamps": "Bootcamplerim",
+      "profile": "Profil",
+      "toggle": "Menüyü aç/kapat"
+    },
+    "overview": {
+      "title": "Genel Bakış",
+      "myProgress": "İlerleme Durumum",
+      "empty": "Henüz kayıtlı olduğunuz bir bootcamp yok."
+    },
+    "myBootcamps": {
+      "title": "Bootcamplerim",
+      "empty": "Henüz kayıtlı olduğunuz bir bootcamp yok.",
+      "browse": "Bootcamp'leri Keşfet",
+      "completed": "tamamlandı"
+    },
+    "bootcampDetail": {
+      "progress": "İlerlemeniz"
+    },
+    "profile": {
+      "title": "Profil",
+      "name": "İsim",
+      "email": "E-posta",
+      "save": "Kaydet",
+      "saved": "Profiliniz başarıyla kaydedildi."
   "features": {
     "expertInstructors": {
       "title": "Uzman Eğitmenler",
