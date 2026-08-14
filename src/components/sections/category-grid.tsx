@@ -1,5 +1,7 @@
 import { getT } from 'next-i18next/server';
 import { mockCategories } from '@/data/categories';
+import { mockBootcamps } from '@/data/bootcamps';
+import { getCategoryCourseCount } from '@/lib/resolve-mock-data';
 import { CategoryCard } from './category-card';
 
 interface CategoryGridProps {
@@ -22,7 +24,12 @@ export async function CategoryGrid({ locale }: CategoryGridProps) {
         </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-4">
           {mockCategories.map((category) => (
-            <CategoryCard key={category.slug} category={category} locale={locale} />
+            <CategoryCard
+              key={category.slug}
+              category={category}
+              locale={locale}
+              courseCount={getCategoryCourseCount(category.slug, mockBootcamps)}
+            />
           ))}
         </div>
       </div>

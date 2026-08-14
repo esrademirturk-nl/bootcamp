@@ -14,7 +14,6 @@ export interface Category {
   slug: string; // URL dostu benzersiz id (ör: 'frontend-development'), aynı zamanda i18n key kökü
   defaultName: string; // TR fallback kategori adı; i18n key: categories.<slug>.name
   icon: string; // İkon adı veya path
-  courseCount: number; // Kategorideki toplam kurs sayısı
 }
 
 // Müfredat modülü arayüzü

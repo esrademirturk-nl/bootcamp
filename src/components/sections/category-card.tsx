@@ -8,9 +8,10 @@ import type { Category } from '@/types';
 interface CategoryCardProps {
   category: Category;
   locale: string;
+  courseCount: number;
 }
 
-export async function CategoryCard({ category, locale }: CategoryCardProps) {
+export async function CategoryCard({ category, locale, courseCount }: CategoryCardProps) {
   const { t } = await getT('common', { lng: locale });
   const Icon = iconMap[category.icon];
   const name = resolveCategoryName(category, t);
@@ -22,7 +23,7 @@ export async function CategoryCard({ category, locale }: CategoryCardProps) {
       <h3 className="font-heading text-lg font-bold text-foreground">{name}</h3>
 
       <p className="text-sm text-muted">
-        {t('landing.categories.programCount', { count: category.courseCount })}
+        {t('landing.categories.programCount', { count: courseCount })}
       </p>
       <Link
         href={`/bootcamps?categories=${category.slug}`}
