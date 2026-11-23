@@ -10,9 +10,12 @@ function localizedHref(path: string, locale: string) {
   return `/${locale}${path === '/' ? '' : path}`;
 }
 
-export async function Hero() {
-  const { t, i18n } = await getT('common');
-  const locale = i18n.language;
+interface HeroProps {
+  locale: string;
+}
+
+export async function Hero({ locale }: HeroProps) {
+  const { t } = await getT('common', { lng: locale });
 
   return (
     <section className="relative overflow-hidden">

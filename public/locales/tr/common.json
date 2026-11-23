@@ -6,6 +6,64 @@
     "about": "Hakkımızda",
     "contact": "İletişim"
   },
+  "cookieConsent": {
+    "message": "Deneyiminizi geliştirmek için çerezler kullanıyoruz. Detaylar için Gizlilik Politikamızı inceleyebilirsiniz.",
+    "privacyLink": "Gizlilik Politikası",
+    "accept": "Kabul Et",
+    "reject": "Reddet",
+    "preferences": "Tercihler",
+    "preferencesTitle": "Çerez Tercihleri",
+    "preferencesDescription": "Hangi çerez kategorilerine izin vermek istediğinizi seçin. Zorunlu çerezler sitenin çalışması için gereklidir ve kapatılamaz.",
+    "necessaryLabel": "Zorunlu Çerezler",
+    "necessaryDescription": "Sitenin temel işlevleri (oturum, güvenlik, tema tercihi) için gereklidir.",
+    "analyticsLabel": "Analitik Çerezler",
+    "analyticsDescription": "Ziyaretçi davranışlarını anonim olarak analiz etmemize yardımcı olur.",
+    "marketingLabel": "Pazarlama Çerezleri",
+    "marketingDescription": "Size daha ilgili içerik ve reklamlar gösterebilmemizi sağlar.",
+    "savePreferences": "Tercihleri Kaydet",
+    "close": "Kapat",
+    "alwaysOn": "Her zaman açık"
+  },
+  "privacyPage": {
+    "title": "Gizlilik Politikası",
+    "lastUpdated": "Son güncelleme: 10 Ağustos 2026",
+    "intro": "NextGen IT Academy olarak gizliliğinize önem veriyoruz. Bu politika, platformumuzu kullanırken hangi bilgileri topladığımızı, bu bilgileri nasıl kullandığımızı ve haklarınızın neler olduğunu açıklar.",
+    "section1Title": "Topladığımız Bilgiler",
+    "section1Body": "Hesap oluşturduğunuzda ad, e-posta adresi ve iletişim bilgilerinizi topluyoruz. Platformu kullanırken, hangi bootcamp sayfalarını ziyaret ettiğiniz ve tercih ettiğiniz dil gibi kullanım verilerini de kaydedebiliriz.",
+    "section2Title": "Bilgilerin Kullanımı",
+    "section2Body": "Topladığımız bilgileri hesabınızı yönetmek, bootcamp başvurularınızı işlemek, size ilgili programlar hakkında bilgi vermek ve platformu geliştirmek için kullanırız.",
+    "section3Title": "Çerezler",
+    "section3Body": "Sitemiz, temel işlevsellik için zorunlu çerezler kullanır; analitik ve pazarlama çerezleri ise yalnızca onayınızla etkinleştirilir. Tercihlerinizi dilediğiniz zaman sayfanın altındaki çerez banner'ı üzerinden güncelleyebilirsiniz.",
+    "section4Title": "Veri Paylaşımı",
+    "section4Body": "Bilgilerinizi, yasal bir zorunluluk olmadıkça veya açık onayınız olmadıkça üçüncü taraflarla paylaşmayız. Eğitmenler ve iş ortaklarımızla yalnızca başvuru sürecinizi ilerletmek için gerekli asgari bilgi paylaşılır.",
+    "section5Title": "Veri Güvenliği",
+    "section5Body": "Verilerinizi yetkisiz erişime, kayba veya kötüye kullanıma karşı korumak için makul teknik ve idari önlemler alıyoruz. Ancak internet üzerinden hiçbir aktarımın %100 güvenli olmadığını hatırlatmak isteriz.",
+    "section6Title": "Haklarınız",
+    "section6Body": "Verilerinize erişme, düzeltilmesini isteme, silinmesini talep etme ve işlenmesine itiraz etme hakkına sahipsiniz. Bu haklarınızı kullanmak için bizimle iletişime geçebilirsiniz.",
+    "contactTitle": "Bize Ulaşın",
+    "contactBody": "Gizlilikle ilgili sorularınız için iletişim sayfamız üzerinden bize ulaşabilirsiniz."
+  },
+  "termsPage": {
+    "title": "Kullanım Koşulları",
+    "lastUpdated": "Son güncelleme: 10 Ağustos 2026",
+    "intro": "Bu Kullanım Koşulları, NextGen IT Academy platformunu kullanırken sizinle aramızdaki hak ve yükümlülükleri belirler. Platformu kullanarak bu koşulları kabul etmiş sayılırsınız.",
+    "section1Title": "Koşulların Kabulü",
+    "section1Body": "Platforma kayıt olarak veya bootcamp'lerimize başvurarak bu Kullanım Koşulları'nı ve Gizlilik Politikamızı kabul etmiş olursunuz. Koşulları kabul etmiyorsanız platformu kullanmamalısınız.",
+    "section2Title": "Hizmet Tanımı",
+    "section2Body": "NextGen IT Academy, teknoloji alanında bootcamp programları sunan bir eğitim platformudur. Bu site bir ders projesi kapsamında geliştirilmiştir; içerikteki bootcamp'ler, eğitmenler ve kohortlar örnek (mock) verilerdir.",
+    "section3Title": "Kullanıcı Sorumlulukları",
+    "section3Body": "Hesabınızla ilgili bilgilerin doğruluğundan ve hesap güvenliğinden siz sorumlusunuz. Platformu yasa dışı amaçlarla veya başkalarının haklarını ihlal edecek şekilde kullanamazsınız.",
+    "section4Title": "Fikri Mülkiyet",
+    "section4Body": "Platformdaki tasarım, logo, metin ve görsel içeriklerin hakları NextGen IT Academy'ye aittir. İzinsiz kopyalanamaz veya ticari amaçla kullanılamaz.",
+    "section5Title": "Ödeme ve İptal",
+    "section5Body": "Bootcamp ücretleri ilgili program sayfasında belirtilir. İptal ve iade koşulları, başvuru sürecinde ayrıca paylaşılır. Bu demo platformda gerçek bir ödeme işlemi gerçekleşmez.",
+    "section6Title": "Sorumluluğun Sınırlandırılması",
+    "section6Body": "Platform \"olduğu gibi\" sunulur. Hizmetin kesintisiz veya hatasız olacağını garanti etmiyoruz; kullanımdan doğabilecek dolaylı zararlardan sorumlu tutulamayız.",
+    "section7Title": "Koşullardaki Değişiklikler",
+    "section7Body": "Bu koşulları zaman zaman güncelleyebiliriz. Önemli değişiklikler platform üzerinden duyurulur. Güncellemelerden sonra platformu kullanmaya devam etmeniz, yeni koşulları kabul ettiğiniz anlamına gelir.",
+    "contactTitle": "Bize Ulaşın",
+    "contactBody": "Kullanım koşullarıyla ilgili sorularınız için iletişim sayfamız üzerinden bize ulaşabilirsiniz."
+  },
   "cta": {
     "signup": "Kayıt Ol"
   },
@@ -20,6 +78,79 @@
       "graduatesLabel": "Mezun",
       "employmentRateLabel": "İstihdam Oranı",
       "partnersLabel": "Partner Şirket"
+    },
+    "categories": {
+      "eyebrow": "Kategoriler",
+      "title": "İlgi Alanına Uygun Bootcamp'i Bul",
+      "programCount": "{{count}} program mevcut",
+      "explore": "Keşfet"
+    },
+    "features": {
+      "eyebrow": "Neden Biz",
+      "title": "Kariyerinde Fark Yaratacak Özellikler"
+    },
+    "featuredPrograms": {
+      "eyebrow": "Öne Çıkanlar",
+      "title": "Popüler Bootcamp Programları",
+      "viewDetails": "Detayları Gör"
+    },
+    "howItWorks": {
+      "eyebrow": "Süreç",
+      "title": "Nasıl Çalışır",
+      "steps": {
+        "step1": {
+          "title": "Başvur",
+          "description": "İlgilendiğiniz bootcamp'i seçin ve birkaç dakikada online başvurunuzu tamamlayın."
+        },
+        "step2": {
+          "title": "Görüşme",
+          "description": "Ekibimizle kısa bir görüşme yaparak hedeflerinizi ve seviyenizi birlikte değerlendirin."
+        },
+        "step3": {
+          "title": "Kayıt Ol",
+          "description": "Size uygun kohortu seçin, ödemenizi tamamlayın ve yerinizi garanti altına alın."
+        },
+        "step4": {
+          "title": "Öğrenmeye Başla",
+          "description": "Eğitmenleriniz ve topluluğunuzla birlikte bootcamp yolculuğunuza başlayın."
+        }
+      }
+    },
+    "instructors": {
+      "eyebrow": "Kadromuz",
+      "title": "Sektörden Deneyimli Eğitmenler",
+      "prev": "Önceki",
+      "next": "Sonraki"
+    },
+    "testimonials": {
+      "eyebrow": "Yorumlar",
+      "title": "Mezunlarımız Ne Diyor?"
+    },
+    "pricing": {
+      "eyebrow": "Fiyatlandırma",
+      "title": "Sana Uygun Planı Seç",
+      "popular": "En Popüler",
+      "start": "Şimdi Başla",
+      "contact": "Bize Ulaşın",
+      "perMonth": "ay",
+      "perYear": "yıl",
+      "monthly": "Aylık",
+      "yearly": "Yıllık",
+      "yearlyDiscount": "2 ay ücretsiz",
+      "selected": "Seçildi"
+    },
+    "newsletter": {
+      "eyebrow": "Bültenimiz",
+      "title": "Bültenimize Katılın",
+      "subtitle": "Yeni bootcamp'ler ve kariyer fırsatları hakkında ilk siz haberdar olun.",
+      "placeholder": "E-posta adresiniz",
+      "button": "Abone Ol",
+      "success": "Teşekkürler! Abonelik talebiniz alındı."
+    },
+    "closingCta": {
+      "title": "Kariyerine Bugün Yön Ver",
+      "subtitle": "Binlerce mezunun katıldığı yolculuğa sen de katıl, geleceğini şekillendir.",
+      "button": "Hemen Başvur"
     }
   },
   "header": {
@@ -53,7 +184,8 @@
     "levelLabel": "Seviye",
     "categoriesLabel": "Kategoriler",
     "inspect": "İncele",
-    "weeks": "{{count}} Hafta"
+    "weeks": "{{count}} Hafta",
+    "featuredBadge": "Öne Çıkan"
   },
   "sortOptions": {
     "popularity": "Popülerlik",
@@ -187,28 +319,28 @@
     "loginNow": "Giriş Yapın",
     "failHint": "* Hata senaryosu için fail@example.com yazabilirsiniz.",
     "acceptTerms": "Kullanım Koşullarını kabul ediyorum. *",
-    "strengthLabel": "Şifre Gücü:"
-  },
-  "fields": {
-    "name": "Ad Soyad",
-    "email": "E-posta Adresi",
-    "password": "Şifre",
-    "confirmPassword": "Şifre Tekrarı"
-  },
-  "errors": {
-    "emailRequired": "E-posta alanı zorunludur.",
-    "emailInvalid": "Geçerli bir e-posta adresi giriniz.",
-    "passwordRequired": "Şifre alanı zorunludur.",
-    "passwordMin": "Şifre en az 8 karakter olmalıdır.",
-    "passwordMatch": "Şifreler eşleşmiyor.",
-    "nameRequired": "Ad soyad alanı zorunludur.",
-    "termsRequired": "Kullanım koşullarını kabul etmelisiniz."
-  },
-  "strength": {
-    "weak": "Zayıf",
-    "medium": "Orta",
-    "good": "İyi",
-    "strong": "Çok Güçlü"
+    "strengthLabel": "Şifre Gücü:",
+    "fields": {
+      "name": "Ad Soyad",
+      "email": "E-posta Adresi",
+      "password": "Şifre",
+      "confirmPassword": "Şifre Tekrarı"
+    },
+    "errors": {
+      "nameRequired": "Ad soyad alanı zorunludur.",
+      "emailRequired": "E-posta alanı zorunludur.",
+      "emailInvalid": "Geçerli bir e-posta adresi giriniz.",
+      "passwordRequired": "Şifre alanı zorunludur.",
+      "passwordMin": "Şifre en az 8 karakter olmalıdır.",
+      "passwordMatch": "Şifreler eşleşmiyor.",
+      "termsRequired": "Kullanım koşullarını kabul etmelisiniz."
+    },
+    "strength": {
+      "weak": "Zayıf",
+      "medium": "Orta",
+      "good": "İyi",
+      "strong": "Çok Güçlü"
+    }
   },
   "notFoundPage": {
     "badge": "Hata 404",
@@ -221,5 +353,254 @@
     "bootcamps": "Bootcamp'ler",
     "schedule": "Program",
     "contact": "İletişim"
+  },
+  "features": {
+    "expertInstructors": {
+      "title": "Uzman Eğitmenler",
+      "description": "Sektörde aktif çalışan deneyimli profesyonellerden birebir öğrenin."
+    },
+    "handsOnProjects": {
+      "title": "Uygulamalı Projeler",
+      "description": "Gerçek dünya senaryolarına dayalı projelerle portföyünüzü güçlendirin."
+    },
+    "flexibleSchedule": {
+      "title": "Esnek Program",
+      "description": "Online, hibrit veya yüz yüze seçenekleriyle kendi temponuzda ilerleyin."
+    },
+    "careerSupport": {
+      "title": "Kariyer Desteği",
+      "description": "CV danışmanlığı, mülakat hazırlığı ve iş görüşmesi eşleştirmesi."
+    },
+    "community": {
+      "title": "Güçlü Topluluk",
+      "description": "Mezunlar ve öğrencilerden oluşan aktif bir networke katılın."
+    },
+    "certification": {
+      "title": "Sertifikasyon",
+      "description": "Program sonunda sektörde tanınan bir tamamlama sertifikası kazanın."
+    }
+  },
+  "pricingPlans": {
+    "self-paced": {
+      "name": "Kendi Hızında",
+      "description": "Bireysel öğrenciler için esnek, kendi hızında ilerleme imkanı.",
+      "features": [
+        "Tüm kurs içeriklerine erişim",
+        "Topluluk forumuna katılım",
+        "Aylık grup mentorluk oturumu",
+        "Tamamlama sertifikası"
+      ]
+    },
+    "guided-bootcamp": {
+      "name": "Rehberli Bootcamp",
+      "description": "Canlı derslerle, eğitmen desteğiyle yapılandırılmış öğrenme deneyimi.",
+      "features": [
+        "Kendi Hızında planındaki her şey",
+        "Haftalık canlı dersler",
+        "Birebir eğitmen mentorluğu",
+        "Kariyer danışmanlığı ve CV desteği",
+        "İş görüşmesi eşleştirmesi"
+      ]
+    },
+    "enterprise": {
+      "name": "Kurumsal",
+      "description": "Ekipler ve şirketler için özelleştirilmiş eğitim çözümleri.",
+      "features": [
+        "Rehberli Bootcamp planındaki her şey",
+        "Özel kohort planlaması",
+        "Şirkete özel müfredat",
+        "Detaylı ilerleme raporlama"
+      ]
+    }
+  },
+  "instructors": {
+    "ahmet-yilmaz": {
+      "bio": "10+ yıllık Web Teknolojileri tecrübesi, eski Spotify geliştiricisi."
+    },
+    "elena-rodriguez": {
+      "bio": "AWS Certified Solutions Architect ve DevOps tutkunu."
+    },
+    "can-ozkan": {
+      "bio": "Go ve Distributed Systems uzmanı."
+    },
+    "sarah-jenkins": {
+      "bio": "Kullanıcı odaklı tasarım sistemleri uzmanı."
+    },
+    "mehmet-kaya": {
+      "bio": "Python ve Machine Learning konularında akademik ve sektörel deneyim."
+    },
+    "zeynep-iron": {
+      "bio": "React Native ve iOS native uygulama geliştiricisi."
+    }
+  },
+  "testimonials": {
+    "1": {
+      "quote": "React & Next.js bootcamp sayesinde sektör standartlarında proje geliştirmeyi ve clean code disiplinini kazandım."
+    },
+    "2": {
+      "quote": "Kubernetes ve AWS süreçlerini canlı projeler üzerinde deneyimlemek harikaydı."
+    },
+    "3": {
+      "quote": "Figma ile başlayan yolculuğum, gerçek kullanıcı testleriyle desteklenen bir portföye dönüştü."
+    },
+    "4": {
+      "quote": "SQL ve veri görselleştirme becerilerimi geliştirerek kariyer değişikliği yaptım."
+    },
+    "5": {
+      "quote": "Teknik ekiplerle daha güçlü iletişim kurabilmek için Python & Django bootcamp’ine katıldım; artık backend kararlarını çok daha rahat tartışabiliyorum."
+    },
+    "6": {
+      "quote": "Full-stack bootcamp'i tamamladıktan bir ay sonra yeni işime başladım."
+    },
+    "7": {
+      "quote": "React Native bootcamp’inde tek kod tabanıyla hem iOS hem Android’e yayın yapmayı öğrendim, portföyüme gerçek bir mobil uygulama ekledim."
+    },
+    "8": {
+      "quote": "Ethical Hacking bootcamp’i sızma testi (pentest) süreçlerini uçtan uca uygulamalı görmemi sağladı, sertifikasyon sınavına çok daha hazır girdim."
+    }
+  },
+  "bootcamps": {
+    "react-nextjs-frontend-bootcamp": {
+      "title": "React & Next.js Frontend Bootcamp",
+      "shortDescription": "Modern web geliştirme ekosisteminde React, Next.js ve TypeScript ile profesyonel projeler üretin.",
+      "description": "Bu kapsamlı eğitimde modern frontend mimarilerini, state yönetimini, Server Components mantığını ve performans optimizasyonlarını uygulamalı projelerle öğreneceksiniz.",
+      "curriculum": {
+        "module1": "Modül 1: TypeScript ve Modern JS",
+        "module2": "Modül 2: Advanced React",
+        "module3": "Modül 3: Next.js App Router"
+      }
+    },
+    "zero-to-hero-javascript": {
+      "title": "Sıfırdan Frontend Web Geliştirme",
+      "shortDescription": "Yazılıma ilk adımı atın. HTML, CSS ve JavaScript ile web siteleri tasarlamayı öğrenin.",
+      "description": "Hangi altyapıdan olursanız olun, web dünyasına giriş yapmanız için tasarlanmış temel seviye kodlama eğitimi.",
+      "curriculum": {
+        "module1": "Modül 1: Web Temelleri",
+        "module2": "Modül 2: JavaScript Temelleri"
+      }
+    },
+    "advanced-vue-js-masterclass": {
+      "title": "Advanced Vue.js & Nuxt 3 Masterclass",
+      "shortDescription": "Vue 3 Composition API ve Nuxt 3 ile ölçeklenebilir kurumsal uygulamalar geliştirin.",
+      "description": "Büyük ölçekli projeler için Vue 3 mimarisi, Pinia state yönetimi ve Nuxt SSR sistemleri.",
+      "curriculum": {
+        "module1": "Modül 1: Composition API"
+      }
+    },
+    "node-js-microservices-backend": {
+      "title": "Node.js & Microservices Backend",
+      "shortDescription": "Node.js, Express, PostgreSQL ve Docker kullanarak mikroservis mimarileri inşa edin.",
+      "description": "Yüksek trafikli sistemler için backend geliştirmeyi, API güvenliğini ve veritabanı yönetimini öğrenin.",
+      "curriculum": {
+        "module1": "Modül 1: REST API Design"
+      }
+    },
+    "go-programming-high-performance": {
+      "title": "Go (Golang) High Performance Backend",
+      "shortDescription": "Google tarafından geliştirilen Go dili ile eşzamanlı (concurrent) ve hızlı backend yazılımı.",
+      "description": "Goroutine, Channel ve Go ekosistemi ile yüksek performanslı backend servisleri yazın.",
+      "curriculum": {
+        "module1": "Modül 1: Go Internals"
+      }
+    },
+    "python-django-rest-framework": {
+      "title": "Python & Django REST Framework",
+      "shortDescription": "Python ile sıfırdan backend geliştirmeye geçin. Güvenli web servisleri yazın.",
+      "description": "Python ekosisteminde en popüler backend framework olan Django ile veritabanı ve API yönetimi.",
+      "curriculum": {
+        "module1": "Modül 1: Python Basics"
+      }
+    },
+    "devops-kubernetes-aws-bootcamp": {
+      "title": "DevOps, AWS & Kubernetes Mastery",
+      "shortDescription": "CI/CD süreçleri, bulut altyapısı ve konteyner orkestrasyonu ile modern DevOps mühendisi olun.",
+      "description": "AWS servisleri, Terraform ile Infrastructure as Code ve Kubernetes cluster yönetimi.",
+      "curriculum": {
+        "module1": "Modül 1: Container Architecture"
+      }
+    },
+    "fullstack-javascript-bootcamp": {
+      "title": "Fullstack JavaScript (MERN)",
+      "shortDescription": "MongoDB, Express, React ve Node.js ile baştan sona uçtan uca web uygulamaları geliştirin.",
+      "description": "Tek bir dille (JavaScript) hem ön yüzü hem arka yüzü geliştirmeyi öğrenin.",
+      "curriculum": {
+        "module1": "Modül 1: Fullstack Architecture"
+      }
+    },
+    "ui-ux-design-systems": {
+      "title": "UI/UX Design & Design Systems",
+      "shortDescription": "Figma ile profesyonel arayüz tasarımları ve ölçeklenebilir tasarım sistemleri oluşturun.",
+      "description": "Kullanıcı araştırmasından tel çerçeve (wireframe) ve prototiplemeye kadar UI/UX metodolojileri.",
+      "curriculum": {
+        "module1": "Modül 1: Design Fundamentals"
+      }
+    },
+    "react-native-cross-platform": {
+      "title": "React Native ile Mobil Uygulama",
+      "shortDescription": "iOS ve Android için tek bir kod tabanı üzerinden yerel (native) performanslı mobil uygulamalar yazın.",
+      "description": "React bilginizi mobil dünyaya taşıyın. Navigation, Redux Toolkit ve Cihaz Özellikleri erişimi.",
+      "curriculum": {
+        "module1": "Modül 1: Mobile UI"
+      }
+    },
+    "data-science-machine-learning-python": {
+      "title": "Python ile Data Science & Machine Learning",
+      "shortDescription": "Veri analizi, görselleştirme ve yapay zeka modelleri ile veriden değer üretmeyi öğrenin.",
+      "description": "Pandas, NumPy, Scikit-Learn ve TensorFlow kullanarak gerçek dünya verilerini işleyin.",
+      "curriculum": {
+        "module1": "Modül 1: Data Processing"
+      }
+    },
+    "ethical-hacking-cybersecurity": {
+      "title": "Ethical Hacking & Cyber Security",
+      "shortDescription": "Sistem güvenlik açıkları tespiti, sızma testleri ve siber savunma stratejileri.",
+      "description": "Ağ güvenliği, web uygulama güvenliği (OWASP Top 10) ve etik korsanlık teknikleri.",
+      "curriculum": {
+        "module1": "Modül 1: Security Fundamentals"
+      }
+    }
+  },
+  "bootcampDetailPage": {
+    "notFoundTitle": "Bootcamp Bulunamadı",
+    "comingSoon": "Yakında Duyurulacak",
+    "graduatesLabel": "Mezun",
+    "durationSuffix": "Süre",
+    "languagesLabel": "Diller",
+    "curriculumTitle": "Eğitim Müfredatı",
+    "hoursSuffix": "Saat",
+    "instructorTitle": "Eğitmeniniz",
+    "testimonialsTitle": "Mezun Yorumları",
+    "priceLabel": "Eğitim Ücreti",
+    "nextCohortLabel": "Sonraki Kohort:",
+    "formatLabel": "Format:",
+    "durationLabel": "Süre:",
+    "ctaButton": "Hemen Başvur / Kaydol",
+    "relatedTitle": "İlgini Çekebilecek Diğer Programlar"
+  },
+  "categories": {
+    "frontend": {
+      "name": "Frontend Geliştirme"
+    },
+    "backend": {
+      "name": "Backend Geliştirme"
+    },
+    "fullstack": {
+      "name": "Fullstack Geliştirme"
+    },
+    "devops": {
+      "name": "DevOps & Bulut"
+    },
+    "mobile": {
+      "name": "Mobil Geliştirme"
+    },
+    "data": {
+      "name": "Veri Bilimi & Yapay Zeka"
+    },
+    "cybersecurity": {
+      "name": "Siber Güvenlik"
+    },
+    "uiux": {
+      "name": "UI/UX Tasarım"
+    }
   }
 }

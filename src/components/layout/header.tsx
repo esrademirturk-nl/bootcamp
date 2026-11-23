@@ -2,8 +2,10 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { Rocket } from 'lucide-react';
 import { useT } from 'next-i18next/client';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button-variants';
+import { cn } from '@/lib/utils';
 import { MobileNav, type NavLink } from './mobile-nav';
 import { LanguageSwitcher } from './language-switcher';
 import { ThemeToggle } from './theme-toggle';
@@ -29,13 +31,18 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface/80 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
         {/* Logo */}
         <Link
           href={localizedHref('/', locale)}
-          className="font-heading text-lg font-bold text-foreground"
+          className="flex flex-shrink-0 items-center gap-2.5 whitespace-nowrap font-heading text-base font-bold text-foreground sm:text-lg"
         >
-          Bootcamp<span className="text-primary-600">.</span>
+          <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary-600 text-white">
+            <Rocket className="h-4 w-4" strokeWidth={2} />
+          </span>
+          <span>
+            <span className="text-primary-600">NextGen</span> IT Academy
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -52,7 +59,7 @@ export function Header() {
         </nav>
 
         {/* Sağ taraf: dil seçici, tema toggle, CTA, mobil hamburger */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-shrink-0 items-center gap-3">
           <div className="hidden md:block">
             <LanguageSwitcher />
           </div>
@@ -60,9 +67,15 @@ export function Header() {
           {/* Tema toggle — localStorage'da kalıcı, FOUC'suz (ThemeInitScript ile) */}
           <ThemeToggle label={t('header.themeToggle')} />
 
-          <Button variant="primary" size="sm" className="hidden md:inline-flex">
-            {t('cta.signup')}
-          </Button>
+          <Link
+            href={localizedHref('/auth/login', locale)}
+            className={cn(
+              buttonVariants({ variant: 'primary', size: 'sm' }),
+              'hidden md:inline-flex'
+            )}
+          >
+            {t('footer.login')}
+          </Link>
 
           {/* Mobil hamburger */}
           <button

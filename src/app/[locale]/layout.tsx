@@ -1,7 +1,7 @@
 /**
  * @file src/app/[locale]/layout.tsx
  * @description Tüm uygulamanın kök düzen (Root Layout) bileşenidir.
- * 
+ *
  * Bu dosya ne iş yapar?
  * 1. Uygulamanın temel HTML ve BODY yapısını kurar.
  * 2. Uygulanacak font değişkenlerini (Geist, Space Grotesk) CSS sınıfı olarak hazırlar.
@@ -19,8 +19,10 @@ import { I18nProvider } from 'next-i18next/client';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ThemeInitScript } from '@/components/layout/theme-init-script';
+import { PageTransition } from '@/components/layout/page-transition';
 import i18nConfig from '../../../i18n.config.server';
 import './globals.css';
+import { CookieConsent } from '@/components/layout/cookie-consent';
 
 // 1. Sunucu tarafı i18next yapılandırmasını verilen konfigürasyon ile başlatıyoruz.
 initServerI18next(i18nConfig);
@@ -45,6 +47,14 @@ export const metadata: Metadata = {
 };
 
 /**
+ * Her desteklenen dil için build-time statik path üretir. `[locale]` segmentini
+ * kullanan tüm alt sayfalar (ek dinamik segmenti olmayanlar) bu sayede statik üretilir.
+ */
+export function generateStaticParams() {
+  return i18nConfig.supportedLngs.map((locale) => ({ locale }));
+}
+
+/**
  * @interface RootLayoutProps
  * @property {React.ReactNode} children - Düzenin içine render edilecek olan sayfa bileşenleri.
  * @property {Promise<{ locale: string }>} params - URL'den gelen dinamik dil parametresi (ör: 'tr', 'en', 'nl').
@@ -57,7 +67,7 @@ interface RootLayoutProps {
 /**
  * @function RootLayout
  * @description Kök yerleşim düzenini oluşturan asenkron sunucu bileşeni (Async Server Component).
- * 
+ *
  * @param {RootLayoutProps} props - Sayfa içeriği ve URL parametreleri.
  * @returns {JSX.Element} Bütünsel HTML sayfa yapısı.
  */
@@ -66,7 +76,9 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
   const { locale } = await params;
 
   // 2. Sunucu tarafı i18n çeviri fonksiyonunu (getT) çağırarak aktif i18n örneğini alıyoruz.
-  const { i18n } = await getT();
+  // `lng` route param'dan geliyor; headers()/cookies() tabanlı otomatik algılamaya
+  // düşülmüyor, aksi halde tüm route ağacı dynamic render'a zorlanır.
+  const { i18n } = await getT(undefined, { lng: locale });
 
   // 3. Geliştirme (development) ortamındaysak çeviri dosyalarının anlık güncellenmesini sağlıyoruz.
   if (process.env.NODE_ENV === 'development') {
@@ -86,8 +98,8 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
         {/* Tema ön ayar betiği: Sayfa yüklenmeden önce çalışıp karanlık/aydınlık temayı ayarlar */}
         <ThemeInitScript />
       </head>
-      <body 
-        className="min-h-full flex flex-col font-sans bg-background text-foreground" 
+      <body
+        className="min-h-full flex flex-col font-sans bg-background text-foreground"
         suppressHydrationWarning
       >
         {/* İstemci tarafı i18n bağlamı (Context Provider) */}
@@ -96,10 +108,13 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
           <Header />
 
           {/* Sayfa İçeriklerinin Render Edildiği Ana Alan */}
-          <div className="flex-1">{children}</div>
+          <div className="flex-1">
+            <PageTransition>{children}</PageTransition>
+          </div>
 
           {/* Alt Bilgi / Footer */}
-          <Footer />
+          <Footer locale={locale} />
+          <CookieConsent />
         </I18nProvider>
       </body>
     </html>

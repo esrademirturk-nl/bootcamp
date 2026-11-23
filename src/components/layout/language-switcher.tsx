@@ -6,9 +6,9 @@ import { Select } from '@/components/ui/select';
 import i18nConfig from '../../../i18n.config';
 
 const languageNames: Record<string, string> = {
-  tr: '🇹🇷 Türkçe',
-  en: '🇬🇧 English',
-  nl: '🇳🇱 Nederlands',
+  tr: '🇹🇷 TR',
+  en: '🇬🇧 EN',
+  nl: '🇳🇱 NL',
 };
 
 export function LanguageSwitcher() {
@@ -34,7 +34,7 @@ export function LanguageSwitcher() {
       value={currentLng}
       onChange={(event) => switchLocale(event.target.value)}
       aria-label={t('header.languageSelect')}
-      className="h-8 w-auto py-1 pr-8 text-sm"
+      className="h-8 w-auto py-1 pr-4 text-sm"
     >
       {supportedLngs.map((lng) => (
         <option key={lng} value={lng}>

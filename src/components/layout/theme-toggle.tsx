@@ -1,6 +1,13 @@
 'use client';
 
 import * as React from 'react';
+import { usePathname } from 'next/navigation';
+
+// useLayoutEffect sunucuda çağrılırsa React uyarı verir ("does nothing on
+// the server"). Bu yardımcı, tarayıcıda useLayoutEffect (boyamadan önce,
+// senkron çalışır — flaş olmaz), sunucuda ise useEffect kullanır.
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
 
 export interface ThemeToggleProps {
   label: string;
@@ -45,21 +52,28 @@ function MoonIcon() {
 }
 
 export function ThemeToggle({ label }: ThemeToggleProps) {
-  // İlk render'da her zaman { mounted: false, isDark: false } (server ile
-  // client hydration mismatch'ini önlemek için) — mount sonrası gerçek DOM
-  // durumunu (ThemeInitScript'in senkron uyguladığı .dark class'ını) okuyup
-  // güncelliyoruz. Bu, dış bir kaynaktan (DOM) ilk okuma yapan, kaçınılmaz
-  // bir effect kullanım şekli — next-themes gibi kütüphaneler de aynı deseni
-  // kullanır.
+  // Locale değiştiğinde [locale]/layout.tsx yeniden render olur ve React,
+  // <html> etiketinin className'ini kendi bildiği değere (font class'ları vb.)
+  // sıfırlar — bizim classList.add('dark') ile sonradan eklediğimiz class'ı
+  // React'in haberi olmadığı için siler. Bu effect, pathname her değiştiğinde
+  // (dil değişimi dahil) localStorage'daki tercihi okuyup 'dark' class'ını
+  // yeniden uygulayarak bunu telafi ediyor.
+  const pathname = usePathname();
   const [state, setState] = React.useState({ mounted: false, isDark: false });
 
-  React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setState({
-      mounted: true,
-      isDark: document.documentElement.classList.contains('dark'),
-    });
-  }, []);
+  useIsomorphicLayoutEffect(() => {
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem('theme');
+    } catch {
+      // localStorage kullanılamıyorsa (gizli mod vb.) mevcut DOM durumuna güven
+    }
+
+    const isDark = stored ? stored === 'dark' : document.documentElement.classList.contains('dark');
+
+    document.documentElement.classList.toggle('dark', isDark);
+    setState({ mounted: true, isDark });
+  }, [pathname]);
 
   function toggleTheme() {
     const next = !state.isDark;

@@ -6,13 +6,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CurriculumModule } from '@/types';
+import { useT } from 'next-i18next/client';
+import type { ResolvedCurriculumModule } from '@/types';
 
 interface BootcampCurriculumProps {
-  curriculum: CurriculumModule[];
+  curriculum: ResolvedCurriculumModule[];
 }
 
 export const BootcampCurriculum: React.FC<BootcampCurriculumProps> = ({ curriculum }) => {
+  const { t } = useT('common');
   // İlk modülü varsayılan olarak açık tutuyoruz (index: 0)
   const [openIndexes, setOpenIndexes] = useState<number[]>([0]);
 
@@ -27,7 +29,9 @@ export const BootcampCurriculum: React.FC<BootcampCurriculumProps> = ({ curricul
 
   return (
     <div className="space-y-4">
-      <h2 className="text-2xl font-bold text-foreground">Eğitim Müfredatı</h2>
+      <h2 className="text-2xl font-bold text-foreground">
+        {t('bootcampDetailPage.curriculumTitle', { defaultValue: 'Eğitim Müfredatı' })}
+      </h2>
 
       <div className="space-y-3">
         {curriculum.map((module, index) => {
@@ -49,7 +53,10 @@ export const BootcampCurriculum: React.FC<BootcampCurriculumProps> = ({ curricul
                   <span className="text-foreground">{module.title}</span>
                 </div>
                 <div className="flex items-center space-x-3 text-xs text-muted-foreground">
-                  <span>⏱ {module.durationHours} Saat</span>
+                  <span>
+                    ⏱ {module.durationHours}{' '}
+                    {t('bootcampDetailPage.hoursSuffix', { defaultValue: 'Saat' })}
+                  </span>
                   <span className="text-lg">{isOpen ? '−' : '+'}</span>
                 </div>
               </button>

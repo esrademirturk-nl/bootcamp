@@ -6,6 +6,64 @@
     "about": "About",
     "contact": "Contact"
   },
+  "cookieConsent": {
+    "message": "We use cookies to improve your experience. See our Privacy Policy for details.",
+    "privacyLink": "Privacy Policy",
+    "accept": "Accept",
+    "reject": "Reject",
+    "preferences": "Preferences",
+    "preferencesTitle": "Cookie Preferences",
+    "preferencesDescription": "Choose which cookie categories you want to allow. Necessary cookies are required for the site to function and cannot be turned off.",
+    "necessaryLabel": "Necessary Cookies",
+    "necessaryDescription": "Required for core site functionality (sessions, security, theme preference).",
+    "analyticsLabel": "Analytics Cookies",
+    "analyticsDescription": "Helps us anonymously analyze visitor behavior.",
+    "marketingLabel": "Marketing Cookies",
+    "marketingDescription": "Allows us to show you more relevant content and ads.",
+    "savePreferences": "Save Preferences",
+    "close": "Close",
+    "alwaysOn": "Always on"
+  },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: August 10, 2026",
+    "intro": "At NextGen IT Academy, we take your privacy seriously. This policy explains what information we collect when you use our platform, how we use it, and what rights you have.",
+    "section1Title": "Information We Collect",
+    "section1Body": "When you create an account, we collect your name, email address, and contact details. As you use the platform, we may also record usage data such as which bootcamp pages you visit and your preferred language.",
+    "section2Title": "How We Use Your Information",
+    "section2Body": "We use the information we collect to manage your account, process your bootcamp applications, inform you about relevant programs, and improve the platform.",
+    "section3Title": "Cookies",
+    "section3Body": "Our site uses necessary cookies for core functionality; analytics and marketing cookies are only enabled with your consent. You can update your preferences at any time via the cookie banner at the bottom of the page.",
+    "section4Title": "Data Sharing",
+    "section4Body": "We do not share your information with third parties unless legally required or with your explicit consent. Only the minimum information needed to move your application forward is shared with instructors and partners.",
+    "section5Title": "Data Security",
+    "section5Body": "We take reasonable technical and administrative measures to protect your data from unauthorized access, loss, or misuse. That said, no transmission over the internet is ever 100% secure.",
+    "section6Title": "Your Rights",
+    "section6Body": "You have the right to access, correct, delete, and object to the processing of your data. You can contact us to exercise these rights.",
+    "contactTitle": "Contact Us",
+    "contactBody": "If you have questions about privacy, please reach out via our contact page."
+  },
+  "termsPage": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: August 10, 2026",
+    "intro": "These Terms of Service set out the rights and obligations between you and NextGen IT Academy when using our platform. By using the platform, you agree to these terms.",
+    "section1Title": "Acceptance of Terms",
+    "section1Body": "By registering on the platform or applying to one of our bootcamps, you agree to these Terms of Service and our Privacy Policy. If you do not agree to these terms, you should not use the platform.",
+    "section2Title": "Description of Service",
+    "section2Body": "NextGen IT Academy is an education platform offering technology bootcamp programs. This site was built as a course project; the bootcamps, instructors, and cohorts shown are mock data.",
+    "section3Title": "User Responsibilities",
+    "section3Body": "You are responsible for the accuracy of your account information and for keeping your account secure. You may not use the platform for unlawful purposes or in ways that infringe on others' rights.",
+    "section4Title": "Intellectual Property",
+    "section4Body": "The design, logo, text, and visual content on the platform belong to NextGen IT Academy. They may not be copied or used commercially without permission.",
+    "section5Title": "Payment and Cancellation",
+    "section5Body": "Bootcamp fees are listed on the relevant program page. Cancellation and refund terms are shared separately during the application process. No real payment is processed on this demo platform.",
+    "section6Title": "Limitation of Liability",
+    "section6Body": "The platform is provided \"as is.\" We do not guarantee uninterrupted or error-free service and are not liable for any indirect damages arising from its use.",
+    "section7Title": "Changes to These Terms",
+    "section7Body": "We may update these terms from time to time. Significant changes will be announced on the platform. Continuing to use the platform after an update means you accept the revised terms.",
+    "contactTitle": "Contact Us",
+    "contactBody": "If you have questions about these terms, please reach out via our contact page."
+  },
   "cta": {
     "signup": "Sign Up"
   },
@@ -20,6 +78,79 @@
       "graduatesLabel": "Graduates",
       "employmentRateLabel": "Employment Rate",
       "partnersLabel": "Partner Companies"
+    },
+    "categories": {
+      "eyebrow": "Categories",
+      "title": "Find the Bootcamp That Matches Your Interest",
+      "programCount": "{{count}} programs available",
+      "explore": "Explore"
+    },
+    "features": {
+      "eyebrow": "Why Us",
+      "title": "Features That Make a Difference in Your Career"
+    },
+    "featuredPrograms": {
+      "eyebrow": "Featured",
+      "title": "Popular Bootcamp Programs",
+      "viewDetails": "View Details"
+    },
+    "howItWorks": {
+      "eyebrow": "Process",
+      "title": "How It Works",
+      "steps": {
+        "step1": {
+          "title": "Apply",
+          "description": "Choose the bootcamp you are interested in and complete your online application in minutes."
+        },
+        "step2": {
+          "title": "Interview",
+          "description": "Have a short conversation with our team to assess your goals and level together."
+        },
+        "step3": {
+          "title": "Enroll",
+          "description": "Pick the cohort that suits you, complete your payment, and secure your seat."
+        },
+        "step4": {
+          "title": "Start Learning",
+          "description": "Begin your bootcamp journey together with your instructors and community."
+        }
+      }
+    },
+    "instructors": {
+      "eyebrow": "Our Team",
+      "title": "Experienced Instructors From the Industry",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "testimonials": {
+      "eyebrow": "Testimonials",
+      "title": "What Our Graduates Say"
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "Choose the Plan That Fits You",
+      "popular": "Most Popular",
+      "start": "Get Started",
+      "contact": "Contact Us",
+      "perMonth": "month",
+      "perYear": "year",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "yearlyDiscount": "2 months free",
+      "selected": "Selected"
+    },
+    "newsletter": {
+      "title": "Join Our Newsletter",
+      "subtitle": "Be the first to know about new bootcamps and career opportunities.",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "success": "Thanks! Your subscription request has been received.",
+      "eyebrow": "Newsletter"
+    },
+    "closingCta": {
+      "title": "Shape Your Career Today",
+      "subtitle": "Join thousands of graduates on this journey and shape your future.",
+      "button": "Get Started Now"
     }
   },
   "header": {
@@ -34,7 +165,7 @@
     "columnPlatform": "Platform",
     "columnResources": "Resources",
     "columnLegal": "Legal",
-    "login": "Log In",
+    "login": "Sign In",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "rights": "All rights reserved."
@@ -53,7 +184,8 @@
     "levelLabel": "Level",
     "categoriesLabel": "Categories",
     "inspect": "View",
-    "weeks": "{{count}} Weeks"
+    "weeks": "{{count}} Weeks",
+    "featuredBadge": "Featured"
   },
   "sortOptions": {
     "popularity": "Popularity",
@@ -187,28 +319,28 @@
     "loginNow": "Sign in",
     "failHint": "* You can type fail@example.com to test error scenario.",
     "acceptTerms": "I accept the Terms of Use. *",
-    "strengthLabel": "Password Strength:"
-  },
-  "fields": {
-    "name": "Full Name",
-    "email": "Email Address",
-    "password": "Password",
-    "confirmPassword": "Confirm Password"
-  },
-  "errors": {
-    "emailRequired": "Email is required.",
-    "emailInvalid": "Please enter a valid email address.",
-    "passwordRequired": "Password is required.",
-    "passwordMin": "Password must be at least 8 characters.",
-    "passwordMatch": "Passwords do not match.",
-    "nameRequired": "Full name is required.",
-    "termsRequired": "You must accept the terms of use."
-  },
-  "strength": {
-    "weak": "Weak",
-    "medium": "Medium",
-    "good": "Good",
-    "strong": "Very Strong"
+    "strengthLabel": "Password Strength:",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "errors": {
+      "nameRequired": "Full name is required.",
+      "emailRequired": "Email address is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "passwordRequired": "Password is required.",
+      "passwordMin": "Password must be at least 8 characters.",
+      "passwordMatch": "Passwords do not match.",
+      "termsRequired": "You must accept the Terms of Service."
+    },
+    "strength": {
+      "weak": "Weak",
+      "medium": "Medium",
+      "good": "Good",
+      "strong": "Very Strong"
+    }
   },
   "notFoundPage": {
     "badge": "Error 404",
@@ -221,5 +353,254 @@
     "bootcamps": "Bootcamps",
     "schedule": "Schedule",
     "contact": "Contact"
+  },
+  "features": {
+    "expertInstructors": {
+      "title": "Expert Instructors",
+      "description": "Learn directly from experienced professionals actively working in the industry."
+    },
+    "handsOnProjects": {
+      "title": "Hands-On Projects",
+      "description": "Strengthen your portfolio with projects based on real-world scenarios."
+    },
+    "flexibleSchedule": {
+      "title": "Flexible Schedule",
+      "description": "Progress at your own pace with online, hybrid, or in-person options."
+    },
+    "careerSupport": {
+      "title": "Career Support",
+      "description": "CV coaching, interview preparation, and job interview matching."
+    },
+    "community": {
+      "title": "Strong Community",
+      "description": "Join an active network of graduates and students."
+    },
+    "certification": {
+      "title": "Certification",
+      "description": "Earn an industry-recognized completion certificate at the end of the program."
+    }
+  },
+  "pricingPlans": {
+    "self-paced": {
+      "name": "Self-Paced",
+      "description": "Flexible, self-paced progress for individual learners.",
+      "features": [
+        "Access to all course content",
+        "Community forum access",
+        "Monthly group mentoring session",
+        "Completion certificate"
+      ]
+    },
+    "guided-bootcamp": {
+      "name": "Guided Bootcamp",
+      "description": "A structured learning experience with live classes and instructor support.",
+      "features": [
+        "Everything in Self-Paced",
+        "Weekly live classes",
+        "One-on-one instructor mentoring",
+        "Career coaching and CV support",
+        "Job interview matching"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "description": "Customized training solutions for teams and companies.",
+      "features": [
+        "Everything in Guided Bootcamp",
+        "Custom cohort planning",
+        "Company-specific curriculum",
+        "Detailed progress reporting"
+      ]
+    }
+  },
+  "instructors": {
+    "ahmet-yilmaz": {
+      "bio": "10+ years of Web Technologies experience, former Spotify engineer."
+    },
+    "elena-rodriguez": {
+      "bio": "AWS Certified Solutions Architect and DevOps enthusiast."
+    },
+    "can-ozkan": {
+      "bio": "Expert in Go and Distributed Systems."
+    },
+    "sarah-jenkins": {
+      "bio": "Specialist in user-centered design systems."
+    },
+    "mehmet-kaya": {
+      "bio": "Academic and industry experience in Python and Machine Learning."
+    },
+    "zeynep-iron": {
+      "bio": "React Native and native iOS app developer."
+    }
+  },
+  "testimonials": {
+    "1": {
+      "quote": "Thanks to the React & Next.js bootcamp, I learned to build industry-standard projects and adopted clean code discipline."
+    },
+    "2": {
+      "quote": "Experiencing Kubernetes and AWS workflows on live projects was fantastic."
+    },
+    "3": {
+      "quote": "My journey that started with Figma turned into a portfolio backed by real user testing."
+    },
+    "4": {
+      "quote": "I made a career change by developing my SQL and data visualization skills."
+    },
+    "5": {
+      "quote": "I joined the Python & Django bootcamp to communicate more effectively with technical teams; now I can discuss backend decisions much more confidently."
+    },
+    "6": {
+      "quote": "I started my new job one month after completing the full-stack bootcamp."
+    },
+    "7": {
+      "quote": "In the React Native bootcamp I learned to ship to both iOS and Android from a single codebase, adding a real mobile app to my portfolio."
+    },
+    "8": {
+      "quote": "The Ethical Hacking bootcamp let me practice penetration testing workflows end-to-end, leaving me much better prepared for the certification exam."
+    }
+  },
+  "bootcamps": {
+    "react-nextjs-frontend-bootcamp": {
+      "title": "React & Next.js Frontend Bootcamp",
+      "shortDescription": "Build professional projects in the modern web development ecosystem with React, Next.js, and TypeScript.",
+      "description": "In this comprehensive course, you will learn modern frontend architectures, state management, Server Components concepts, and performance optimization through hands-on projects.",
+      "curriculum": {
+        "module1": "Module 1: TypeScript and Modern JS",
+        "module2": "Module 2: Advanced React",
+        "module3": "Module 3: Next.js App Router"
+      }
+    },
+    "zero-to-hero-javascript": {
+      "title": "Frontend Web Development from Zero",
+      "shortDescription": "Take your first step into software development. Learn to design websites with HTML, CSS, and JavaScript.",
+      "description": "A beginner-level coding course designed to introduce you to the world of the web, regardless of your background.",
+      "curriculum": {
+        "module1": "Module 1: Web Fundamentals",
+        "module2": "Module 2: JavaScript Fundamentals"
+      }
+    },
+    "advanced-vue-js-masterclass": {
+      "title": "Advanced Vue.js & Nuxt 3 Masterclass",
+      "shortDescription": "Build scalable enterprise applications with the Vue 3 Composition API and Nuxt 3.",
+      "description": "Vue 3 architecture, Pinia state management, and Nuxt SSR systems for large-scale projects.",
+      "curriculum": {
+        "module1": "Module 1: Composition API"
+      }
+    },
+    "node-js-microservices-backend": {
+      "title": "Node.js & Microservices Backend",
+      "shortDescription": "Build microservice architectures using Node.js, Express, PostgreSQL, and Docker.",
+      "description": "Learn backend development, API security, and database management for high-traffic systems.",
+      "curriculum": {
+        "module1": "Module 1: REST API Design"
+      }
+    },
+    "go-programming-high-performance": {
+      "title": "Go (Golang) High Performance Backend",
+      "shortDescription": "Build concurrent, high-speed backend software with Go, the language developed by Google.",
+      "description": "Write high-performance backend services using Goroutines, Channels, and the Go ecosystem.",
+      "curriculum": {
+        "module1": "Module 1: Go Internals"
+      }
+    },
+    "python-django-rest-framework": {
+      "title": "Python & Django REST Framework",
+      "shortDescription": "Move into backend development from scratch with Python. Build secure web services.",
+      "description": "Database and API management with Django, the most popular backend framework in the Python ecosystem.",
+      "curriculum": {
+        "module1": "Module 1: Python Basics"
+      }
+    },
+    "devops-kubernetes-aws-bootcamp": {
+      "title": "DevOps, AWS & Kubernetes Mastery",
+      "shortDescription": "Become a modern DevOps engineer with CI/CD pipelines, cloud infrastructure, and container orchestration.",
+      "description": "AWS services, Infrastructure as Code with Terraform, and Kubernetes cluster management.",
+      "curriculum": {
+        "module1": "Module 1: Container Architecture"
+      }
+    },
+    "fullstack-javascript-bootcamp": {
+      "title": "Fullstack JavaScript (MERN)",
+      "shortDescription": "Build end-to-end web applications from start to finish with MongoDB, Express, React, and Node.js.",
+      "description": "Learn to build both the frontend and backend with a single language: JavaScript.",
+      "curriculum": {
+        "module1": "Module 1: Fullstack Architecture"
+      }
+    },
+    "ui-ux-design-systems": {
+      "title": "UI/UX Design & Design Systems",
+      "shortDescription": "Create professional interface designs and scalable design systems with Figma.",
+      "description": "UI/UX methodologies from user research to wireframing and prototyping.",
+      "curriculum": {
+        "module1": "Module 1: Design Fundamentals"
+      }
+    },
+    "react-native-cross-platform": {
+      "title": "Mobile App Development with React Native",
+      "shortDescription": "Write mobile apps with native-level performance for iOS and Android from a single codebase.",
+      "description": "Bring your React knowledge into the mobile world. Navigation, Redux Toolkit, and device feature access.",
+      "curriculum": {
+        "module1": "Module 1: Mobile UI"
+      }
+    },
+    "data-science-machine-learning-python": {
+      "title": "Data Science & Machine Learning with Python",
+      "shortDescription": "Learn to generate value from data through data analysis, visualization, and AI models.",
+      "description": "Process real-world data using Pandas, NumPy, Scikit-Learn, and TensorFlow.",
+      "curriculum": {
+        "module1": "Module 1: Data Processing"
+      }
+    },
+    "ethical-hacking-cybersecurity": {
+      "title": "Ethical Hacking & Cyber Security",
+      "shortDescription": "System vulnerability detection, penetration testing, and cyber defense strategies.",
+      "description": "Network security, web application security (OWASP Top 10), and ethical hacking techniques.",
+      "curriculum": {
+        "module1": "Module 1: Security Fundamentals"
+      }
+    }
+  },
+  "bootcampDetailPage": {
+    "notFoundTitle": "Bootcamp Not Found",
+    "comingSoon": "Coming Soon",
+    "graduatesLabel": "Graduates",
+    "durationSuffix": "Duration",
+    "languagesLabel": "Languages",
+    "curriculumTitle": "Curriculum",
+    "hoursSuffix": "Hours",
+    "instructorTitle": "Your Instructor",
+    "testimonialsTitle": "Graduate Testimonials",
+    "priceLabel": "Tuition",
+    "nextCohortLabel": "Next Cohort:",
+    "formatLabel": "Format:",
+    "durationLabel": "Duration:",
+    "ctaButton": "Apply / Enroll Now",
+    "relatedTitle": "Other Programs You Might Like"
+  },
+  "categories": {
+    "frontend": {
+      "name": "Frontend Development"
+    },
+    "backend": {
+      "name": "Backend Development"
+    },
+    "fullstack": {
+      "name": "Fullstack Development"
+    },
+    "devops": {
+      "name": "DevOps & Cloud"
+    },
+    "mobile": {
+      "name": "Mobile Development"
+    },
+    "data": {
+      "name": "Data Science & AI"
+    },
+    "cybersecurity": {
+      "name": "Cyber Security"
+    },
+    "uiux": {
+      "name": "UI/UX Design"
+    }
   }
 }
