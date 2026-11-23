@@ -1,4 +1,6 @@
-# NextGen IT Academy — Bootcamp Sitesi
+
+# Bootcamp Sitesi- new
+
 
 Bootcamp'leri keşfetmek, karşılaştırmak, kohort takvimini takip etmek ve kayıt sürecini başlatmak için kurumsal, çok dilli bir eğitim platformu. Referans: [global-it.team-vit-devops.nl](https://global-it.team-vit-devops.nl) (içerik/bilgi mimarisi baz alındı — görsel dil ve komponent yapısı özgün, piksel klon değil).
 
