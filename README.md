@@ -1,4 +1,4 @@
-# Bootcamp Sitesi
+# Bootcamp Sitesi- new
 
 Referans: global-it.team-vit-devops.nl/en (içerik/bilgi mimarisi baz alınır, görsel dil ve komponent yapısı özgündür — piksel klon değildir).
 
